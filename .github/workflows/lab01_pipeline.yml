@@ -1,0 +1,112 @@
+name: LAB01 - Pipeline completo
+
+"on":
+  workflow_dispatch:
+  push:
+    paths:
+      - ".run-lab01"
+
+permissions:
+  contents: write
+
+jobs:
+  ejecutar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar secreto Gemini
+        shell: bash
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "Falta el secreto GEMINI_API_KEY en Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - name: Instalar Miniforge
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          activate-environment: lab-noticias-obsidian
+          auto-activate-base: false
+
+      - name: Crear entorno desde environment.yml
+        shell: bash -el {0}
+        run: |
+          conda env update -n lab-noticias-obsidian -f environment.yml --prune
+          conda env list
+          python --version
+
+      - name: Captura HTTP real
+        shell: bash -el {0}
+        run: python main.py capturar --forzar
+
+      - name: Pruebas automatizadas
+        shell: bash -el {0}
+        run: |
+          python -m unittest discover -s tests -v 2>&1 | tee outputs/test_results.txt
+
+      - name: Extracción Gemini y validación
+        shell: bash -el {0}
+        run: python main.py extraer --forzar
+
+      - name: Generar vault Obsidian
+        shell: bash -el {0}
+        run: python main.py obsidian
+
+      - name: Data Understanding
+        shell: bash -el {0}
+        run: python main.py analizar
+
+      - name: Auditoría de muestra
+        shell: bash -el {0}
+        run: python main.py auditar
+
+      - name: Inventario y auditoría de secretos
+        if: always()
+        shell: bash -el {0}
+        run: |
+          echo "=== Archivos generados ===" > outputs/inventario.txt
+          find data/json data/validation obsidian_vault outputs docs -maxdepth 5 -type f | sort >> outputs/inventario.txt || true
+          if grep -RInE 'GEMINI_API_KEY=AIza[0-9A-Za-z_-]{20,}|AIza[0-9A-Za-z_-]{30,}' . \
+              --exclude-dir=.git --exclude=.env.example --exclude='*.log' ; then
+            echo "Se detectó un patrón potencialmente secreto." >&2
+            exit 1
+          fi
+
+      - name: Publicar salidas estructuradas reproducibles
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/json/ data/validation/ obsidian_vault/ outputs/ docs/auditoria_llm.md
+          if git diff --cached --quiet; then
+            echo "No hay salidas nuevas que versionar."
+          else
+            git commit -m "data: generar salidas validadas del laboratorio"
+            git push
+          fi
+
+      - name: Empaquetar evidencia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB01-evidencia
+          if-no-files-found: warn
+          retention-days: 7
+          path: |
+            data/raw/
+            data/processed/
+            data/json/
+            data/validation/
+            data/llm_raw/
+            obsidian_vault/
+            outputs/
+            docs/auditoria_llm.md
+            logs/
