@@ -2,6 +2,22 @@
 
 Laboratorio 01 del Minor de Sistemas Inteligentes / Machine Learning de la Universidad Católica del Norte. El proyecto transforma noticias delictuales públicas en un **grafo de conocimiento Markdown navegable en Obsidian**, manteniendo trazabilidad desde la URL hasta el JSON validado y las notas finales.
 
+## Estado final verificado
+
+La versión final fue ejecutada de extremo a extremo en **GitHub Actions (run #11, 26-09-2026)** con estado **SUCCESS**:
+
+- 12 noticias procesadas;
+- 12 JSON válidos y 0 fallidos;
+- 37 relaciones extraídas;
+- 195 archivos Markdown en la bóveda;
+- 0 enlaces rotos;
+- 7 visualizaciones de Data Understanding;
+- 14/14 pruebas automatizadas aprobadas;
+- auditoría manual de 12/12 noticias;
+- 0 relaciones dudosas detectadas por el validador final.
+
+El detalle de ejecución está en [`docs/estado_ejecucion.md`](docs/estado_ejecucion.md) y la revisión humana caso a caso en [`docs/auditoria_manual_final.md`](docs/auditoria_manual_final.md).
+
 ## Objetivo
 
 El pipeline implementa:
@@ -242,7 +258,10 @@ Este proyecto es académico y exploratorio. Una investigación, detención o imp
 - `docs/decisiones_tecnicas.md`
 - `docs/etica_limitaciones.md`
 - `docs/referencia_auditoria_manual.json`
-- `docs/auditoria_llm.md` (generado al ejecutar la auditoría)
+- `docs/auditoria_llm.md` (guía generada al ejecutar la auditoría)
+- `docs/auditoria_manual_final.md` (revisión humana final N001-N012)
+- `docs/estado_ejecucion.md` (evidencia y métricas del run final)
+- `report/LAB01_Informe_Final.pdf` (informe académico final, cuando se compila/publica)
 
 ## Seguridad
 
