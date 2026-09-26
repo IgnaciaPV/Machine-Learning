@@ -4,6 +4,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from datetime import datetime, timezone
+import re
 from typing import Iterable
 from urllib.parse import urlparse
 
@@ -99,7 +100,24 @@ class CapturadorCooperativa(CapturadorFuente):
         return "cooperativa.cl" in urlparse(url).netloc.lower() or (fuente or "").lower().startswith("cooperativa")
 
     def selectores_articulo(self) -> Iterable[str]:
-        return ("article", ".cuerpo", ".article-content", "main")
+        # En cooperativa.cl las páginas no AMP incluyen múltiples <article>
+        # (titular, relacionados, tarjetas). El cuerpo editorial estable está en
+        # .cuerpo-articulo; en AMP también está disponible.
+        return (".cuerpo-articulo", ".contenedor-cuerpo", ".cuerpo", ".article-content", "article", "main")
+
+    def capturar(self, url: str) -> CapturaWeb:
+        captura = super().capturar(url)
+        if not captura.fecha_publicacion:
+            # Algunas variantes AMP/no-AMP no exponen article:published_time.
+            # La fecha sí está codificada explícitamente en la URL oficial.
+            m = re.search(r"/(20\\d{2})-(\\d{2})-(\\d{2})/", captura.url_final)
+            if m:
+                captura.fecha_publicacion = "-".join(m.groups())
+            else:
+                m = re.search(r"/(20\\d{2})(\\d{2})(\\d{2})/", captura.url_final)
+                if m:
+                    captura.fecha_publicacion = "-".join(m.groups())
+        return captura
 
 
 class CapturadorLaTercera(CapturadorFuente):
