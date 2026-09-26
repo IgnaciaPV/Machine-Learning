@@ -14,3 +14,21 @@ class TestLimpiadorHTML(unittest.TestCase):
         self.assertEqual(resultado.cuerpo.count("información relevante"), 1)
         self.assertNotIn("secreto", resultado.cuerpo)
         self.assertNotIn("navegación", resultado.cuerpo)
+
+    def test_elimina_tarjeta_lee_tambien(self):
+        html = '''<html><body><article>
+        <h1>Titular principal suficientemente largo</h1>
+        <p>Párrafo principal del hecho con información relevante y suficientemente extensa para conservarse.</p>
+        <p>Lee también...</p>
+        <p>Noticia ajena sobre un homicidio de hincha de fútbol en otra causa.</p>
+        <p>Jueves 19 Marzo, 2026 | 12:08</p>
+        <p>Continuación del artículo principal con otra oración suficientemente extensa para conservarse.</p>
+        </article></body></html>'''
+        resultado = LimpiadorHTML().limpiar_documento(html)
+        self.assertIn("Párrafo principal", resultado.cuerpo)
+        self.assertIn("Continuación del artículo", resultado.cuerpo)
+        self.assertNotIn("hincha de fútbol", resultado.cuerpo)
+
+
+if __name__ == "__main__":
+    unittest.main()
