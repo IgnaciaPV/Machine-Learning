@@ -110,11 +110,11 @@ class CapturadorCooperativa(CapturadorFuente):
         if not captura.fecha_publicacion:
             # Algunas variantes AMP/no-AMP no exponen article:published_time.
             # La fecha sí está codificada explícitamente en la URL oficial.
-            m = re.search(r"/(20\\d{2})-(\\d{2})-(\\d{2})/", captura.url_final)
+            m = re.search(r"/(20\d{2})-(\d{2})-(\d{2})/", captura.url_final)
             if m:
                 captura.fecha_publicacion = "-".join(m.groups())
             else:
-                m = re.search(r"/(20\\d{2})(\\d{2})(\\d{2})/", captura.url_final)
+                m = re.search(r"/(20\d{2})(\d{2})(\d{2})/", captura.url_final)
                 if m:
                     captura.fecha_publicacion = "-".join(m.groups())
         return captura
