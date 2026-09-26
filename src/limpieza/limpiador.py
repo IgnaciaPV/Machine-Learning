@@ -86,6 +86,22 @@ class LimpiadorHTML:
         lineas_crudas = [self._normalizar_espacios(x) for x in articulo.get_text("\n").splitlines()]
         lineas_crudas = [x for x in lineas_crudas if x]
 
+        # BioBioChile inserta tarjetas "Lee también" dentro del contenedor editorial.
+        # Esas tarjetas son noticias relacionadas, no parte del hecho analizado. Se
+        # elimina el marcador y, de forma conservadora, las dos líneas siguientes
+        # (titular enlazado y fecha/hora de la tarjeta).
+        filtradas: list[str] = []
+        omitir = 0
+        for linea in lineas_crudas:
+            if linea.casefold().startswith("lee también") or linea.casefold().startswith("lee tambien"):
+                omitir = 2
+                continue
+            if omitir:
+                omitir -= 1
+                continue
+            filtradas.append(linea)
+        lineas_crudas = filtradas
+
         # Eliminar duplicados exactos frecuentes sin borrar una repetición significativa única.
         conteo = Counter(lineas_crudas)
         vistos: set[str] = set()
