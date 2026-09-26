@@ -2,9 +2,6 @@
   "id_noticia": "N006",
   "valido": true,
   "errores": [],
-  "advertencias": [
-    "Relación 2: origen no aparece entre entidades: personal policial",
-    "Relación 4: origen no aparece entre entidades: personal policial"
-  ],
+  "advertencias": [],
   "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N006.json"
 }

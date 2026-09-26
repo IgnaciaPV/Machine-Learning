@@ -4,7 +4,7 @@
   "fecha_publicacion": null,
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260601/pags-amp/20260601102915.html",
-  "resumen": "Una persecución policial por el robo de una camioneta en La Serena terminó con un delincuente baleado y tres menores de edad detenidos tras colisionar con una casa.",
+  "resumen": "Una persecución policial en La Serena tras el robo de una camioneta culminó con la colisión de los asaltantes contra una casa, dejando a un individuo baleado hospitalizado y a tres menores de edad detenidos.",
   "delitos": [
     "robo"
   ],
@@ -14,28 +14,16 @@
       "rol": "víctima"
     },
     {
+      "nombre": "tres menores de edad",
+      "rol": "detenidos"
+    },
+    {
       "nombre": "delincuente",
       "rol": "detenido"
     },
     {
-      "nombre": "tres menores de edad",
-      "rol": "detenido"
-    },
-    {
-      "nombre": "asaltantes",
-      "rol": null
-    },
-    {
-      "nombre": "delincuentes",
-      "rol": null
-    },
-    {
       "nombre": "uno de ellos",
-      "rol": null
-    },
-    {
-      "nombre": "otros tres menores",
-      "rol": null
+      "rol": "herido a bala"
     }
   ],
   "organizaciones": [
@@ -66,13 +54,13 @@
   "relaciones": [
     {
       "origen": "víctima",
-      "tipo": "DIO_AVISO",
+      "tipo": "DIO_AVISO_A",
       "destino": "Carabineros"
     },
     {
-      "origen": "delincuente",
-      "tipo": "ATENDIDO_EN",
-      "destino": "Hospital de La Serena"
+      "origen": "tres menores de edad",
+      "tipo": "DETENIDO_EN",
+      "destino": "Arcos de Pinamar"
     }
   ]
 }

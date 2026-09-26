@@ -8,6 +8,6 @@ test_detecta_campo_faltante (test_validacion.TestValidadorJSON.test_detecta_camp
 test_valido_y_trazable (test_validacion.TestValidadorJSON.test_valido_y_trazable) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 1.010s
+Ran 8 tests in 0.965s
 
 OK

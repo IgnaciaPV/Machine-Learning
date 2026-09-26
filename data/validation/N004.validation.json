@@ -2,10 +2,6 @@
   "id_noticia": "N004",
   "valido": true,
   "errores": [],
-  "advertencias": [
-    "Relación 1: destino no aparece entre entidades: delitos de usurpación de funciones públicas, infracción a la Ley de Control de Armas y receptación de vehículo",
-    "Relación 2: destino no aparece entre entidades: seremi de Salud",
-    "Relación 3: destino no aparece entre entidades: vehículo con encargo por robo"
-  ],
+  "advertencias": [],
   "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N004.json"
 }

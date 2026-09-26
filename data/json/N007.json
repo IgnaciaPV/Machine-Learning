@@ -1,24 +1,93 @@
 {
   "id_noticia": "N007",
   "titulo": "Cinco gendarmes detenidos por presunta vinculación a red narco en cárcel de Illapel",
-  "fecha_publicacion": "2026-06-10",
+  "fecha_publicacion": null,
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/cinco-gendarmes-detenidos-por-presunta-vinculacion-a-red-narco-en-carcel/2026-06-10/133653.html",
-  "resumen": "Cinco gendarmes fueron detenidos en el marco de la operación \"El Dorado\", que investiga tráfico de drogas, cohecho, ingresos de elementos ilícitos a un recinto penitenciario y lavado de activos. La diligencia incluyó 21 órdenes de entrada y registro en el centro penitenciario y domicilios de Salamanca, Santiago y Tomé, resultando en 16 personas aprehendidas.",
+  "resumen": "Cinco gendarmes y otras personas fueron detenidas en un operativo en la cárcel de Illapel y en diversas comunas, acusados de participar en una red de narcotráfico y corrupción.",
   "delitos": [
+    "narcotráfico",
+    "corrupción",
+    "asociación criminal",
     "tráfico de drogas",
     "cohecho",
-    "ingresos de elementos ilícitos a un recinto penitenciario",
+    "ingreso de elementos ilícitos a un recinto penitenciario",
     "lavado de activos"
   ],
-  "personas": [],
-  "organizaciones": [],
-  "lugares": [
-    "Illapel",
-    "Salamanca",
-    "Santiago",
-    "Tomé"
+  "personas": [
+    {
+      "nombre": "seremi de Gobierno de Coquimbo",
+      "rol": null
+    },
+    {
+      "nombre": "diputado",
+      "rol": null
+    },
+    {
+      "nombre": "Castillo",
+      "rol": null
+    }
   ],
-  "objetos": [],
+  "organizaciones": [
+    "Fiscalía Regional de Coquimbo",
+    "Policía de Investigaciones de La Serena",
+    "Fiscalía de Illapel",
+    "Gendarmería",
+    "Gobierno",
+    "Partido Comunista"
+  ],
+  "lugares": [
+    "cárcel de Illapel",
+    "Salamanca",
+    "Illapel",
+    "Santiago",
+    "Tomé",
+    "Región del Biobío",
+    "Coquimbo"
+  ],
+  "objetos": [
+    {
+      "tipo": "dispositivo electrónico",
+      "nombre": "teléfonos celulares",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "marihuana",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "ketamina",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "éxtasis",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "clonazepam",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "dinero",
+      "nombre": "dinero en efectivo",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "vehículo",
+      "nombre": "vehículos motorizados",
+      "cantidad": 5,
+      "unidad": null
+    }
+  ],
   "relaciones": []
 }

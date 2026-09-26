@@ -63,12 +63,12 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - ✓ lugares_esperados: Coquimbo
   - ✓ lugares_esperados: Salamanca
   - ✓ lugares_esperados: Región de Coquimbo
-  - △ lugares_esperados: Illapel
+  - ✓ lugares_esperados: Illapel
   - △ organizaciones_esperadas: PDI
   - ✓ organizaciones_esperadas: Brigada de Homicidios
-  - △ organizaciones_esperadas: Fiscalía ECOH
-  - △ organizaciones_esperadas: Laboratorio de Criminalística Regional de La Serena
-  - △ organizaciones_esperadas: Juzgado de Garantía de Illapel
+  - ✓ organizaciones_esperadas: Fiscalía ECOH
+  - ✓ organizaciones_esperadas: Laboratorio de Criminalística Regional de La Serena
+  - ✓ organizaciones_esperadas: Juzgado de Garantía de Illapel
 - Resultado final de esta muestra: revisar visualmente original → limpio → JSON y registrar omisiones, roles y relaciones.
 
 ## N004
@@ -93,7 +93,7 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - ✓ organizaciones_esperadas: Ministerio Público
   - ✓ objetos_esperados: vehículo con encargo por robo
   - ✓ objetos_esperados: balizas
-  - ✓ objetos_esperados: elementos que simulaban pertenecer a Carabineros
+  - △ objetos_esperados: elementos que simulaban pertenecer a Carabineros
 - Resultado final de esta muestra: revisar visualmente original → limpio → JSON y registrar omisiones, roles y relaciones.
 
 ## N005
@@ -114,8 +114,8 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - ✓ lugares_esperados: Coquimbo
   - ✓ organizaciones_esperadas: seguridad municipal
   - ✓ organizaciones_esperadas: Juzgado de Garantía de Coquimbo
-  - △ organizaciones_esperadas: Ministerio Público
-  - △ objetos_esperados: arma cortopunzante
+  - ✓ organizaciones_esperadas: Ministerio Público
+  - ✓ objetos_esperados: arma cortopunzante
 - Resultado final de esta muestra: revisar visualmente original → limpio → JSON y registrar omisiones, roles y relaciones.
 
 ## N006
@@ -158,7 +158,7 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - culpabilidad de los gendarmes
   - pertenencia individual a cada delito sin respaldo
 - Señales automáticas de cobertura (solo apoyo):
-  - △ delitos_esperados: asociación criminal
+  - ✓ delitos_esperados: asociación criminal
   - ✓ delitos_esperados: tráfico de drogas
   - ✓ delitos_esperados: cohecho
   - ✓ delitos_esperados: ingreso de elementos ilícitos a un recinto penitenciario
@@ -167,19 +167,19 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - ✓ lugares_esperados: Salamanca
   - ✓ lugares_esperados: Santiago
   - ✓ lugares_esperados: Tomé
-  - △ lugares_esperados: Región del Biobío
-  - △ lugares_esperados: Región de Coquimbo
-  - △ organizaciones_esperadas: Fiscalía Regional de Coquimbo
-  - △ organizaciones_esperadas: PDI La Serena
+  - ✓ lugares_esperados: Región del Biobío
+  - ✓ lugares_esperados: Región de Coquimbo
+  - ✓ organizaciones_esperadas: Fiscalía Regional de Coquimbo
+  - ✓ organizaciones_esperadas: PDI La Serena
   - ✓ organizaciones_esperadas: Fiscalía de Illapel
-  - △ organizaciones_esperadas: Gendarmería
-  - △ objetos_esperados: teléfonos celulares
-  - △ objetos_esperados: marihuana
-  - △ objetos_esperados: ketamina
-  - △ objetos_esperados: éxtasis
-  - △ objetos_esperados: clonazepam
-  - △ objetos_esperados: dinero en efectivo
-  - △ objetos_esperados: cinco vehículos motorizados
+  - ✓ organizaciones_esperadas: Gendarmería
+  - ✓ objetos_esperados: teléfonos celulares
+  - ✓ objetos_esperados: marihuana
+  - ✓ objetos_esperados: ketamina
+  - ✓ objetos_esperados: éxtasis
+  - ✓ objetos_esperados: clonazepam
+  - ✓ objetos_esperados: dinero en efectivo
+  - ✓ objetos_esperados: cinco vehículos motorizados
 - Resultado final de esta muestra: revisar visualmente original → limpio → JSON y registrar omisiones, roles y relaciones.
 
 ## N008
@@ -196,13 +196,13 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - que el pozo fue definitivamente el lugar del asesinato
 - Señales automáticas de cobertura (solo apoyo):
   - ✓ delitos_esperados: homicidio
-  - △ lugares_esperados: Panulcillo
+  - ✓ lugares_esperados: Panulcillo
   - ✓ lugares_esperados: Ovalle
-  - △ lugares_esperados: Región de Coquimbo
-  - △ organizaciones_esperadas: Brigada de Homicidios
+  - ✓ lugares_esperados: Región de Coquimbo
+  - ✓ organizaciones_esperadas: Brigada de Homicidios
   - △ organizaciones_esperadas: PDI
-  - △ objetos_esperados: objeto contundente
-  - △ objetos_esperados: pozo
+  - ✓ objetos_esperados: objeto contundente
+  - ✓ objetos_esperados: pozo
 - Resultado final de esta muestra: revisar visualmente original → limpio → JSON y registrar omisiones, roles y relaciones.
 
 ## N009

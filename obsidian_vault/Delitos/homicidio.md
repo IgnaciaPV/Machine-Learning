@@ -3,6 +3,7 @@
 Tipo: Delito
 
 ## Noticias relacionadas
+- [[Noticias/N003|N003]]
 - [[Noticias/N005|N005]]
 - [[Noticias/N006|N006]]
 - [[Noticias/N008|N008]]

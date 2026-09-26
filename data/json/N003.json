@@ -1,41 +1,84 @@
 {
   "id_noticia": "N003",
   "titulo": "PDI investiga dos homicidios en la Región de Coquimbo",
-  "fecha_publicacion": "2026-08-22",
+  "fecha_publicacion": null,
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-investiga-dos-homicidios-en-la-region-de-coquimbo/2026-08-22/095503.html",
-  "resumen": "La PDI investiga dos homicidios en la Región de Coquimbo. Un hombre de 84 años fue encontrado muerto con lesiones en el cráneo en su domicilio en Salamanca, y un hombre de unos 37 años ingresó fallecido al hospital en Coquimbo con impactos balísticos tras ser trasladado por sujetos desconocidos.",
+  "resumen": "La PDI investiga dos homicidios en las comunas de Salamanca y Coquimbo. El primer caso corresponde a un hombre de unos 37 años ingresado fallecido al Hospital de Coquimbo con impactos balísticos. El segundo caso involucra la detención de una mujer de 56 años por el homicidio de un hombre de 85 años en Salamanca.",
   "delitos": [
-    "homicidios"
+    "homicidio"
   ],
   "personas": [
-    {
-      "nombre": "hombre de 84 años",
-      "rol": "víctima"
-    },
     {
       "nombre": "hombre de unos 37 años",
       "rol": "víctima"
     },
     {
       "nombre": "sujetos desconocidos",
-      "rol": "trasladadores"
+      "rol": null
+    },
+    {
+      "nombre": "persona de sexo masculino, no identificado",
+      "rol": "víctima"
+    },
+    {
+      "nombre": "mujer de 56 años",
+      "rol": "detenida"
+    },
+    {
+      "nombre": "hombre de 85 años",
+      "rol": "víctima"
+    },
+    {
+      "nombre": "familiares",
+      "rol": null
+    },
+    {
+      "nombre": "jueza de garantía",
+      "rol": null
+    },
+    {
+      "nombre": "fiscal Soto",
+      "rol": "fiscal"
+    },
+    {
+      "nombre": "esta persona imputada",
+      "rol": "imputada"
     }
   ],
   "organizaciones": [
-    "PDI"
+    "PDI",
+    "Fiscalía ECOH",
+    "Brigada de Homicidios",
+    "Laboratorio de Criminalística Regional de La Serena",
+    "Juzgado de Garantía de Illapel"
   ],
   "lugares": [
+    "Región de Coquimbo",
+    "comunas de Salamanca y Coquimbo",
     "Salamanca",
     "Coquimbo",
-    "Región de Coquimbo"
+    "Hospital de Coquimbo",
+    "La Serena"
   ],
-  "objetos": [],
+  "objetos": [
+    {
+      "tipo": "arma",
+      "nombre": "impactos de bala",
+      "cantidad": null,
+      "unidad": null
+    }
+  ],
   "relaciones": [
     {
-      "origen": "PDI",
-      "tipo": "INVESTIGA",
-      "destino": "dos homicidios"
+      "origen": "sujetos desconocidos",
+      "tipo": "TRASLADO_A",
+      "destino": "Hospital de Coquimbo"
+    },
+    {
+      "origen": "mujer de 56 años",
+      "tipo": "AUTORA_DE",
+      "destino": "homicidio"
     }
   ]
 }

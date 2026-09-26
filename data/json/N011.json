@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-03-19T14:23:35-03:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/03/19/cae-clan-familiar-los-shein-18-detenidos-tras-operativo-en-13-viviendas-de-coquimbo-y-la-serena.shtml",
-  "resumen": "Una intervención territorial simultánea desarrollada por Carabineros y el OS7 en 13 viviendas de La Serena y Coquimbo permitió desarticular a la organización criminal \"Los Shein\", resultando en 18 detenidos y la incautación de armas, municiones, vehículos, dinero y drogas.",
+  "resumen": "Una intervención de Carabineros y el OS7 desarticuló a la organización criminal \"Los Shein\" en La Serena y Coquimbo, dejando 18 detenidos tras el allanamiento de 13 viviendas y la incautación de armas, drogas, vehículos y dinero.",
   "delitos": [
     "tráfico de drogas",
     "disparos injustificados en la vía pública",
@@ -17,18 +17,19 @@
     },
     {
       "nombre": "Christian Brebi",
-      "rol": "general de Zona de Carabineros Coquimbo"
+      "rol": null
     }
   ],
   "organizaciones": [
+    "Los Shein",
     "Carabineros",
-    "OS7",
-    "Los Shein"
+    "OS7"
   ],
   "lugares": [
     "La Serena",
     "Coquimbo",
-    "Chile"
+    "Chile",
+    "región"
   ],
   "objetos": [
     {
@@ -98,12 +99,6 @@
       "unidad": null
     },
     {
-      "tipo": "objeto",
-      "nombre": "fuegos artificiales",
-      "cantidad": null,
-      "unidad": null
-    },
-    {
       "tipo": "arma",
       "nombre": "armas con miras láser",
       "cantidad": null,
@@ -130,14 +125,9 @@
   ],
   "relaciones": [
     {
-      "origen": "OS7",
-      "tipo": "ENCABEZÓ",
-      "destino": "operativo"
-    },
-    {
       "origen": "Carabineros",
-      "tipo": "INTERVINO",
-      "destino": "13 viviendas en La Serena y Coquimbo"
+      "tipo": "PERTENECE_A",
+      "destino": "OS7"
     },
     {
       "origen": "Y.A.P.L.",

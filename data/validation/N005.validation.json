@@ -2,6 +2,8 @@
   "id_noticia": "N005",
   "valido": true,
   "errores": [],
-  "advertencias": [],
+  "advertencias": [
+    "Relación 1: destino no aparece entre entidades: personal de seguridad municipal"
+  ],
   "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N005.json"
 }

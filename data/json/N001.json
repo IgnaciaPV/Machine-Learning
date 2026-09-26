@@ -1,12 +1,12 @@
 {
   "id_noticia": "N001",
   "titulo": "La Serena: Persecución terminó con incautación de más de un millón de pesos en jarabes de codeína",
-  "fecha_publicacion": "2026-08-16",
+  "fecha_publicacion": null,
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260816/pags-amp/20260816121717.html",
-  "resumen": "Una persecución en La Serena terminó con la detención de un hombre tras evadir un control policial e intentar escapar lanzándose al Río Elqui. Carabineros incautó un automóvil y más de un millón de pesos en jarabes de codeína.",
+  "resumen": "Una persecución en La Serena terminó con la detención de un hombre que intentó escapar de un control policial lanzándose al Río Elqui. Tras registrar su vehículo, Carabineros incautó más de un millón de pesos en jarabes de codeína.",
   "delitos": [
-    "tráfico de drogas"
+    "tráfico de drogas en pequeñas cantidades"
   ],
   "personas": [
     {
@@ -14,13 +14,21 @@
       "rol": "detenido"
     },
     {
+      "nombre": "el imputado",
+      "rol": "imputado"
+    },
+    {
+      "nombre": "el sujeto",
+      "rol": null
+    },
+    {
       "nombre": "Eugenio Olea",
       "rol": "Tte. Crl."
     }
   ],
   "organizaciones": [
-    "Carabineros",
     "Primera Comisaría",
+    "Carabineros",
     "1ª Comisaría",
     "Carabineros Región de Coquimbo"
   ],
@@ -34,7 +42,7 @@
       "tipo": "dinero",
       "nombre": "pesos",
       "cantidad": 1000000,
-      "unidad": "pesos"
+      "unidad": null
     },
     {
       "tipo": "sustancia",
@@ -45,15 +53,31 @@
     {
       "tipo": "vehículo",
       "nombre": "vehículo",
-      "cantidad": 1,
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "medicamentos",
+      "nombre": "medicamentos",
+      "cantidad": null,
       "unidad": null
     }
   ],
   "relaciones": [
     {
-      "origen": "un hombre",
-      "tipo": "TIENE_ANTECEDENTES_POR",
-      "destino": "tráfico de drogas en pequeñas cantidades"
+      "origen": "Primera Comisaría",
+      "tipo": "PERTENECE_A",
+      "destino": "Carabineros"
+    },
+    {
+      "origen": "Carabineros Región de Coquimbo",
+      "tipo": "PERTENECE_A",
+      "destino": "Carabineros"
+    },
+    {
+      "origen": "Eugenio Olea",
+      "tipo": "PERTENECE_A",
+      "destino": "Carabineros"
     }
   ]
 }

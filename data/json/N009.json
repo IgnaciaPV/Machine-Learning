@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-07-17T09:20:09-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/hombre-es-asesinado-con-arma-cortante-al-interior-de-terminal-de-buses-de-coquimbo-pdi-busca-al-autor.shtml",
-  "resumen": "Un hombre de 42 años fue asesinado con un arma cortante al interior del Terminal de Buses de Coquimbo tras sostener una discusión con una locataria y ser atacado por un tercer sujeto, quien se encuentra prófugo mientras la PDI realiza las diligencias investigativas.",
+  "resumen": "Un hombre de 42 años fue asesinado con un arma cortante al interior del Terminal de Buses de Coquimbo tras sostener una discusión con una locataria y ser atacado por un tercer sujeto que posteriormente escapó. La PDI y el Ministerio Público realizan diligencias para dar con el autor, quien permanece prófugo.",
   "delitos": [
     "homicidio"
   ],
@@ -14,23 +14,23 @@
       "rol": "víctima"
     },
     {
-      "nombre": "locataria del terminal",
+      "nombre": "locataria",
       "rol": null
     },
     {
       "nombre": "tercer sujeto",
-      "rol": "autor"
+      "rol": "presunto autor"
     }
   ],
   "organizaciones": [
     "Policía de Investigaciones (PDI)",
     "Ministerio Público",
-    "Brigada de Homicidios (BH)",
-    "Laboratorio de Criminalística Regional (Lacrim)",
-    "Brigada de Homicidios de La Serena"
+    "Brigada de Homicidios (BH) de La Serena",
+    "Laboratorio de Criminalística Regional (Lacrim)"
   ],
   "lugares": [
     "Terminal de Buses de Coquimbo",
+    "Coquimbo",
     "La Serena"
   ],
   "objetos": [
@@ -43,14 +43,14 @@
   ],
   "relaciones": [
     {
+      "origen": "Policía de Investigaciones (PDI)",
+      "tipo": "INVESTIGA",
+      "destino": "homicidio"
+    },
+    {
       "origen": "tercer sujeto",
       "tipo": "ATACÓ",
       "destino": "hombre de 42 años"
-    },
-    {
-      "origen": "hombre de 42 años",
-      "tipo": "SOSTUVO_DISCUSION",
-      "destino": "locataria del terminal"
     }
   ]
 }

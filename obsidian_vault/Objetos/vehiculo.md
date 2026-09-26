@@ -8,5 +8,4 @@ Tipo: Objeto
 - [[Noticias/N004|N004]]
 
 ## Cantidades explícitas observadas
-- N001: 1
 - N002: 1

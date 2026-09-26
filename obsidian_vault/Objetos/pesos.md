@@ -6,4 +6,4 @@ Tipo: Objeto
 - [[Noticias/N001|N001]]
 
 ## Cantidades explícitas observadas
-- N001: 1000000 pesos
+- N001: 1000000
