@@ -70,12 +70,20 @@ class ExtractorGemini(ExtractorLLM):
             )
         try:
             from google import genai
+            from google.genai import types
         except ImportError as exc:
             raise RuntimeError(
                 "No está instalado google-genai. Cree/active el entorno Conda desde environment.yml."
             ) from exc
         if self._client is None:
-            self._client = genai.Client(api_key=self.api_key)
+            # Evita que una cuota/modelo no disponible bloquee el pipeline durante
+            # varios minutos. El extractor ya aplica reintentos controlados a nivel
+            # de noticia.
+            http_options = types.HttpOptions(
+                timeout=60_000,
+                retry_options=types.HttpRetryOptions(attempts=1),
+            )
+            self._client = genai.Client(api_key=self.api_key, http_options=http_options)
         return self._client
 
     @staticmethod
