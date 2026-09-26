@@ -132,7 +132,11 @@ REGLAS OBLIGATORIAS:
 - Evita duplicar una misma entidad por correferencias obvias dentro de la noticia (por ejemplo, "un hombre", "el sujeto" y "el imputado" cuando el texto deja claro que son la misma persona). Conserva la denominación explícita más informativa.
 - Para objetos conserva tipo, nombre, cantidad y unidad solo cuando existan explícitamente. Una valoración monetaria de bienes o drogas NO debe convertirse en un objeto "dinero" si no se incautó dinero efectivo.
 - Si una relación usa expresiones de incertidumbre de la fuente (presunto, habría, se investiga, sindicado), conserva esa incertidumbre en el tipo de relación; no conviertas una atribución provisional en un hecho definitivo.
-- Todo origen y destino de una relación debe corresponder a una entidad, delito, lugar u objeto incluido explícitamente en el mismo JSON.
+- Todo origen y destino de una relación debe corresponder EXACTAMENTE al texto de una entidad, delito, lugar u objeto ya incluido en el mismo JSON. No expandas ni reformules el nombre dentro de relaciones.
+- No registres como persona a colectivos institucionales como "detectives", "personal policial", "Carabineros" o "funcionarios" cuando el texto los presenta actuando como institución; usa organizaciones. Nunca asignes a policías/detectives el rol de detenido por confundir el verbo "detuvieron".
+- La cantidad de un objeto describe cuántos objetos o cuánto de esa sustancia se menciona. No uses como cantidad el número de heridas, estocadas, usos o eventos relacionados con el objeto.
+- No separes un delito compuesto en otro delito adicional por coincidencia léxica: "homicidio frustrado" no implica además "homicidio" si la fuente no menciona ambos por separado.
+- Cuando una expresión sea solo una valorización ("más de un millón de pesos en jarabes"), no crees una entidad dinero salvo que el texto diga que se incautó dinero efectivo.
 - El resumen debe describir el hecho sin añadir conclusiones ni culpabilidad.
 - Devuelve únicamente la estructura JSON solicitada por el esquema de salida de la API; no agregues explicaciones.
 
