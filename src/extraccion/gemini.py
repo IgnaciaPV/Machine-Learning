@@ -305,6 +305,10 @@ TEXTO PROCESADO:
                 continue
             origen = str(rel.get("origen", "")).strip()
             tipo = str(rel.get("tipo", "")).strip()
+            # Normalización sintáctica del tipo sin alterar el significado:
+            # mayúsculas, espacios -> guiones bajos y sin espacios periféricos.
+            tipo = re.sub(r"\s+", "_", tipo.upper())
+            rel["tipo"] = tipo
             destino = str(rel.get("destino", "")).strip()
             if origen.casefold() not in entidades or destino.casefold() not in entidades:
                 LOGGER.warning(
@@ -322,7 +326,8 @@ TEXTO PROCESADO:
                 marca in rol for marca in ("deten", "imput", "sospech", "presunt", "investig")
             )
             relacion_afirmativa = tipo_norm in {
-                "cometio", "cometio_delito", "autor_de", "culpable_de"
+                "cometio", "cometio_delito", "autor_de", "culpable_de",
+                "agredio_a", "ataco_a", "asesino_a"
             }
             conserva_incertidumbre = any(
                 marca in tipo_norm for marca in ("presunt", "habria", "sospech", "investig")
