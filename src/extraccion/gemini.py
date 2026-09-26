@@ -128,7 +128,11 @@ REGLAS OBLIGATORIAS:
 - Si un dato escalar no aparece, usa null. Si una colección no tiene elementos respaldados, usa [].
 - Las relaciones deben estar explícitamente respaldadas por el texto y usar un tipo breve en MAYÚSCULAS_CON_GUIONES_BAJOS.
 - No crees una persona u organización solo porque pueda deducirse del contexto.
-- Para objetos conserva tipo, nombre, cantidad y unidad solo cuando existan explícitamente.
+- Incluye también referencias grupales explícitas cuando sean actores centrales del hecho (por ejemplo, "cinco gendarmes" o "dos hombres detenidos"), aunque no tengan nombre propio.
+- Evita duplicar una misma entidad por correferencias obvias dentro de la noticia (por ejemplo, "un hombre", "el sujeto" y "el imputado" cuando el texto deja claro que son la misma persona). Conserva la denominación explícita más informativa.
+- Para objetos conserva tipo, nombre, cantidad y unidad solo cuando existan explícitamente. Una valoración monetaria de bienes o drogas NO debe convertirse en un objeto "dinero" si no se incautó dinero efectivo.
+- Si una relación usa expresiones de incertidumbre de la fuente (presunto, habría, se investiga, sindicado), conserva esa incertidumbre en el tipo de relación; no conviertas una atribución provisional en un hecho definitivo.
+- Todo origen y destino de una relación debe corresponder a una entidad, delito, lugar u objeto incluido explícitamente en el mismo JSON.
 - El resumen debe describir el hecho sin añadir conclusiones ni culpabilidad.
 - Devuelve únicamente la estructura JSON solicitada por el esquema de salida de la API; no agregues explicaciones.
 
