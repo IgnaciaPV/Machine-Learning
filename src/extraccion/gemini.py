@@ -270,8 +270,21 @@ TEXTO PROCESADO:
                 if not clave or clave in vistos:
                     continue
                 vistos.add(clave)
+                # Una valorización monetaria no es cantidad física del objeto.
+                if campo == "objetos":
+                    tipo_obj = str(item.get("tipo", "")).strip().casefold()
+                    cantidad = item.get("cantidad")
+                    if tipo_obj != "dinero" and isinstance(cantidad, str):
+                        if re.search(r"\\bpesos?\\b|\\$|clp", cantidad, re.IGNORECASE):
+                            item["cantidad"] = None
                 limpios.append(item)
             data[campo] = limpios
+
+        roles_persona = {
+            str(p.get("nombre", "")).strip().casefold(): str(p.get("rol") or "").strip().casefold()
+            for p in data.get("personas", [])
+            if isinstance(p, dict) and p.get("nombre")
+        }
 
         entidades: set[str] = set()
         for campo in ("delitos", "organizaciones", "lugares"):
@@ -299,6 +312,28 @@ TEXTO PROCESADO:
                     origen, tipo, destino,
                 )
                 continue
+
+            # Control ético determinista: una persona descrita solo como detenida,
+            # imputada, sospechosa o presunta no puede transformarse por el LLM en
+            # autor culpable mediante un tipo afirmativo como COMETIO_DELITO.
+            rol = roles_persona.get(origen.casefold(), "")
+            tipo_norm = tipo.casefold()
+            rol_no_condenatorio = any(
+                marca in rol for marca in ("deten", "imput", "sospech", "presunt", "investig")
+            )
+            relacion_afirmativa = tipo_norm in {
+                "cometio", "cometio_delito", "autor_de", "culpable_de"
+            }
+            conserva_incertidumbre = any(
+                marca in tipo_norm for marca in ("presunt", "habria", "sospech", "investig")
+            )
+            if rol_no_condenatorio and relacion_afirmativa and not conserva_incertidumbre:
+                LOGGER.warning(
+                    "Relación descartada por sobreafirmar culpabilidad: %s --%s--> %s (rol=%s)",
+                    origen, tipo, destino, rol,
+                )
+                continue
+
             clave = (origen.casefold(), tipo.casefold(), destino.casefold())
             if clave not in vistas_rel:
                 vistas_rel.add(clave)
