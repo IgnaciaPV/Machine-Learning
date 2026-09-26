@@ -1,0 +1,13 @@
+id_noticia,fuente,url,categoria_busqueda
+N001,Cooperativa,https://www.cooperativa.cl/noticias/site/artic/20260816/pags-amp/20260816121717.html,trafico_drogas
+N002,Cooperativa,https://www.cooperativa.cl/noticias/site/artic/20260601/pags-amp/20260601102915.html,robo_vehiculo
+N003,Cooperativa,https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-investiga-dos-homicidios-en-la-region-de-coquimbo/2026-08-22/095503.html,homicidio
+N004,Cooperativa,https://www.cooperativa.cl/noticias/site/artic/20260703/pags-amp/20260703202824.html,usurpacion_receptacion
+N005,Cooperativa,https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/rina-termino-en-homicidio-en-el-barrio-ingles-de-coquimbo/2026-03-04/104350.html,homicidio
+N006,Cooperativa,https://www.cooperativa.cl/noticias/site/artic/20260810/pags-amp/20260810131415.html,homicidio
+N007,Cooperativa,https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/cinco-gendarmes-detenidos-por-presunta-vinculacion-a-red-narco-en-carcel/2026-06-10/133653.html,trafico_drogas
+N008,Cooperativa,https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-indaga-el-homicidio-de-hombre-de-46-anos-hallado-en-un-pozo-en-ovalle/2026-07-13/120930.html,homicidio
+N009,BioBioChile,https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/hombre-es-asesinado-con-arma-cortante-al-interior-de-terminal-de-buses-de-coquimbo-pdi-busca-al-autor.shtml,homicidio
+N010,BioBioChile,https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/detienen-a-presunto-autor-del-asesinato-de-hombre-al-interior-de-terminal-de-buses-en-coquimbo.shtml,homicidio
+N011,BioBioChile,https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/03/19/cae-clan-familiar-los-shein-18-detenidos-tras-operativo-en-13-viviendas-de-coquimbo-y-la-serena.shtml,trafico_drogas
+N012,BioBioChile,https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/06/23/carabineros-desarticula-centro-de-acopio-de-drogas-y-detiene-a-dos-hombres-tras-operativo-en-coquimbo.shtml,trafico_drogas

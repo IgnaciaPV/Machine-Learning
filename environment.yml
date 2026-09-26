@@ -1,0 +1,16 @@
+name: lab-noticias-obsidian
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - requests>=2.32
+  - beautifulsoup4>=4.12
+  - lxml>=5.0
+  - feedparser>=6.0
+  - pandas>=2.2
+  - matplotlib>=3.9
+  - python-dotenv>=1.0
+  - pydantic>=2.8
+  - pip
+  - pip:
+      - google-genai>=1.0

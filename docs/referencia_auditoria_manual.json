@@ -1,0 +1,102 @@
+{
+  "descripcion": "Referencia humana construida a partir de la noticia original recuperada y el texto limpio. No es salida de Gemini; sirve para auditar al menos 10 resultados del LLM.",
+  "muestras": [
+    {
+      "id_noticia": "N001",
+      "hechos_clave": ["detención tras persecución en La Serena", "incautación de jarabes de codeína", "antecedente por tráfico de drogas en pequeñas cantidades"],
+      "roles_esperados": ["Eugenio Olea: teniente coronel de Carabineros", "hombre no identificado: detenido/imputado"],
+      "lugares_esperados": ["La Serena", "Río Elqui", "Región de Coquimbo"],
+      "organizaciones_esperadas": ["Carabineros", "Primera Comisaría"],
+      "objetos_esperados": ["jarabes de codeína", "vehículo/automóvil"],
+      "prohibido_inferir": ["que el detenido fue formalizado o condenado por tráfico en este hecho", "identidad del detenido"]
+    },
+    {
+      "id_noticia": "N002",
+      "hechos_clave": ["robo de camioneta", "persecución policial", "un sospechoso herido y tres menores detenidos"],
+      "roles_esperados": ["persona asaltada: víctima", "tres menores: detenidos", "otro involucrado: herido/detenido"],
+      "lugares_esperados": ["La Serena", "Avenida del Mar", "Avenida Francisco de Aguirre", "Arcos de Pinamar"],
+      "organizaciones_esperadas": ["Carabineros", "Hospital de La Serena"],
+      "objetos_esperados": ["camioneta/vehículo"],
+      "prohibido_inferir": ["identidad de los menores", "condenas o culpabilidad judicial"]
+    },
+    {
+      "id_noticia": "N003",
+      "hechos_clave": ["dos homicidios investigados por separado", "víctima masculina no identificada con impactos balísticos en Coquimbo", "mujer de 56 años detenida en investigación por homicidio de hombre de 85 años en Salamanca"],
+      "roles_esperados": ["hombre de unos 37 años: víctima", "hombre de 85 años: víctima", "mujer de 56 años: detenida/presunta autora/imputada", "fiscal Soto: fiscal"],
+      "lugares_esperados": ["Coquimbo", "Salamanca", "Región de Coquimbo", "Illapel"],
+      "organizaciones_esperadas": ["PDI", "Brigada de Homicidios", "Fiscalía ECOH", "Laboratorio de Criminalística Regional de La Serena", "Juzgado de Garantía de Illapel"],
+      "objetos_esperados": [],
+      "prohibido_inferir": ["que ambos casos están relacionados", "culpabilidad de la mujer detenida", "identidad de la víctima no identificada"]
+    },
+    {
+      "id_noticia": "N004",
+      "hechos_clave": ["Matías Letelier fue detenido", "simuló ser carabinero para realizar controles", "usó un vehículo con encargo por robo"],
+      "roles_esperados": ["Matías Letelier: detenido y exseremi de Salud"],
+      "lugares_esperados": ["La Serena", "Región de Coquimbo"],
+      "organizaciones_esperadas": ["Carabineros", "Ministerio Público"],
+      "objetos_esperados": ["vehículo con encargo por robo", "balizas", "elementos que simulaban pertenecer a Carabineros"],
+      "delitos_esperados": ["usurpación de funciones públicas", "infracción a la Ley de Control de Armas", "receptación de vehículo"],
+      "prohibido_inferir": ["condena", "que pertenecía a Carabineros"]
+    },
+    {
+      "id_noticia": "N005",
+      "hechos_clave": ["riña en Barrio Inglés", "víctima murió por tres estocadas", "presunto autor colombiano de 38 años fue detenido"],
+      "roles_esperados": ["hombre fallecido: víctima", "ciudadano colombiano de 38 años: imputado/presunto autor/detenido"],
+      "lugares_esperados": ["Barrio Inglés", "Coquimbo"],
+      "organizaciones_esperadas": ["seguridad municipal", "Juzgado de Garantía de Coquimbo", "Ministerio Público"],
+      "objetos_esperados": ["arma cortopunzante"],
+      "delitos_esperados": ["homicidio"],
+      "prohibido_inferir": ["nombre del imputado", "condena"]
+    },
+    {
+      "id_noticia": "N006",
+      "hechos_clave": ["mujer extranjera asesinada con arma cortopunzante", "sospechoso huyó y fue capturado por Carabineros", "arma cortopunzante hallada en su posesión"],
+      "roles_esperados": ["mujer extranjera: víctima", "sujeto extranjero: sospechoso/detenido"],
+      "lugares_esperados": ["Diaguitas", "Vicuña", "Andacollito", "Provincia de Elqui", "Región de Coquimbo"],
+      "organizaciones_esperadas": ["Carabineros", "Ministerio Público"],
+      "objetos_esperados": ["arma cortopunzante", "pistola de aire comprimido", "elementos contundentes"],
+      "delitos_esperados": ["homicidio"],
+      "prohibido_inferir": ["identidad o nacionalidad específica no indicada", "condena"]
+    },
+    {
+      "id_noticia": "N007",
+      "hechos_clave": ["Operación El Dorado", "cinco gendarmes detenidos", "16 personas aprehendidas", "21 órdenes de entrada y registro"],
+      "roles_esperados": ["cinco gendarmes: detenidos/acusados según la fuente"],
+      "lugares_esperados": ["Illapel", "Salamanca", "Santiago", "Tomé", "Región del Biobío", "Región de Coquimbo"],
+      "organizaciones_esperadas": ["Fiscalía Regional de Coquimbo", "PDI La Serena", "Fiscalía de Illapel", "Gendarmería"],
+      "objetos_esperados": ["teléfonos celulares", "marihuana", "ketamina", "éxtasis", "clonazepam", "dinero en efectivo", "cinco vehículos motorizados"],
+      "delitos_esperados": ["asociación criminal", "tráfico de drogas", "cohecho", "ingreso de elementos ilícitos a un recinto penitenciario", "lavado de activos"],
+      "prohibido_inferir": ["culpabilidad de los gendarmes", "pertenencia individual a cada delito sin respaldo"]
+    },
+    {
+      "id_noticia": "N008",
+      "hechos_clave": ["hombre de 46 años hallado muerto en un pozo", "lesiones atribuibles a terceros", "PDI investiga si el pozo fue sitio del homicidio u ocultamiento"],
+      "roles_esperados": ["hombre de 46 años: víctima"],
+      "lugares_esperados": ["Panulcillo", "Ovalle", "Región de Coquimbo"],
+      "organizaciones_esperadas": ["Brigada de Homicidios", "PDI"],
+      "objetos_esperados": ["objeto contundente", "pozo"],
+      "delitos_esperados": ["homicidio"],
+      "prohibido_inferir": ["identidad del autor", "que el pozo fue definitivamente el lugar del asesinato"]
+    },
+    {
+      "id_noticia": "N009",
+      "hechos_clave": ["homicidio en Terminal de Buses de Coquimbo", "víctima chilena de 42 años atacada con arma cortante", "presunto autor permanecía prófugo al publicarse"],
+      "roles_esperados": ["hombre chileno de 42 años: víctima", "tercer sujeto: presunto autor/prófugo", "locataria: persona con quien la víctima discutió"],
+      "lugares_esperados": ["Terminal de Buses de Coquimbo", "Coquimbo"],
+      "organizaciones_esperadas": ["PDI", "Brigada de Homicidios de La Serena", "Lacrim", "Ministerio Público"],
+      "objetos_esperados": ["arma cortante"],
+      "delitos_esperados": ["homicidio"],
+      "prohibido_inferir": ["identidad del agresor", "que la locataria participó del ataque"]
+    },
+    {
+      "id_noticia": "N010",
+      "hechos_clave": ["actualización del homicidio del Terminal de Buses de Coquimbo", "imputado chileno de 45 años detenido", "víctima chilena de 42 años murió en Hospital San Pablo"],
+      "roles_esperados": ["hombre chileno de 42 años: víctima", "chileno de 45 años: imputado/presunto autor/detenido"],
+      "lugares_esperados": ["Terminal de Buses de Coquimbo", "Coquimbo"],
+      "organizaciones_esperadas": ["Brigada de Homicidios La Serena", "Hospital San Pablo de Coquimbo", "Juzgado de Garantía de Coquimbo"],
+      "objetos_esperados": ["arma cortante"],
+      "delitos_esperados": ["homicidio"],
+      "prohibido_inferir": ["condena del imputado", "motivo del ataque"]
+    }
+  ]
+}
