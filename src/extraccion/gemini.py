@@ -242,6 +242,70 @@ TEXTO PROCESADO:
             errores.append(f"generate_content={type(exc).__name__}: {exc}")
             raise RuntimeError("; ".join(errores)) from exc
 
+    @staticmethod
+    def _postprocesar_estructurado(data: dict[str, Any]) -> dict[str, Any]:
+        """Aplica reglas deterministas conservadoras después del LLM.
+
+        No agrega hechos. Solo elimina duplicados exactos y relaciones cuyo origen
+        o destino no existe en las entidades ya extraídas, evitando enlaces huérfanos.
+        """
+        for campo in ("delitos", "organizaciones", "lugares"):
+            vistos: set[str] = set()
+            limpios: list[str] = []
+            for valor in data.get(campo, []) or []:
+                texto = str(valor).strip()
+                clave = texto.casefold()
+                if texto and clave not in vistos:
+                    vistos.add(clave)
+                    limpios.append(texto)
+            data[campo] = limpios
+
+        for campo, clave_nombre in (("personas", "nombre"), ("objetos", "nombre")):
+            vistos: set[str] = set()
+            limpios: list[dict[str, Any]] = []
+            for item in data.get(campo, []) or []:
+                if not isinstance(item, dict):
+                    continue
+                clave = str(item.get(clave_nombre, "")).strip().casefold()
+                if not clave or clave in vistos:
+                    continue
+                vistos.add(clave)
+                limpios.append(item)
+            data[campo] = limpios
+
+        entidades: set[str] = set()
+        for campo in ("delitos", "organizaciones", "lugares"):
+            entidades.update(str(x).strip().casefold() for x in data.get(campo, []) if str(x).strip())
+        for p in data.get("personas", []):
+            if p.get("nombre"):
+                entidades.add(str(p["nombre"]).strip().casefold())
+        for o in data.get("objetos", []):
+            if o.get("nombre"):
+                entidades.add(str(o["nombre"]).strip().casefold())
+            if o.get("tipo"):
+                entidades.add(str(o["tipo"]).strip().casefold())
+
+        relaciones_limpias: list[dict[str, Any]] = []
+        vistas_rel: set[tuple[str, str, str]] = set()
+        for rel in data.get("relaciones", []) or []:
+            if not isinstance(rel, dict):
+                continue
+            origen = str(rel.get("origen", "")).strip()
+            tipo = str(rel.get("tipo", "")).strip()
+            destino = str(rel.get("destino", "")).strip()
+            if origen.casefold() not in entidades or destino.casefold() not in entidades:
+                LOGGER.warning(
+                    "Relación descartada por endpoint no trazable: %s --%s--> %s",
+                    origen, tipo, destino,
+                )
+                continue
+            clave = (origen.casefold(), tipo.casefold(), destino.casefold())
+            if clave not in vistas_rel:
+                vistas_rel.add(clave)
+                relaciones_limpias.append(rel)
+        data["relaciones"] = relaciones_limpias
+        return data
+
     def extraer(self, noticia: NoticiaFuente) -> dict[str, Any]:
         prompt = self.construir_prompt(noticia)
         ultimo_error: Exception | None = None
@@ -250,6 +314,7 @@ TEXTO PROCESADO:
                 texto_respuesta, model = self._llamar(prompt)
                 (self.raw_dir / f"{noticia.id_noticia}.txt").write_text(texto_respuesta, encoding="utf-8")
                 data = self._extraer_json_de_texto(texto_respuesta)
+                data = self._postprocesar_estructurado(data)
 
                 # La trazabilidad no se delega al LLM: estos metadatos provienen del CSV/origen.
                 data["id_noticia"] = noticia.id_noticia
