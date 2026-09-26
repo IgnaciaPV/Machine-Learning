@@ -1,4 +1,4 @@
-# Brigada de Homicidios (BH) de La Serena
+# Brigada de Homicidios de La Serena
 
 Tipo: Organizacione
 

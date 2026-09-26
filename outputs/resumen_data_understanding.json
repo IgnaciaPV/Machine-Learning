@@ -6,10 +6,11 @@
     "BioBioChile": 4
   },
   "delitos_frecuentes": {
-    "homicidio": 7,
+    "homicidio": 6,
     "tráfico de drogas": 3,
     "tráfico de drogas en pequeñas cantidades": 1,
     "robo de auto": 1,
+    "robo de su vehículo": 1,
     "usurpación de funciones públicas": 1,
     "infracción a la Ley de Control de Armas": 1,
     "receptación de vehículo": 1,
@@ -19,16 +20,13 @@
     "lavado de activos": 1,
     "disparos injustificados en la vía pública": 1,
     "homicidio frustrado": 1,
-    "homicidio de hincha de fútbol": 1,
-    "tenencia de armas": 1,
     "robo con violencia": 1,
     "lesiones": 1
   },
   "lugares_frecuentes": {
+    "Región de Coquimbo": 6,
     "La Serena": 5,
-    "Región de Coquimbo": 5,
     "Coquimbo": 5,
-    "Salamanca": 2,
     "Juzgado de Garantía de Coquimbo": 2,
     "Terminal de Buses de Coquimbo": 2,
     "Río Elqui": 1,
@@ -36,32 +34,32 @@
     "Avenida Francisco de Aguirre": 1,
     "Arcos de Pinamar": 1,
     "Hospital de La Serena": 1,
+    "comunas de Salamanca": 1,
     "Hospital de Coquimbo": 1,
+    "comuna de Salamanca": 1,
     "Barrio Inglés": 1,
     "hospital local": 1,
-    "cerros de la ciudad puerto": 1,
-    "Vicuña": 1,
     "Diaguitas": 1,
+    "Vicuña": 1,
     "Provincia de Elqui": 1,
     "Andacollito": 1,
     "Illapel": 1,
+    "Salamanca": 1,
     "Santiago": 1,
     "Tomé": 1,
     "Región del Biobío": 1,
     "sector rural de Panulcillo": 1,
-    "comuna de Ovalle": 1,
+    "Ovalle": 1,
     "pozo": 1,
-    "sitio del suceso": 1,
-    "Chile": 1,
-    "barrios": 1,
+    "13 viviendas en La Serena y Coquimbo": 1,
     "Tierras Blancas": 1,
     "Tribunal de Garantía de Coquimbo": 1
   },
-  "personas_unicas": 33,
+  "personas_unicas": 34,
   "organizaciones_unicas": 24,
-  "relaciones_extraidas": 35,
+  "relaciones_extraidas": 31,
   "porcentaje_campos_faltantes": {
-    "objetos": 8.33,
+    "relaciones": 8.33,
     "fecha_publicacion": 0.0,
     "titulo": 0.0,
     "fuente": 0.0,
@@ -71,12 +69,18 @@
     "personas": 0.0,
     "organizaciones": 0.0,
     "lugares": 0.0,
-    "relaciones": 0.0
+    "objetos": 0.0
   },
   "noticias_duplicadas": [],
-  "entidades_inconsistentes": [],
-  "relaciones_dudosas": [
-    "N007.validation: Relación 1: destino no aparece entre entidades: red de narcotráfico y corrupción"
+  "entidades_inconsistentes": [
+    {
+      "clave": "un hombre",
+      "variantes": [
+        "Un hombre",
+        "un hombre"
+      ]
+    }
   ],
+  "relaciones_dudosas": [],
   "json_invalidos_detalle": []
 }

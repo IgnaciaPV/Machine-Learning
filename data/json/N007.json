@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-06-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/cinco-gendarmes-detenidos-por-presunta-vinculacion-a-red-narco-en-carcel/2026-06-10/133653.html",
-  "resumen": "Cinco gendarmes fueron detenidos por su presunta vinculación a una red de narcotráfico y corrupción en la cárcel de Illapel, en el marco de diligencias desarrolladas por la Fiscalía Regional de Coquimbo, la Policía de Investigaciones de La Serena, la Fiscalía de Illapel y Gendarmería que incluyeron allanamientos y la incautación de diversos elementos ilícitos.",
+  "resumen": "Cinco gendarmes fueron detenidos por su presunta vinculación a una red de narcotráfico y corrupción en la cárcel de Illapel, en el marco de una investigación conjunta entre la Fiscalía y la Policía de Investigaciones que incluyó allanamientos y la incautación de drogas, teléfonos, dinero y vehículos.",
   "delitos": [
     "asociación criminal",
     "tráfico de drogas",
@@ -16,6 +16,18 @@
     {
       "nombre": "cinco gendarmes",
       "rol": "detenido"
+    },
+    {
+      "nombre": "seremi de Gobierno de Coquimbo",
+      "rol": null
+    },
+    {
+      "nombre": "diputado",
+      "rol": null
+    },
+    {
+      "nombre": "Castillo",
+      "rol": null
     }
   ],
   "organizaciones": [
@@ -78,11 +90,5 @@
       "unidad": null
     }
   ],
-  "relaciones": [
-    {
-      "origen": "cinco gendarmes",
-      "tipo": "PRESUNTA_VINCULACION_A",
-      "destino": "red de narcotráfico y corrupción"
-    }
-  ]
+  "relaciones": []
 }

@@ -2,8 +2,6 @@
   "id_noticia": "N007",
   "valido": true,
   "errores": [],
-  "advertencias": [
-    "Relación 1: destino no aparece entre entidades: red de narcotráfico y corrupción"
-  ],
+  "advertencias": [],
   "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N007.json"
 }

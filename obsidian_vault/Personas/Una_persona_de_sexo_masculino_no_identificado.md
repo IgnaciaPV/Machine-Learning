@@ -1,9 +1,9 @@
-# un hombre de 42 años
+# Una persona de sexo masculino, no identificado
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N009|N009]]
+- [[Noticias/N003|N003]]
 
 ## Roles explícitos observados
 - víctima

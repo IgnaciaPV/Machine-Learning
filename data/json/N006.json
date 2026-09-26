@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-08-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260810/pags-amp/20260810131415.html",
-  "resumen": "Una mujer extranjera fue asesinada a puñaladas en la vía pública en Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes.",
+  "resumen": "Una mujer de nacionalidad extranjera fue asesinada a puñaladas en la vía pública en la localidad de Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia el sector de Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes antes de ponerlo a disposición del Ministerio Público.",
   "delitos": [
     "homicidio"
   ],
@@ -18,7 +18,7 @@
       "rol": null
     },
     {
-      "nombre": "el sospechoso",
+      "nombre": "un sujeto",
       "rol": "detenido"
     }
   ],
@@ -27,8 +27,8 @@
     "Ministerio Público"
   ],
   "lugares": [
-    "Vicuña",
     "Diaguitas",
+    "Vicuña",
     "Provincia de Elqui",
     "Región de Coquimbo",
     "Andacollito"
@@ -43,7 +43,7 @@
     {
       "tipo": "arma",
       "nombre": "pistola de aire comprimido",
-      "cantidad": null,
+      "cantidad": 1,
       "unidad": null
     },
     {
@@ -55,24 +55,29 @@
   ],
   "relaciones": [
     {
-      "origen": "el sospechoso",
-      "tipo": "COMETIO",
+      "origen": "mujer",
+      "tipo": "VICTIMA_DE_DELITO",
       "destino": "homicidio"
     },
     {
-      "origen": "el sospechoso",
-      "tipo": "FUE_CAPTURADO_EN",
-      "destino": "Andacollito"
+      "origen": "un sujeto",
+      "tipo": "DETENIDO_POR",
+      "destino": "Carabineros"
     },
     {
-      "origen": "Carabineros",
-      "tipo": "CAPTURO",
-      "destino": "el sospechoso"
-    },
-    {
-      "origen": "el sospechoso",
-      "tipo": "POESEDIA",
+      "origen": "un sujeto",
+      "tipo": "TIENE_OBJETO",
       "destino": "arma cortopunzante"
+    },
+    {
+      "origen": "un sujeto",
+      "tipo": "TIENE_OBJETO",
+      "destino": "pistola de aire comprimido"
+    },
+    {
+      "origen": "un sujeto",
+      "tipo": "TIENE_OBJETO",
+      "destino": "elementos contundentes"
     }
   ]
 }

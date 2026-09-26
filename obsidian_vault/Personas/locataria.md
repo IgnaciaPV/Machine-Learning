@@ -1,4 +1,4 @@
-# una locataria del terminal
+# locataria
 
 Tipo: Persona
 

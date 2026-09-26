@@ -88,7 +88,7 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - ✓ delitos_esperados: infracción a la Ley de Control de Armas
   - ✓ delitos_esperados: receptación de vehículo
   - ✓ lugares_esperados: La Serena
-  - △ lugares_esperados: Región de Coquimbo
+  - ✓ lugares_esperados: Región de Coquimbo
   - ✓ organizaciones_esperadas: Carabineros
   - ✓ organizaciones_esperadas: Ministerio Público
   - ✓ objetos_esperados: vehículo con encargo por robo

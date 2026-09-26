@@ -1,9 +1,9 @@
-# un chileno de 45 años
+# presunto autor del homicidio
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N010|N010]]
+- [[Noticias/N005|N005]]
 
 ## Roles explícitos observados
-- presunto autor
+- detenido

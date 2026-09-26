@@ -1,6 +1,6 @@
-# los otros tres menores
+# robo de su vehículo
 
-Tipo: Persona
+Tipo: Delito
 
 ## Noticias relacionadas
 - [[Noticias/N002|N002]]

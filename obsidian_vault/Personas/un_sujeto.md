@@ -1,9 +1,9 @@
-# una mujer de 56 años
+# un sujeto
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N003|N003]]
+- [[Noticias/N006|N006]]
 
 ## Roles explícitos observados
 - detenido

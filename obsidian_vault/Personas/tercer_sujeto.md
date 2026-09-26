@@ -1,6 +1,6 @@
-# sitio del suceso
+# tercer sujeto
 
-Tipo: Lugare
+Tipo: Persona
 
 ## Noticias relacionadas
 - [[Noticias/N009|N009]]

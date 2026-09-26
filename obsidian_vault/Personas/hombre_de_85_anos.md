@@ -1,4 +1,4 @@
-# un hombre de 85 años
+# hombre de 85 años
 
 Tipo: Persona
 

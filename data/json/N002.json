@@ -4,9 +4,10 @@
   "fecha_publicacion": "2026-06-01",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260601/pags-amp/20260601102915.html",
-  "resumen": "Una persecución policial en La Serena iniciada tras el robo de una camioneta culminó con una colisión domiciliaria, un delincuente baleado y cuatro menores de edad involucrados detenidos por Carabineros.",
+  "resumen": "Una persecución policial por el robo de una camioneta en La Serena terminó con un delincuente baleado y tres menores de edad detenidos tras colisionar con una casa.",
   "delitos": [
-    "robo de auto"
+    "robo de auto",
+    "robo de su vehículo"
   ],
   "personas": [
     {
@@ -15,15 +16,11 @@
     },
     {
       "nombre": "tres menores de edad",
-      "rol": "detenidos"
+      "rol": "detenido"
     },
     {
       "nombre": "una persona",
       "rol": "víctima"
-    },
-    {
-      "nombre": "los otros tres menores",
-      "rol": null
     }
   ],
   "organizaciones": [
@@ -43,18 +40,24 @@
       "nombre": "camioneta",
       "cantidad": null,
       "unidad": null
+    },
+    {
+      "tipo": "vehículo",
+      "nombre": "vehículo",
+      "cantidad": null,
+      "unidad": null
     }
   ],
   "relaciones": [
     {
-      "origen": "una persona",
-      "tipo": "VICTIMA_DE",
-      "destino": "robo de auto"
+      "origen": "Carabineros",
+      "tipo": "INICIÓ_SEGUIMIENTO",
+      "destino": "camioneta"
     },
     {
-      "origen": "Carabineros",
-      "tipo": "REALIZA_PERSECUCION_EN",
-      "destino": "La Serena"
+      "origen": "una persona",
+      "tipo": "FUE_VÍCTIMA_DE",
+      "destino": "robo de su vehículo"
     }
   ]
 }

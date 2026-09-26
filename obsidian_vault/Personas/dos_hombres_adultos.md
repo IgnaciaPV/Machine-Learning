@@ -1,9 +1,9 @@
-# el presunto autor del homicidio
+# dos hombres adultos
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N005|N005]]
+- [[Noticias/N012|N012]]
 
 ## Roles explícitos observados
 - detenido

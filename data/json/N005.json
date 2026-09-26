@@ -4,13 +4,13 @@
   "fecha_publicacion": "2026-03-04",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/rina-termino-en-homicidio-en-el-barrio-ingles-de-coquimbo/2026-03-04/104350.html",
-  "resumen": "Un hombre falleció tras una riña en el Barrio Inglés de Coquimbo, luego de ser agredido con un arma cortopunzante por un grupo de individuos. Posteriormente, personal de seguridad municipal detuvo al presunto autor, quien pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
+  "resumen": "Un hombre falleció tras una riña en el Barrio Inglés de Coquimbo, luego de enfrentarse con al menos cuatro individuos y recibir tres estocadas con un arma cortopunzante. Personal de seguridad municipal detuvo al presunto autor, quien pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
   "delitos": [
     "homicidio"
   ],
   "personas": [
     {
-      "nombre": "un hombre",
+      "nombre": "Un hombre",
       "rol": "víctima"
     },
     {
@@ -18,7 +18,7 @@
       "rol": null
     },
     {
-      "nombre": "el presunto autor del homicidio",
+      "nombre": "presunto autor del homicidio",
       "rol": "detenido"
     }
   ],
@@ -30,7 +30,6 @@
     "Barrio Inglés",
     "Coquimbo",
     "hospital local",
-    "cerros de la ciudad puerto",
     "Juzgado de Garantía de Coquimbo"
   ],
   "objetos": [
@@ -43,19 +42,19 @@
   ],
   "relaciones": [
     {
-      "origen": "un hombre",
-      "tipo": "VICTIMA_DE_HOMICIDIO",
+      "origen": "Un hombre",
+      "tipo": "VICTIMA_DE_DELITO",
       "destino": "homicidio"
     },
     {
-      "origen": "el presunto autor del homicidio",
-      "tipo": "SOSPECHOSO_DE",
+      "origen": "presunto autor del homicidio",
+      "tipo": "PRESUNTO_AUTOR_DE",
       "destino": "homicidio"
     },
     {
-      "origen": "el presunto autor del homicidio",
-      "tipo": "DETENIDO_EN",
-      "destino": "Coquimbo"
+      "origen": "seguridad municipal",
+      "tipo": "DETUVO_A",
+      "destino": "presunto autor del homicidio"
     }
   ]
 }

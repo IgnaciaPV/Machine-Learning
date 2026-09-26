@@ -1,6 +1,6 @@
-# vecino de la localidad
+# Ovalle
 
-Tipo: Persona
+Tipo: Lugare
 
 ## Noticias relacionadas
 - [[Noticias/N008|N008]]
