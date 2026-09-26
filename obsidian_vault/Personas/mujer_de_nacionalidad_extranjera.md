@@ -1,4 +1,4 @@
-# un sujeto
+# mujer de nacionalidad extranjera
 
 Tipo: Persona
 
@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N006|N006]]
 
 ## Roles explícitos observados
-- detenido
+- víctima

@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-08-22",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-investiga-dos-homicidios-en-la-region-de-coquimbo/2026-08-22/095503.html",
-  "resumen": "La PDI investiga dos homicidios separados en las comunas de Coquimbo y Salamanca. El primer caso corresponde a un hombre de unos 37 años hallado fallecido con impactos balísticos en el Hospital de Coquimbo tras ser trasladado por sujetos desconocidos. El segundo caso involucra a una mujer de 56 años detenida y sindicada como presunta autora del homicidio de un hombre de 85 años en Salamanca, cuyo control de detención fue ampliado hasta el martes 25 de agosto.",
+  "resumen": "La PDI investiga dos homicidios ocurridos en Salamanca y Coquimbo. El primer caso corresponde a un hombre de unos 37 años que ingresó fallecido por impactos balísticos al Hospital de Coquimbo tras ser trasladado por sujetos desconocidos. El segundo caso involucra a una mujer de 56 años detenida y sindicada como presunta autora del homicidio de un hombre de 85 años en Salamanca, cuyo cuerpo fue hallado por sus familiares en su domicilio con lesiones contusas.",
   "delitos": [
     "homicidio"
   ],
@@ -30,7 +30,7 @@
       "rol": "víctima"
     },
     {
-      "nombre": "familiares",
+      "nombre": "sus propios familiares",
       "rol": null
     },
     {
@@ -38,39 +38,32 @@
       "rol": "fiscal"
     },
     {
-      "nombre": "esta persona imputada",
+      "nombre": "persona imputada",
       "rol": "imputado"
     }
   ],
   "organizaciones": [
     "Brigada de Homicidios de la PDI La Serena",
-    "Fiscalía ECOH",
-    "Laboratorio de Criminalística Regional de La Serena",
     "PDI",
+    "Fiscalía ECOH",
+    "Brigada de Homicidios",
+    "Laboratorio de Criminalística Regional de La Serena",
     "Juzgado de Garantía de Illapel"
   ],
   "lugares": [
-    "Región de Coquimbo",
-    "comunas de Salamanca",
+    "Salamanca",
     "Coquimbo",
+    "Región de Coquimbo",
     "Hospital de Coquimbo",
-    "comuna de Salamanca"
+    "Illapel"
   ],
-  "objetos": [
-    {
-      "tipo": "arma",
-      "nombre": "impactos de bala",
-      "cantidad": null,
-      "unidad": null
-    },
-    {
-      "tipo": "arma",
-      "nombre": "impactos balísticos",
-      "cantidad": null,
-      "unidad": null
-    }
-  ],
+  "objetos": [],
   "relaciones": [
+    {
+      "origen": "sujetos desconocidos",
+      "tipo": "TRASLADO_A",
+      "destino": "Hospital de Coquimbo"
+    },
     {
       "origen": "mujer de 56 años",
       "tipo": "PRESUNTA_AUTORA_DE",

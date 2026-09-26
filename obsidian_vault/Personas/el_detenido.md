@@ -1,9 +1,9 @@
-# dos hombres adultos
+# el detenido
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N012|N012]]
+- [[Noticias/N001|N001]]
 
 ## Roles explícitos observados
 - detenido

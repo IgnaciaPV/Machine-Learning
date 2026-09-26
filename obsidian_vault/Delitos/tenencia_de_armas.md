@@ -1,6 +1,6 @@
-# Tribunal de Garantía de Coquimbo
+# tenencia de armas
 
-Tipo: Lugare
+Tipo: Delito
 
 ## Noticias relacionadas
 - [[Noticias/N012|N012]]

@@ -1,6 +1,6 @@
-# familiares
+# uno de ellos
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N003|N003]]
+- [[Noticias/N002|N002]]

@@ -1,9 +1,9 @@
-# esta persona imputada
+# dos hombres
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N003|N003]]
+- [[Noticias/N012|N012]]
 
 ## Roles explícitos observados
-- imputado
+- detenido

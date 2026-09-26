@@ -1,9 +1,9 @@
-# mujer
+# imputado, un chileno de 45 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N006|N006]]
+- [[Noticias/N010|N010]]
 
 ## Roles explícitos observados
-- víctima
+- detenido

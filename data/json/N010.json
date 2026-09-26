@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-07-17T12:51:22-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/detienen-a-presunto-autor-del-asesinato-de-hombre-al-interior-de-terminal-de-buses-en-coquimbo.shtml",
-  "resumen": "Detectives de la Brigada de Homicidios La Serena detuvieron a un chileno de 45 años, presunto autor del homicidio de un hombre chileno de 42 años al interior del Terminal de Buses de Coquimbo.",
+  "resumen": "Detectives detuvieron a un hombre de 45 años, presunto autor del homicidio con arma cortante de un hombre de 42 años al interior del Terminal de Buses de Coquimbo.",
   "delitos": [
     "homicidio"
   ],
@@ -14,12 +14,13 @@
       "rol": "víctima"
     },
     {
-      "nombre": "el imputado, un chileno de 45 años",
-      "rol": "imputado"
+      "nombre": "imputado, un chileno de 45 años",
+      "rol": "detenido"
     }
   ],
   "organizaciones": [
-    "Brigada de Homicidios La Serena"
+    "Brigada de Homicidios La Serena",
+    "Juzgado de Garantía de Coquimbo"
   ],
   "lugares": [
     "Terminal de Buses de Coquimbo",
@@ -35,24 +36,14 @@
   ],
   "relaciones": [
     {
-      "origen": "Brigada de Homicidios La Serena",
-      "tipo": "DETUVO_A",
-      "destino": "el imputado, un chileno de 45 años"
-    },
-    {
-      "origen": "el imputado, un chileno de 45 años",
-      "tipo": "HABRIA_COMETIDO",
+      "origen": "imputado, un chileno de 45 años",
+      "tipo": "PRESUNTO_AUTOR_DE",
       "destino": "homicidio"
     },
     {
-      "origen": "el imputado, un chileno de 45 años",
-      "tipo": "HABRIA_AGREDIDO_A",
+      "origen": "imputado, un chileno de 45 años",
+      "tipo": "AGREDIO_A",
       "destino": "hombre chileno de 42 años"
-    },
-    {
-      "origen": "el imputado, un chileno de 45 años",
-      "tipo": "USO",
-      "destino": "arma cortante"
     }
   ]
 }

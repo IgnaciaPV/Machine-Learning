@@ -1,9 +1,9 @@
-# el imputado, un chileno de 45 años
+# el presunto autor del homicidio
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N010|N010]]
+- [[Noticias/N005|N005]]
 
 ## Roles explícitos observados
-- imputado
+- detenido

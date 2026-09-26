@@ -20,8 +20,8 @@ Hospital de La Serena,robo de su vehículo,1
 La Serena,robo de su vehículo,1
 Región de Coquimbo,robo de su vehículo,1
 Hospital de Coquimbo,homicidio,1
-comuna de Salamanca,homicidio,1
-comunas de Salamanca,homicidio,1
+Illapel,homicidio,1
+Salamanca,homicidio,1
 La Serena,infracción a la Ley de Control de Armas,1
 Región de Coquimbo,infracción a la Ley de Control de Armas,1
 La Serena,receptación de vehículo,1
@@ -29,6 +29,7 @@ Región de Coquimbo,receptación de vehículo,1
 La Serena,usurpación de funciones públicas,1
 Región de Coquimbo,usurpación de funciones públicas,1
 Barrio Inglés,homicidio,1
+cerros de la ciudad puerto,homicidio,1
 hospital local,homicidio,1
 Andacollito,homicidio,1
 Diaguitas,homicidio,1
@@ -63,7 +64,7 @@ Región del Biobío,tráfico de drogas,1
 Salamanca,tráfico de drogas,1
 Santiago,tráfico de drogas,1
 Tomé,tráfico de drogas,1
-Ovalle,homicidio,1
+comuna de Ovalle,homicidio,1
 pozo,homicidio,1
 sector rural de Panulcillo,homicidio,1
 La Serena,homicidio,1
@@ -77,9 +78,8 @@ La Serena,homicidio frustrado,1
 La Serena,tráfico de drogas,1
 Coquimbo,lesiones,1
 Tierras Blancas,lesiones,1
-Tribunal de Garantía de Coquimbo,lesiones,1
 Coquimbo,robo con violencia,1
 Tierras Blancas,robo con violencia,1
-Tribunal de Garantía de Coquimbo,robo con violencia,1
+Coquimbo,tenencia de armas,1
+Tierras Blancas,tenencia de armas,1
 Tierras Blancas,tráfico de drogas,1
-Tribunal de Garantía de Coquimbo,tráfico de drogas,1

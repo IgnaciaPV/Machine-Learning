@@ -1,6 +1,6 @@
-# comunas de Salamanca
+# sus propios familiares
 
-Tipo: Lugare
+Tipo: Persona
 
 ## Noticias relacionadas
 - [[Noticias/N003|N003]]

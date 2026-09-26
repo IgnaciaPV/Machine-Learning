@@ -1,4 +1,4 @@
-# cuatro individuos
+# al menos cuatro individuos
 
 Tipo: Persona
 

@@ -1,6 +1,6 @@
-# medicamentos
+# Tte. Crl. Eugenio Olea
 
-Tipo: Objeto
+Tipo: Persona
 
 ## Noticias relacionadas
 - [[Noticias/N001|N001]]

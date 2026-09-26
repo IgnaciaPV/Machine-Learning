@@ -10,6 +10,6 @@ test_detecta_campo_faltante (test_validacion.TestValidadorJSON.test_detecta_camp
 test_valido_y_trazable (test_validacion.TestValidadorJSON.test_valido_y_trazable) ... ok
 
 ----------------------------------------------------------------------
-Ran 10 tests in 0.951s
+Ran 10 tests in 0.622s
 
 OK

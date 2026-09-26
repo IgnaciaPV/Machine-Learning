@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-07-03",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260703/pags-amp/20260703202824.html",
-  "resumen": "El exseremi Matías Letelier fue detenido en La Serena por disfrazarse de carabinero e intentar realizar controles de tránsito utilizando un vehículo con encargo por robo, balizas y elementos simulados, enfrentando cargos por usurpación de funciones públicas, infracción a la Ley de Control de Armas y receptación de vehículo.",
+  "resumen": "El exseremi Matías Letelier fue detenido en La Serena por disfrazarse de carabinero, intentar realizar controles de tránsito utilizando un vehículo con encargo por robo provisto de balizas y elementos simulados, siendo imputado por usurpación de funciones públicas, infracción a la Ley de Control de Armas y receptación de vehículo.",
   "delitos": [
     "usurpación de funciones públicas",
     "infracción a la Ley de Control de Armas",
@@ -14,11 +14,15 @@
     {
       "nombre": "Matías Letelier",
       "rol": "detenido"
+    },
+    {
+      "nombre": "Sebastián Piñera",
+      "rol": null
     }
   ],
   "organizaciones": [
-    "Ministerio Público",
-    "Carabineros"
+    "carabinero",
+    "Ministerio Público"
   ],
   "lugares": [
     "Región de Coquimbo",
@@ -27,18 +31,18 @@
   "objetos": [
     {
       "tipo": "vehículo",
-      "nombre": "vehículo con encargo por robo",
+      "nombre": "vehículo",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "equipamiento",
+      "tipo": "dispositivo",
       "nombre": "balizas",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "equipamiento",
+      "tipo": "implemento",
       "nombre": "elementos que simulaban pertenecer a la institución",
       "cantidad": null,
       "unidad": null
@@ -47,23 +51,23 @@
   "relaciones": [
     {
       "origen": "Matías Letelier",
-      "tipo": "COMETIO_DELITO",
+      "tipo": "DETENIDO_POR",
       "destino": "usurpación de funciones públicas"
     },
     {
       "origen": "Matías Letelier",
-      "tipo": "COMETIO_DELITO",
+      "tipo": "DETENIDO_POR",
       "destino": "infracción a la Ley de Control de Armas"
     },
     {
       "origen": "Matías Letelier",
-      "tipo": "COMETIO_DELITO",
+      "tipo": "DETENIDO_POR",
       "destino": "receptación de vehículo"
     },
     {
       "origen": "Matías Letelier",
-      "tipo": "UTILIZO_OBJETO",
-      "destino": "vehículo con encargo por robo"
+      "tipo": "UTILIZO",
+      "destino": "vehículo"
     }
   ]
 }

@@ -1,6 +1,6 @@
-# comuna de Salamanca
+# Brigada de Homicidios
 
-Tipo: Lugare
+Tipo: Organizacione
 
 ## Noticias relacionadas
 - [[Noticias/N003|N003]]
