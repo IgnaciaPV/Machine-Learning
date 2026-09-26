@@ -22,14 +22,15 @@ jobs:
           unzip -t /tmp/lab01.zip
           unzip -o /tmp/lab01.zip -d .
 
-      - name: Remove temporary bootstrap files
+      - name: Prepare content-only commit
         shell: bash
         run: |
+          set -euo pipefail
           rm -rf .upload .bootstrap .payload2
           rm -f .run-bootstrap .run-bootstrap2 .run-install-lab01
-          rm -f .github/workflows/bootstrap.yml
-          rm -f .github/workflows/bootstrap2.yml
-          rm -f .github/workflows/install_lab01.yml
+          # El GITHUB_TOKEN de Actions no puede modificar workflows.
+          # El workflow definitivo se instalará después mediante la conexión autorizada de GitHub.
+          rm -f .github/workflows/lab01_pipeline.yml
 
       - name: Commit complete project
         shell: bash
