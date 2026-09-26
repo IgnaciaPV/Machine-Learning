@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import re
 import time
 from urllib.parse import urlparse
 
@@ -35,8 +36,19 @@ class ClienteHTTP:
 
     def obtener_html(self, url: str) -> tuple[str, str]:
         respuesta = self.obtener(url)
-        if respuesta.encoding is None:
+
+        # requests puede asumir ISO-8859-1 cuando el servidor no declara charset en
+        # Content-Type, aun cuando el propio HTML declare UTF-8. Respetamos primero
+        # esa declaración para evitar mojibake en nombres, lugares y entidades.
+        cabecera = respuesta.content[:8192].lower()
+        declara_utf8 = bool(
+            re.search(br"charset\s*=\s*['\"]?utf-?8", cabecera)
+        )
+        if declara_utf8:
+            respuesta.encoding = "utf-8"
+        elif respuesta.encoding is None or respuesta.encoding.lower() in {"iso-8859-1", "latin-1"}:
             respuesta.encoding = respuesta.apparent_encoding or "utf-8"
+
         return respuesta.text, respuesta.url
 
     def url_final(self, url: str) -> str:
