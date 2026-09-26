@@ -1,4 +1,4 @@
-# tercer sujeto
+# una locataria del terminal
 
 Tipo: Persona
 

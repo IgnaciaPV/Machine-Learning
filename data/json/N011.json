@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-03-19T14:23:35-03:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/03/19/cae-clan-familiar-los-shein-18-detenidos-tras-operativo-en-13-viviendas-de-coquimbo-y-la-serena.shtml",
-  "resumen": "Una intervención territorial simultánea de Carabineros, encabezada por el OS7 en 13 viviendas de La Serena y Coquimbo, permitió desarticular a la organización criminal clan familiar 'Los Shein', resultando en 18 detenidos y la incautación de armamento, municiones, vehículos, motocicleta y drogas.",
+  "resumen": "Un operativo simultáneo de Carabineros y el OS7 en 13 viviendas de La Serena y Coquimbo permitió desarticular a la organización criminal \"Los Shein\", resultando en 18 detenidos, la incautación de armas, municiones, vehículos, dinero y drogas.",
   "delitos": [
     "tráfico de drogas",
     "disparos injustificados en la vía pública",
@@ -21,7 +21,7 @@
     },
     {
       "nombre": "Christian Brebi",
-      "rol": "jefe de Zona de Carabineros Coquimbo"
+      "rol": null
     }
   ],
   "organizaciones": [
@@ -31,25 +31,12 @@
   ],
   "lugares": [
     "La Serena",
-    "Coquimbo",
-    "13 viviendas en La Serena y Coquimbo"
+    "Coquimbo"
   ],
   "objetos": [
     {
       "tipo": "arma",
       "nombre": "armamento",
-      "cantidad": null,
-      "unidad": null
-    },
-    {
-      "tipo": "droga",
-      "nombre": "drogas",
-      "cantidad": null,
-      "unidad": null
-    },
-    {
-      "tipo": "vehículo",
-      "nombre": "vehículos",
       "cantidad": null,
       "unidad": null
     },
@@ -73,24 +60,30 @@
     },
     {
       "tipo": "vehículo",
+      "nombre": "vehículos",
+      "cantidad": 3,
+      "unidad": null
+    },
+    {
+      "tipo": "vehículo",
       "nombre": "motocicleta",
       "cantidad": 1,
       "unidad": null
     },
     {
-      "tipo": "droga",
+      "tipo": "sustancia",
       "nombre": "marihuana",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "droga",
+      "tipo": "sustancia",
       "nombre": "pasta base",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "droga",
+      "tipo": "sustancia",
       "nombre": "ketamina",
       "cantidad": null,
       "unidad": null
@@ -135,6 +128,16 @@
       "origen": "Y.A.P.L.",
       "tipo": "TIENE_ORDEN_VIGENTE_POR",
       "destino": "homicidio frustrado"
+    },
+    {
+      "origen": "Y.A.P.L.",
+      "tipo": "ES_CABECILLA_DE",
+      "destino": "Los Shein"
+    },
+    {
+      "origen": "Los Shein",
+      "tipo": "VINCULADO_A",
+      "destino": "tráfico de drogas"
     }
   ]
 }

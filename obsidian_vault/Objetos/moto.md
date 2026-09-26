@@ -1,6 +1,6 @@
-# uno de ellos
+# moto
 
-Tipo: Persona
+Tipo: Objeto
 
 ## Noticias relacionadas
 - [[Noticias/N002|N002]]

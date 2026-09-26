@@ -1,9 +1,9 @@
-# el detenido
+# un hombre chileno de 42 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N001|N001]]
+- [[Noticias/N010|N010]]
 
 ## Roles explícitos observados
-- detenido
+- víctima

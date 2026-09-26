@@ -1,6 +1,6 @@
-# Brigada de Homicidios
+# jueza de garantía
 
-Tipo: Organizacione
+Tipo: Persona
 
 ## Noticias relacionadas
 - [[Noticias/N003|N003]]

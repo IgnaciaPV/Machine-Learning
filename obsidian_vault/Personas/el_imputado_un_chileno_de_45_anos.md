@@ -1,9 +1,9 @@
-# hombre de 42 años
+# el imputado, un chileno de 45 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N009|N009]]
+- [[Noticias/N010|N010]]
 
 ## Roles explícitos observados
-- víctima
+- imputado

@@ -1,4 +1,4 @@
-# robo de su vehículo
+# robo
 
 Tipo: Delito
 

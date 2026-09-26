@@ -1,6 +1,6 @@
-# locataria
+# familiares
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N009|N009]]
+- [[Noticias/N003|N003]]

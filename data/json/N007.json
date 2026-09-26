@@ -4,8 +4,10 @@
   "fecha_publicacion": "2026-06-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/cinco-gendarmes-detenidos-por-presunta-vinculacion-a-red-narco-en-carcel/2026-06-10/133653.html",
-  "resumen": "Cinco gendarmes fueron detenidos en el marco de una investigación contra una red de narcotráfico y corrupción en la cárcel de Illapel, con operativos en diversas comunas y la incautación de teléfonos, drogas, dinero en efectivo y vehículos.",
+  "resumen": "Cinco gendarmes fueron detenidos por su presunta vinculación a una red de narcotráfico y corrupción en la cárcel de Illapel, en el marco de una operación conjunta que incluyó allanamientos y la incautación de diversos objetos ilícitos en múltiples comunas.",
   "delitos": [
+    "narcotráfico",
+    "corrupción",
     "asociación criminal",
     "tráfico de drogas",
     "cohecho",
@@ -48,7 +50,7 @@
   ],
   "objetos": [
     {
-      "tipo": "dispositivo",
+      "tipo": "dispositivo electrónico",
       "nombre": "teléfonos celulares",
       "cantidad": null,
       "unidad": null
@@ -94,7 +96,7 @@
     {
       "origen": "cinco gendarmes",
       "tipo": "PRESUNTA_VINCULACION_A",
-      "destino": "asociación criminal"
+      "destino": "narcotráfico"
     }
   ]
 }

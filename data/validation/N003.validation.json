@@ -2,6 +2,8 @@
   "id_noticia": "N003",
   "valido": true,
   "errores": [],
-  "advertencias": [],
+  "advertencias": [
+    "Relación 1 usa tipo no normalizado: TRASLADó"
+  ],
   "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N003.json"
 }

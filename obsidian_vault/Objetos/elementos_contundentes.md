@@ -1,4 +1,4 @@
-# otros elementos contundentes
+# elementos contundentes
 
 Tipo: Objeto
 

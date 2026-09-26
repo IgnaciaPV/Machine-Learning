@@ -1,6 +1,6 @@
-# robo de auto
+# corrupción
 
 Tipo: Delito
 
 ## Noticias relacionadas
-- [[Noticias/N002|N002]]
+- [[Noticias/N007|N007]]

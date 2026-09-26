@@ -1,9 +1,9 @@
-# el presunto autor del homicidio
+# un hombre de 42 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N005|N005]]
+- [[Noticias/N009|N009]]
 
 ## Roles explícitos observados
-- detenido
+- víctima

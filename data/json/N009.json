@@ -4,30 +4,29 @@
   "fecha_publicacion": "2026-07-17T09:20:09-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/hombre-es-asesinado-con-arma-cortante-al-interior-de-terminal-de-buses-de-coquimbo-pdi-busca-al-autor.shtml",
-  "resumen": "Un hombre de 42 años fue asesinado con un arma cortante al interior del Terminal de Buses de Coquimbo tras sostener una discusión y ser atacado por un tercer sujeto, quien se encuentra prófugo mientras la PDI realiza diligencias por instrucción del Ministerio Público.",
+  "resumen": "Un hombre de 42 años murió tras ser atacado con un arma cortante al interior del Terminal de Buses de Coquimbo, luego de sostener una discusión en la que intervino un tercer sujeto que huyó del lugar. La PDI y el Ministerio Público realizan diligencias para esclarecer el homicidio e identificar al responsable.",
   "delitos": [
     "homicidio"
   ],
   "personas": [
     {
-      "nombre": "hombre de 42 años",
+      "nombre": "un hombre de 42 años",
       "rol": "víctima"
     },
     {
-      "nombre": "locataria",
+      "nombre": "una locataria del terminal",
       "rol": null
     },
     {
-      "nombre": "tercer sujeto",
+      "nombre": "un tercer sujeto",
       "rol": null
     }
   ],
   "organizaciones": [
     "Policía de Investigaciones (PDI)",
     "Ministerio Público",
-    "Brigada de Homicidios (BH) de La Serena",
-    "Laboratorio de Criminalística Regional (Lacrim)",
-    "Brigada de Homicidios de La Serena"
+    "Brigada de Homicidios (BH)",
+    "Laboratorio de Criminalística Regional (Lacrim)"
   ],
   "lugares": [
     "Terminal de Buses de Coquimbo",
@@ -43,14 +42,29 @@
   ],
   "relaciones": [
     {
-      "origen": "tercer sujeto",
+      "origen": "un tercer sujeto",
       "tipo": "PRESUNTO_AUTOR_DE",
       "destino": "homicidio"
     },
     {
+      "origen": "un hombre de 42 años",
+      "tipo": "VICTIMA_DE",
+      "destino": "homicidio"
+    },
+    {
       "origen": "homicidio",
-      "tipo": "OCURRIDO_EN",
+      "tipo": " OCURRIO_EN",
       "destino": "Terminal de Buses de Coquimbo"
+    },
+    {
+      "origen": "Brigada de Homicidios (BH)",
+      "tipo": "PERTENECE_A",
+      "destino": "Policía de Investigaciones (PDI)"
+    },
+    {
+      "origen": "Laboratorio de Criminalística Regional (Lacrim)",
+      "tipo": "PERTENECE_A",
+      "destino": "Policía de Investigaciones (PDI)"
     }
   ]
 }

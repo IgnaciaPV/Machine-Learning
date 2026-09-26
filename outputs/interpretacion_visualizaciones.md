@@ -18,12 +18,12 @@ La visualización apila **co-menciones dentro de una misma noticia**. Sirve para
 El gráfico permite detectar notas densas en entidades y otras con poca información explícita. Valores altos suelen corresponder a operativos u organizaciones; valores bajos pueden reflejar hechos sin identidades publicadas o restricciones editoriales.
 
 ## 06. Campos faltantes
-El mayor porcentaje de ausencia corresponde a **objetos** (8.3%). En campos de personas, objetos o relaciones, una lista vacía puede ser correcta: la regla del laboratorio es no inventar información ausente.
+El mayor porcentaje de ausencia corresponde a **titulo** (0.0%). En campos de personas, objetos o relaciones, una lista vacía puede ser correcta: la regla del laboratorio es no inventar información ausente.
 
 ## 07. Evolución temporal
 La serie temporal describe cuándo se publicaron las noticias del corpus. Con una muestra pequeña, no debe interpretarse como tendencia criminal: está afectada por la ventana de recolección y la disponibilidad de artículos.
 
 ## Calidad del corpus
-Duplicados detectados: **0** grupos. Variantes potencialmente inconsistentes de entidades: **0**. Advertencias de relaciones: **0**.
+Duplicados detectados: **0** grupos. Variantes potencialmente inconsistentes de entidades: **0**. Advertencias de relaciones: **1**.
 
 Las advertencias requieren revisión humana porque las equivalencias nominales y el respaldo semántico de una relación no pueden resolverse de forma segura mediante similitud textual agresiva.
