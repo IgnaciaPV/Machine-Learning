@@ -275,7 +275,7 @@ TEXTO PROCESADO:
                     tipo_obj = str(item.get("tipo", "")).strip().casefold()
                     cantidad = item.get("cantidad")
                     if tipo_obj != "dinero" and isinstance(cantidad, str):
-                        if re.search(r"\\bpesos?\\b|\\$|clp", cantidad, re.IGNORECASE):
+                        if re.search(r"\bpesos?\b|\$|clp", cantidad, re.IGNORECASE):
                             item["cantidad"] = None
                 limpios.append(item)
             data[campo] = limpios
