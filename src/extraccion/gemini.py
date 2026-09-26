@@ -27,11 +27,15 @@ class ExtractorLLM:
 class ExtractorGemini(ExtractorLLM):
     """Extractor con Gemini, esquema estructurado y validación Pydantic posterior."""
 
+    # Por defecto se priorizan modelos con nivel gratuito y salida estructurada.
+    # Gemini 3.5 Flash-Lite está optimizado para procesamiento simple/de alto volumen,
+    # que corresponde mejor a esta extracción académica de noticias.
     MODELOS_PREFERIDOS = (
-        "gemini-3.8-flash",
-        "gemini-3.5-flash",
         "gemini-3.5-flash-lite",
         "gemini-3.1-flash-lite",
+        "gemini-3.5-flash",
+        "gemini-3.8-flash",
+        "gemini-2.5-flash-lite",
         "gemini-2.5-flash",
     )
 
