@@ -1,0 +1,9 @@
+{
+  "id_noticia": "N003",
+  "valido": true,
+  "errores": [],
+  "advertencias": [
+    "Relación 1: destino no aparece entre entidades: dos homicidios"
+  ],
+  "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N003.json"
+}

@@ -1,0 +1,55 @@
+{
+  "id_noticia": "N010",
+  "titulo": "Detienen a presunto autor del asesinato de hombre al interior de Terminal de Buses en Coquimbo",
+  "fecha_publicacion": "2026-07-17T12:51:22-04:00",
+  "fuente": "BioBioChile",
+  "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/detienen-a-presunto-autor-del-asesinato-de-hombre-al-interior-de-terminal-de-buses-en-coquimbo.shtml",
+  "resumen": "Detectives de la Brigada de Homicidios La Serena detuvieron al presunto autor del homicidio de un hombre de 42 años en el Terminal de Buses de Coquimbo, tras ser agredido con un arma cortante y fallecer posteriormente a causa de las lesiones.",
+  "delitos": [
+    "homicidio",
+    "asesinato"
+  ],
+  "personas": [
+    {
+      "nombre": "hombre chileno de 42 años",
+      "rol": "víctima"
+    },
+    {
+      "nombre": "imputado, un chileno de 45 años",
+      "rol": "imputado"
+    },
+    {
+      "nombre": "presunto autor",
+      "rol": "detenido"
+    }
+  ],
+  "organizaciones": [
+    "Brigada de Homicidios La Serena",
+    "PDI",
+    "Juzgado de Garantía de Coquimbo"
+  ],
+  "lugares": [
+    "Terminal de Buses de Coquimbo",
+    "Juzgado de Garantía de Coquimbo"
+  ],
+  "objetos": [
+    {
+      "tipo": "arma",
+      "nombre": "arma cortante",
+      "cantidad": null,
+      "unidad": null
+    }
+  ],
+  "relaciones": [
+    {
+      "origen": "imputado, un chileno de 45 años",
+      "tipo": "AGREDIO_A",
+      "destino": "hombre chileno de 42 años"
+    },
+    {
+      "origen": "Brigada de Homicidios La Serena",
+      "tipo": "DETUVO_A",
+      "destino": "presunto autor"
+    }
+  ]
+}

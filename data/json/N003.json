@@ -1,0 +1,41 @@
+{
+  "id_noticia": "N003",
+  "titulo": "PDI investiga dos homicidios en la Región de Coquimbo",
+  "fecha_publicacion": "2026-08-22",
+  "fuente": "Cooperativa",
+  "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-investiga-dos-homicidios-en-la-region-de-coquimbo/2026-08-22/095503.html",
+  "resumen": "La PDI investiga dos homicidios en la Región de Coquimbo. Un hombre de 84 años fue encontrado muerto con lesiones en el cráneo en su domicilio en Salamanca, y un hombre de unos 37 años ingresó fallecido al hospital en Coquimbo con impactos balísticos tras ser trasladado por sujetos desconocidos.",
+  "delitos": [
+    "homicidios"
+  ],
+  "personas": [
+    {
+      "nombre": "hombre de 84 años",
+      "rol": "víctima"
+    },
+    {
+      "nombre": "hombre de unos 37 años",
+      "rol": "víctima"
+    },
+    {
+      "nombre": "sujetos desconocidos",
+      "rol": "trasladadores"
+    }
+  ],
+  "organizaciones": [
+    "PDI"
+  ],
+  "lugares": [
+    "Salamanca",
+    "Coquimbo",
+    "Región de Coquimbo"
+  ],
+  "objetos": [],
+  "relaciones": [
+    {
+      "origen": "PDI",
+      "tipo": "INVESTIGA",
+      "destino": "dos homicidios"
+    }
+  ]
+}

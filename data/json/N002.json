@@ -1,0 +1,78 @@
+{
+  "id_noticia": "N002",
+  "titulo": "La Serena: Persecución por robo de auto terminó con un delincuente baleado y tres detenidos",
+  "fecha_publicacion": null,
+  "fuente": "Cooperativa",
+  "url": "https://www.cooperativa.cl/noticias/site/artic/20260601/pags-amp/20260601102915.html",
+  "resumen": "Una persecución policial por el robo de una camioneta en La Serena terminó con un delincuente baleado y tres menores de edad detenidos tras colisionar con una casa.",
+  "delitos": [
+    "robo"
+  ],
+  "personas": [
+    {
+      "nombre": "víctima",
+      "rol": "víctima"
+    },
+    {
+      "nombre": "delincuente",
+      "rol": "detenido"
+    },
+    {
+      "nombre": "tres menores de edad",
+      "rol": "detenido"
+    },
+    {
+      "nombre": "asaltantes",
+      "rol": null
+    },
+    {
+      "nombre": "delincuentes",
+      "rol": null
+    },
+    {
+      "nombre": "uno de ellos",
+      "rol": null
+    },
+    {
+      "nombre": "otros tres menores",
+      "rol": null
+    }
+  ],
+  "organizaciones": [
+    "Carabineros"
+  ],
+  "lugares": [
+    "La Serena",
+    "Región de Coquimbo",
+    "Avenida del Mar",
+    "Avenida Francisco de Aguirre",
+    "Arcos de Pinamar",
+    "Hospital de La Serena"
+  ],
+  "objetos": [
+    {
+      "tipo": "vehículo",
+      "nombre": "camioneta",
+      "cantidad": 1,
+      "unidad": null
+    },
+    {
+      "tipo": "vehículo",
+      "nombre": "vehículo",
+      "cantidad": 1,
+      "unidad": null
+    }
+  ],
+  "relaciones": [
+    {
+      "origen": "víctima",
+      "tipo": "DIO_AVISO",
+      "destino": "Carabineros"
+    },
+    {
+      "origen": "delincuente",
+      "tipo": "ATENDIDO_EN",
+      "destino": "Hospital de La Serena"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id_noticia": "N011",
+  "titulo": "Cae clan familiar \"Los Shein\": 18 detenidos tras operativo en 13 viviendas de Coquimbo y La Serena",
+  "fecha_publicacion": "2026-03-19T14:23:35-03:00",
+  "fuente": "BioBioChile",
+  "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/03/19/cae-clan-familiar-los-shein-18-detenidos-tras-operativo-en-13-viviendas-de-coquimbo-y-la-serena.shtml",
+  "resumen": "Una intervención territorial simultánea desarrollada por Carabineros y el OS7 en 13 viviendas de La Serena y Coquimbo permitió desarticular a la organización criminal \"Los Shein\", resultando en 18 detenidos y la incautación de armas, municiones, vehículos, dinero y drogas.",
+  "delitos": [
+    "tráfico de drogas",
+    "disparos injustificados en la vía pública",
+    "homicidio frustrado"
+  ],
+  "personas": [
+    {
+      "nombre": "Y.A.P.L.",
+      "rol": "detenido"
+    },
+    {
+      "nombre": "Christian Brebi",
+      "rol": "general de Zona de Carabineros Coquimbo"
+    }
+  ],
+  "organizaciones": [
+    "Carabineros",
+    "OS7",
+    "Los Shein"
+  ],
+  "lugares": [
+    "La Serena",
+    "Coquimbo",
+    "Chile"
+  ],
+  "objetos": [
+    {
+      "tipo": "arma",
+      "nombre": "armamento",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "drogas",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "vehículo",
+      "nombre": "vehículos",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "dinero",
+      "nombre": "dinero en efectivo",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "arma",
+      "nombre": "armas de fuego",
+      "cantidad": 7,
+      "unidad": null
+    },
+    {
+      "tipo": "munición",
+      "nombre": "municiones",
+      "cantidad": 77,
+      "unidad": null
+    },
+    {
+      "tipo": "vehículo",
+      "nombre": "vehículos",
+      "cantidad": 3,
+      "unidad": null
+    },
+    {
+      "tipo": "vehículo",
+      "nombre": "motocicleta",
+      "cantidad": 1,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "marihuana",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "pasta base",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "ketamina",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "objeto",
+      "nombre": "fuegos artificiales",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "arma",
+      "nombre": "armas con miras láser",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "arma",
+      "nombre": "escopetas",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "arma",
+      "nombre": "rifles",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "arma",
+      "nombre": "pistolas",
+      "cantidad": null,
+      "unidad": null
+    }
+  ],
+  "relaciones": [
+    {
+      "origen": "OS7",
+      "tipo": "ENCABEZÓ",
+      "destino": "operativo"
+    },
+    {
+      "origen": "Carabineros",
+      "tipo": "INTERVINO",
+      "destino": "13 viviendas en La Serena y Coquimbo"
+    },
+    {
+      "origen": "Y.A.P.L.",
+      "tipo": "PERTENECE_A",
+      "destino": "Los Shein"
+    },
+    {
+      "origen": "Christian Brebi",
+      "tipo": "PERTENECE_A",
+      "destino": "Carabineros"
+    }
+  ]
+}

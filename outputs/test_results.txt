@@ -1,0 +1,13 @@
+test_genera_resumen_y_visualizaciones (test_analisis.TestAnalisis.test_genera_resumen_y_visualizaciones) ... ok
+test_prompt_contiene_reglas_eticas_y_trazabilidad (test_extraccion.TestExtractorGemini.test_prompt_contiene_reglas_eticas_y_trazabilidad) ... ok
+test_recupera_json_con_fences (test_extraccion.TestExtractorGemini.test_recupera_json_con_fences) ... ok
+test_elimina_ruido_y_conserva_cuerpo (test_limpieza.TestLimpiadorHTML.test_elimina_ruido_y_conserva_cuerpo) ... ok
+test_vault_navegable_sin_enlaces_rotos (test_obsidian.TestObsidian.test_vault_navegable_sin_enlaces_rotos) ... ok
+test_corpus_semilla_tiene_raw_meta_y_processed (test_trazabilidad.TestTrazabilidadCorpus.test_corpus_semilla_tiene_raw_meta_y_processed) ... ok
+test_detecta_campo_faltante (test_validacion.TestValidadorJSON.test_detecta_campo_faltante) ... ok
+test_valido_y_trazable (test_validacion.TestValidadorJSON.test_valido_y_trazable) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.010s
+
+OK

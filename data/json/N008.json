@@ -1,0 +1,26 @@
+{
+  "id_noticia": "N008",
+  "titulo": "PDI indaga el homicidio de hombre de 46 años hallado en un pozo en Ovalle",
+  "fecha_publicacion": "2026-07-13",
+  "fuente": "Cooperativa",
+  "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-indaga-el-homicidio-de-hombre-de-46-anos-hallado-en-un-pozo-en-ovalle/2026-07-13/120930.html",
+  "resumen": "La PDI indaga el homicidio de un hombre de 46 años hallado en un pozo en Ovalle, cuyo cuerpo presenta una fractura expuesta de cráneo y heridas cortantes en el tórax atribuibles a la acción de terceros.",
+  "delitos": [
+    "homicidio"
+  ],
+  "personas": [
+    {
+      "nombre": "hombre de 46 años",
+      "rol": null
+    }
+  ],
+  "organizaciones": [
+    "policía",
+    "PDI"
+  ],
+  "lugares": [
+    "Ovalle"
+  ],
+  "objetos": [],
+  "relaciones": []
+}

@@ -1,0 +1,24 @@
+{
+  "id_noticia": "N007",
+  "titulo": "Cinco gendarmes detenidos por presunta vinculación a red narco en cárcel de Illapel",
+  "fecha_publicacion": "2026-06-10",
+  "fuente": "Cooperativa",
+  "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/cinco-gendarmes-detenidos-por-presunta-vinculacion-a-red-narco-en-carcel/2026-06-10/133653.html",
+  "resumen": "Cinco gendarmes fueron detenidos en el marco de la operación \"El Dorado\", que investiga tráfico de drogas, cohecho, ingresos de elementos ilícitos a un recinto penitenciario y lavado de activos. La diligencia incluyó 21 órdenes de entrada y registro en el centro penitenciario y domicilios de Salamanca, Santiago y Tomé, resultando en 16 personas aprehendidas.",
+  "delitos": [
+    "tráfico de drogas",
+    "cohecho",
+    "ingresos de elementos ilícitos a un recinto penitenciario",
+    "lavado de activos"
+  ],
+  "personas": [],
+  "organizaciones": [],
+  "lugares": [
+    "Illapel",
+    "Salamanca",
+    "Santiago",
+    "Tomé"
+  ],
+  "objetos": [],
+  "relaciones": []
+}
