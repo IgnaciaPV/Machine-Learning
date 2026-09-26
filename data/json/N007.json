@@ -1,10 +1,10 @@
 {
   "id_noticia": "N007",
   "titulo": "Cinco gendarmes detenidos por presunta vinculación a red narco en cárcel de Illapel",
-  "fecha_publicacion": null,
+  "fecha_publicacion": "2026-06-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/cinco-gendarmes-detenidos-por-presunta-vinculacion-a-red-narco-en-carcel/2026-06-10/133653.html",
-  "resumen": "Cinco gendarmes y otras personas fueron detenidas en un operativo en la cárcel de Illapel y en diversas comunas, acusados de participar en una red de narcotráfico y corrupción.",
+  "resumen": "Cinco gendarmes y otras personas fueron detenidas en el marco de una investigación contra una red de narcotráfico y corrupción que operaba en la cárcel de Illapel y domicilios de distintas comunas, en un operativo conjunto de la fiscalía, la PDI y Gendarmería que dejó múltiples incautaciones.",
   "delitos": [
     "narcotráfico",
     "corrupción",
@@ -15,6 +15,10 @@
     "lavado de activos"
   ],
   "personas": [
+    {
+      "nombre": "cinco gendarmes",
+      "rol": "detenido"
+    },
     {
       "nombre": "seremi de Gobierno de Coquimbo",
       "rol": null
@@ -37,9 +41,8 @@
     "Partido Comunista"
   ],
   "lugares": [
-    "cárcel de Illapel",
-    "Salamanca",
     "Illapel",
+    "Salamanca",
     "Santiago",
     "Tomé",
     "Región del Biobío",

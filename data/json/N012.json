@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-06-23T14:55:09-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/06/23/carabineros-desarticula-centro-de-acopio-de-drogas-y-detiene-a-dos-hombres-tras-operativo-en-coquimbo.shtml",
-  "resumen": "Carabineros desarticuló un centro de acopio de drogas en el sector de Tierras Blancas en Coquimbo, deteniendo a dos hombres adultos con prontuario policial y allanando su domicilio.",
+  "resumen": "Carabineros desarticuló un centro de acopio de drogas y detuvo a dos hombres adultos tras un operativo en el sector de Tierras Blancas, en la comuna de Coquimbo. Los sujetos contaban con prontuario policial por tenencia de armas, tráfico de drogas, robo con violencia y lesiones. Durante el procedimiento se incautó droga y los detenidos serán formalizados en el Tribunal de Garantía de Coquimbo.",
   "delitos": [
     "tráfico de drogas",
     "tenencia de armas",
@@ -22,12 +22,13 @@
   ],
   "lugares": [
     "Tierras Blancas",
-    "Coquimbo"
+    "Coquimbo",
+    "Tribunal de Garantía de Coquimbo"
   ],
   "objetos": [
     {
       "tipo": "droga",
-      "nombre": "droga",
+      "nombre": "diversos tipos de droga",
       "cantidad": null,
       "unidad": null
     }
@@ -35,8 +36,8 @@
   "relaciones": [
     {
       "origen": "Carabineros",
-      "tipo": "DESARTICULO",
-      "destino": "centro de acopio de drogas"
+      "tipo": "REALIZO_OPERATIVO_EN",
+      "destino": "Coquimbo"
     },
     {
       "origen": "Carabineros",
@@ -45,7 +46,7 @@
     },
     {
       "origen": "dos hombres adultos",
-      "tipo": "TIENE_DOMICILIO_EN",
+      "tipo": "TIENEN_DOMICILIO_EN",
       "destino": "Tierras Blancas"
     }
   ]

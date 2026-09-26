@@ -1,6 +1,6 @@
-# Sebastián Piñera
+# vehículo con encargo por robo
 
-Tipo: Persona
+Tipo: Objeto
 
 ## Noticias relacionadas
 - [[Noticias/N004|N004]]

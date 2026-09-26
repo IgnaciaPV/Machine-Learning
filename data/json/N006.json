@@ -1,25 +1,30 @@
 {
   "id_noticia": "N006",
   "titulo": "Mujer fue asesinada a puñaladas en plena vía pública de Vicuña",
-  "fecha_publicacion": null,
+  "fecha_publicacion": "2026-08-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260810/pags-amp/20260810131415.html",
-  "resumen": "Una mujer de nacionalidad extranjera fue asesinada a puñaladas en la vía pública en la localidad de Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia el sector de Andacollito, donde fue capturado por personal de Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes, siendo posteriormente puesto a disposición del Ministerio Público.",
+  "resumen": "Una mujer extranjera fue asesinada a puñaladas en la vía pública en Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes.",
   "delitos": [
+    "asesinato",
     "homicidio"
   ],
   "personas": [
     {
-      "nombre": "la víctima",
+      "nombre": "mujer de nacionalidad extranjera",
       "rol": "víctima"
     },
     {
-      "nombre": "un niño",
+      "nombre": "niño",
       "rol": null
     },
     {
-      "nombre": "el sujeto",
+      "nombre": "sujeto",
       "rol": "detenido"
+    },
+    {
+      "nombre": "personal policial",
+      "rol": null
     }
   ],
   "organizaciones": [
@@ -27,8 +32,8 @@
     "Ministerio Público"
   ],
   "lugares": [
-    "Diaguitas",
     "Vicuña",
+    "Diaguitas",
     "Provincia de Elqui",
     "Región de Coquimbo",
     "Andacollito"
@@ -47,7 +52,7 @@
       "unidad": null
     },
     {
-      "tipo": "otro",
+      "tipo": "objeto",
       "nombre": "elementos contundentes",
       "cantidad": null,
       "unidad": null
@@ -55,29 +60,34 @@
   ],
   "relaciones": [
     {
-      "origen": "el sujeto",
-      "tipo": "FUE_CAPTURADO_EN",
+      "origen": "sujeto",
+      "tipo": "ATACÓ",
+      "destino": "mujer de nacionalidad extranjera"
+    },
+    {
+      "origen": "sujeto",
+      "tipo": "HUYÓ_HACIA",
       "destino": "Andacollito"
     },
     {
-      "origen": "el sujeto",
-      "tipo": "TENIA_EN_POSESION",
+      "origen": "Carabineros",
+      "tipo": "CAPTURÓ",
+      "destino": "sujeto"
+    },
+    {
+      "origen": "personal policial",
+      "tipo": "HALLÓ",
       "destino": "arma cortopunzante"
     },
     {
-      "origen": "el sujeto",
-      "tipo": "TENIA_EN_POSESION",
+      "origen": "personal policial",
+      "tipo": "HALLÓ",
       "destino": "pistola de aire comprimido"
     },
     {
-      "origen": "el sujeto",
-      "tipo": "TENIA_EN_POSESION",
+      "origen": "personal policial",
+      "tipo": "HALLÓ",
       "destino": "elementos contundentes"
-    },
-    {
-      "origen": "Carabineros",
-      "tipo": "CAPTURO_A",
-      "destino": "el sujeto"
     }
   ]
 }

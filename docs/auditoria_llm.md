@@ -93,7 +93,7 @@ La referencia fue construida revisando noticia original/snapshot y texto limpio 
   - ✓ organizaciones_esperadas: Ministerio Público
   - ✓ objetos_esperados: vehículo con encargo por robo
   - ✓ objetos_esperados: balizas
-  - △ objetos_esperados: elementos que simulaban pertenecer a Carabineros
+  - ✓ objetos_esperados: elementos que simulaban pertenecer a Carabineros
 - Resultado final de esta muestra: revisar visualmente original → limpio → JSON y registrar omisiones, roles y relaciones.
 
 ## N005

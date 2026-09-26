@@ -1,4 +1,4 @@
-# comunas de Salamanca y Coquimbo
+# comunas de Salamanca
 
 Tipo: Lugare
 

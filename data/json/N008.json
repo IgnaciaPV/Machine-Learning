@@ -1,10 +1,10 @@
 {
   "id_noticia": "N008",
   "titulo": "PDI indaga el homicidio de hombre de 46 años hallado en un pozo en Ovalle",
-  "fecha_publicacion": null,
+  "fecha_publicacion": "2026-07-13",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-indaga-el-homicidio-de-hombre-de-46-anos-hallado-en-un-pozo-en-ovalle/2026-07-13/120930.html",
-  "resumen": "Un hombre de 46 años fue hallado sin vida con múltiples lesiones traumáticas dentro de un pozo en el sector rural de Panulcillo, comuna de Ovalle. La PDI indaga el homicidio tras confirmarse que las lesiones son atribuibles a terceros.",
+  "resumen": "Un hombre de 46 años fue hallado sin vida con lesiones traumáticas al interior de un pozo en el sector rural de Panulcillo, Ovalle. La PDI indaga el caso tras determinarse que el cuerpo presenta fractura expuesta de cráneo y heridas cortantes.",
   "delitos": [
     "homicidio"
   ],
@@ -24,7 +24,7 @@
   ],
   "lugares": [
     "sector rural de Panulcillo",
-    "Ovalle",
+    "comuna de Ovalle",
     "Región de Coquimbo",
     "pozo"
   ],
@@ -38,9 +38,14 @@
   ],
   "relaciones": [
     {
-      "origen": "Brigada de Homicidios (BH)",
-      "tipo": "PERTENECE_A",
-      "destino": "Policía de Investigaciones (PDI)"
+      "origen": "vecino",
+      "tipo": "REALIZO_DESCUBRIMIENTO",
+      "destino": "hombre de 46 años"
+    },
+    {
+      "origen": "Brigada de Homicidios (BH) de la Policía de Investigaciones (PDI)",
+      "tipo": "INDAGA",
+      "destino": "homicidio"
     }
   ]
 }

@@ -1,4 +1,4 @@
-# Brigada de Homicidios
+# Brigada de Homicidios de la PDI La Serena
 
 Tipo: Organizacione
 

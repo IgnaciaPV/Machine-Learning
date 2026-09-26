@@ -1,25 +1,31 @@
 {
   "id_noticia": "N005",
   "titulo": "Riña terminó en homicidio en el Barrio Inglés de Coquimbo",
-  "fecha_publicacion": null,
+  "fecha_publicacion": "2026-03-04",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/rina-termino-en-homicidio-en-el-barrio-ingles-de-coquimbo/2026-03-04/104350.html",
-  "resumen": "Un hombre falleció en el hospital tras ser agredido con un arma cortopunzante en el Barrio Inglés de Coquimbo tras una riña en la vía pública con al menos cuatro individuos. El presunto autor fue detenido por personal de seguridad municipal y pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
+  "resumen": "Una riña en el Barrio Inglés de Coquimbo terminó con un hombre fallecido tras recibir tres estocadas con un arma cortopunzante. Los involucrados huyeron, pero personal de seguridad municipal detuvo al presunto autor, quien pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
   "delitos": [
     "homicidio"
   ],
   "personas": [
     {
-      "nombre": "víctima",
+      "nombre": "un hombre",
       "rol": "víctima"
     },
     {
-      "nombre": "presunto autor del homicidio",
+      "nombre": "cuatro individuos",
+      "rol": null
+    },
+    {
+      "nombre": "el presunto autor del homicidio",
       "rol": "detenido"
     }
   ],
   "organizaciones": [
-    "Ministerio Público"
+    "seguridad municipal",
+    "Ministerio Público",
+    "Juzgado de Garantía de Coquimbo"
   ],
   "lugares": [
     "Barrio Inglés",
@@ -32,15 +38,30 @@
     {
       "tipo": "arma",
       "nombre": "arma cortopunzante",
-      "cantidad": 1,
-      "unidad": null
+      "cantidad": 3,
+      "unidad": "estocadas"
     }
   ],
   "relaciones": [
     {
-      "origen": "presunto autor del homicidio",
-      "tipo": "DETENIDO_POR",
-      "destino": "personal de seguridad municipal"
+      "origen": "el presunto autor del homicidio",
+      "tipo": "PRESUNTO_AUTOR_DE",
+      "destino": "homicidio"
+    },
+    {
+      "origen": "un hombre",
+      "tipo": "VICTIMA_DE",
+      "destino": "homicidio"
+    },
+    {
+      "origen": "seguridad municipal",
+      "tipo": "DETUVO_A",
+      "destino": "el presunto autor del homicidio"
+    },
+    {
+      "origen": "el presunto autor del homicidio",
+      "tipo": "PASO_A",
+      "destino": "Juzgado de Garantía de Coquimbo"
     }
   ]
 }

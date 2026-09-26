@@ -1,4 +1,4 @@
-# delincuente
+# tres menores de edad detenidos
 
 Tipo: Persona
 
@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N002|N002]]
 
 ## Roles explícitos observados
-- detenido
+- detenidos

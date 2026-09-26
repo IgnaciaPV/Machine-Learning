@@ -1,6 +1,6 @@
-# 1ª Comisaría
+# jarabes con codeína
 
-Tipo: Organizacione
+Tipo: Objeto
 
 ## Noticias relacionadas
 - [[Noticias/N001|N001]]

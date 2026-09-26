@@ -4,32 +4,36 @@
   "fecha_publicacion": "2026-03-19T14:23:35-03:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/03/19/cae-clan-familiar-los-shein-18-detenidos-tras-operativo-en-13-viviendas-de-coquimbo-y-la-serena.shtml",
-  "resumen": "Una intervención de Carabineros y el OS7 desarticuló a la organización criminal \"Los Shein\" en La Serena y Coquimbo, dejando 18 detenidos tras el allanamiento de 13 viviendas y la incautación de armas, drogas, vehículos y dinero.",
+  "resumen": "Una intervención territorial simultánea desarrollada por Carabineros y el OS7 permitió desarticular la organización criminal \"Los Shein\" en La Serena y Coquimbo, con un saldo de 18 detenidos, además de la incautación de armas, municiones, vehículos, motocicletas y diversas drogas.",
   "delitos": [
     "tráfico de drogas",
     "disparos injustificados en la vía pública",
-    "homicidio frustrado"
+    "homicidio frustrado",
+    "homicidio"
   ],
   "personas": [
+    {
+      "nombre": "un adolescente de 16 años",
+      "rol": "detenido"
+    },
     {
       "nombre": "Y.A.P.L.",
       "rol": "detenido"
     },
     {
       "nombre": "Christian Brebi",
-      "rol": null
+      "rol": "general"
     }
   ],
   "organizaciones": [
-    "Los Shein",
     "Carabineros",
-    "OS7"
+    "OS7",
+    "Los Shein"
   ],
   "lugares": [
     "La Serena",
     "Coquimbo",
-    "Chile",
-    "región"
+    "Chile"
   ],
   "objetos": [
     {
@@ -126,13 +130,28 @@
   "relaciones": [
     {
       "origen": "Carabineros",
-      "tipo": "PERTENECE_A",
-      "destino": "OS7"
+      "tipo": "INTERVINO",
+      "destino": "13 viviendas en La Serena y Coquimbo"
+    },
+    {
+      "origen": "Los Shein",
+      "tipo": "VINCULADO_A",
+      "destino": "tráfico de drogas"
     },
     {
       "origen": "Y.A.P.L.",
-      "tipo": "PERTENECE_A",
-      "destino": "Los Shein"
+      "tipo": "TIENE_ORDEN_VIGENTE_POR",
+      "destino": "disparos injustificados en la vía pública"
+    },
+    {
+      "origen": "Y.A.P.L.",
+      "tipo": "TIENE_ORDEN_VIGENTE_POR",
+      "destino": "tráfico de drogas"
+    },
+    {
+      "origen": "Y.A.P.L.",
+      "tipo": "TIENE_ORDEN_VIGENTE_POR",
+      "destino": "homicidio frustrado"
     },
     {
       "origen": "Christian Brebi",

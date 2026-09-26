@@ -1,9 +1,9 @@
-# uno de ellos
+# un adolescente de 16 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N002|N002]]
+- [[Noticias/N011|N011]]
 
 ## Roles explícitos observados
-- herido a bala
+- detenido

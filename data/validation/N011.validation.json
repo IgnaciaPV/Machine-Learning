@@ -2,6 +2,8 @@
   "id_noticia": "N011",
   "valido": true,
   "errores": [],
-  "advertencias": [],
+  "advertencias": [
+    "Relación 1: destino no aparece entre entidades: 13 viviendas en La Serena y Coquimbo"
+  ],
   "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N011.json"
 }

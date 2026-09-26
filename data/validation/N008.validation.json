@@ -2,6 +2,8 @@
   "id_noticia": "N008",
   "valido": true,
   "errores": [],
-  "advertencias": [],
+  "advertencias": [
+    "Relación 2: origen no aparece entre entidades: Brigada de Homicidios (BH) de la Policía de Investigaciones (PDI)"
+  ],
   "ruta": "/home/runner/work/Machine-Learning/Machine-Learning/data/json/N008.json"
 }

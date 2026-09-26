@@ -7,4 +7,4 @@ Tipo: Objeto
 - [[Noticias/N006|N006]]
 
 ## Cantidades explícitas observadas
-- N005: 1
+- N005: 3 estocadas

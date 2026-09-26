@@ -1,10 +1,10 @@
 {
   "id_noticia": "N001",
   "titulo": "La Serena: Persecución terminó con incautación de más de un millón de pesos en jarabes de codeína",
-  "fecha_publicacion": null,
+  "fecha_publicacion": "2026-08-16",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260816/pags-amp/20260816121717.html",
-  "resumen": "Una persecución en La Serena terminó con la detención de un hombre que intentó escapar de un control policial lanzándose al Río Elqui. Tras registrar su vehículo, Carabineros incautó más de un millón de pesos en jarabes de codeína.",
+  "resumen": "Una persecución policial en La Serena, Región de Coquimbo, culminó con la detención de un hombre tras intentar escapar lanzándose al Río Elqui. Carabineros de la Primera Comisaría incautó un vehículo y medicamentos equivalentes a más de un millón de pesos en jarabes de codeína.",
   "delitos": [
     "tráfico de drogas en pequeñas cantidades"
   ],
@@ -14,23 +14,13 @@
       "rol": "detenido"
     },
     {
-      "nombre": "el imputado",
-      "rol": "imputado"
-    },
-    {
-      "nombre": "el sujeto",
-      "rol": null
-    },
-    {
       "nombre": "Eugenio Olea",
       "rol": "Tte. Crl."
     }
   ],
   "organizaciones": [
-    "Primera Comisaría",
     "Carabineros",
-    "1ª Comisaría",
-    "Carabineros Región de Coquimbo"
+    "Primera Comisaría"
   ],
   "lugares": [
     "La Serena",
@@ -42,7 +32,7 @@
       "tipo": "dinero",
       "nombre": "pesos",
       "cantidad": 1000000,
-      "unidad": null
+      "unidad": "pesos"
     },
     {
       "tipo": "sustancia",
@@ -53,31 +43,47 @@
     {
       "tipo": "vehículo",
       "nombre": "vehículo",
+      "cantidad": 1,
+      "unidad": null
+    },
+    {
+      "tipo": "sustancia",
+      "nombre": "medicamentos",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "medicamentos",
-      "nombre": "medicamentos",
+      "tipo": "sustancia",
+      "nombre": "jarabes con codeína",
       "cantidad": null,
       "unidad": null
     }
   ],
   "relaciones": [
     {
+      "origen": "un hombre",
+      "tipo": "DETENIDO_EN",
+      "destino": "La Serena"
+    },
+    {
+      "origen": "un hombre",
+      "tipo": "INTENTO_ESCAPAR_EN",
+      "destino": "Río Elqui"
+    },
+    {
       "origen": "Primera Comisaría",
-      "tipo": "PERTENECE_A",
-      "destino": "Carabineros"
+      "tipo": "INCAUTO",
+      "destino": "jarabes de codeína"
     },
     {
-      "origen": "Carabineros Región de Coquimbo",
-      "tipo": "PERTENECE_A",
-      "destino": "Carabineros"
+      "origen": "Primera Comisaría",
+      "tipo": "INCAUTO",
+      "destino": "medicamentos"
     },
     {
-      "origen": "Eugenio Olea",
-      "tipo": "PERTENECE_A",
-      "destino": "Carabineros"
+      "origen": "Carabineros",
+      "tipo": "INCAUTO",
+      "destino": "jarabes con codeína"
     }
   ]
 }

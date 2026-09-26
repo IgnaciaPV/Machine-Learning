@@ -1,29 +1,25 @@
 {
   "id_noticia": "N002",
   "titulo": "La Serena: Persecución por robo de auto terminó con un delincuente baleado y tres detenidos",
-  "fecha_publicacion": null,
+  "fecha_publicacion": "2026-06-01",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260601/pags-amp/20260601102915.html",
-  "resumen": "Una persecución policial en La Serena tras el robo de una camioneta culminó con la colisión de los asaltantes contra una casa, dejando a un individuo baleado hospitalizado y a tres menores de edad detenidos.",
+  "resumen": "Una persecución policial originada por el robo de una camioneta en La Serena terminó con un delincuente baleado, tres menores de edad detenidos tras colisionar con una casa y la recuperación del vehículo.",
   "delitos": [
     "robo"
   ],
   "personas": [
     {
-      "nombre": "víctima",
-      "rol": "víctima"
+      "nombre": "un delincuente baleado",
+      "rol": "delincuente"
     },
     {
-      "nombre": "tres menores de edad",
+      "nombre": "tres menores de edad detenidos",
       "rol": "detenidos"
     },
     {
-      "nombre": "delincuente",
-      "rol": "detenido"
-    },
-    {
-      "nombre": "uno de ellos",
-      "rol": "herido a bala"
+      "nombre": "una persona",
+      "rol": "víctima"
     }
   ],
   "organizaciones": [
@@ -41,26 +37,30 @@
     {
       "tipo": "vehículo",
       "nombre": "camioneta",
-      "cantidad": 1,
-      "unidad": null
-    },
-    {
-      "tipo": "vehículo",
-      "nombre": "vehículo",
-      "cantidad": 1,
+      "cantidad": null,
       "unidad": null
     }
   ],
   "relaciones": [
     {
-      "origen": "víctima",
-      "tipo": "DIO_AVISO_A",
-      "destino": "Carabineros"
+      "origen": "una persona",
+      "tipo": "VICTIMA_DE_ROBO",
+      "destino": "camioneta"
     },
     {
-      "origen": "tres menores de edad",
-      "tipo": "DETENIDO_EN",
-      "destino": "Arcos de Pinamar"
+      "origen": "Carabineros",
+      "tipo": "REALIZA_PERSECUCION",
+      "destino": "un delincuente baleado"
+    },
+    {
+      "origen": "Carabineros",
+      "tipo": "REALIZA_PERSECUCION",
+      "destino": "tres menores de edad detenidos"
+    },
+    {
+      "origen": "un delincuente baleado",
+      "tipo": "INTERNADO_EN",
+      "destino": "Hospital de La Serena"
     }
   ]
 }

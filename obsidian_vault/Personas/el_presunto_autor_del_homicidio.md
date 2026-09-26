@@ -1,9 +1,9 @@
-# esta persona imputada
+# el presunto autor del homicidio
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N003|N003]]
+- [[Noticias/N005|N005]]
 
 ## Roles explícitos observados
-- imputada
+- detenido

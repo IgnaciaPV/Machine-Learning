@@ -1,10 +1,9 @@
-# víctima
+# un chileno de 45 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N002|N002]]
-- [[Noticias/N005|N005]]
+- [[Noticias/N010|N010]]
 
 ## Roles explícitos observados
-- víctima
+- imputado

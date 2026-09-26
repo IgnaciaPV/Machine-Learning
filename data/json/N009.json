@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-07-17T09:20:09-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/hombre-es-asesinado-con-arma-cortante-al-interior-de-terminal-de-buses-de-coquimbo-pdi-busca-al-autor.shtml",
-  "resumen": "Un hombre de 42 años fue asesinado con un arma cortante al interior del Terminal de Buses de Coquimbo tras sostener una discusión con una locataria y ser atacado por un tercer sujeto que posteriormente escapó. La PDI y el Ministerio Público realizan diligencias para dar con el autor, quien permanece prófugo.",
+  "resumen": "La Policía de Investigaciones indaga un homicidio en el Terminal de Buses de Coquimbo, donde un hombre de 42 años murió tras ser atacado con un arma cortante tras sostener una discusión con una locataria y un tercer sujeto que escapó.",
   "delitos": [
     "homicidio"
   ],
@@ -19,7 +19,7 @@
     },
     {
       "nombre": "tercer sujeto",
-      "rol": "presunto autor"
+      "rol": null
     }
   ],
   "organizaciones": [
@@ -30,7 +30,6 @@
   ],
   "lugares": [
     "Terminal de Buses de Coquimbo",
-    "Coquimbo",
     "La Serena"
   ],
   "objetos": [
@@ -43,14 +42,14 @@
   ],
   "relaciones": [
     {
-      "origen": "Policía de Investigaciones (PDI)",
-      "tipo": "INVESTIGA",
+      "origen": "hombre de 42 años",
+      "tipo": "VICTIMA_DE",
       "destino": "homicidio"
     },
     {
-      "origen": "tercer sujeto",
-      "tipo": "ATACÓ",
-      "destino": "hombre de 42 años"
+      "origen": "homicidio",
+      "tipo": "OCURRIDO_EN",
+      "destino": "Terminal de Buses de Coquimbo"
     }
   ]
 }

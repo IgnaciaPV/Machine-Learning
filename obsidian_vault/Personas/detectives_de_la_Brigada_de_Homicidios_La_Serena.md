@@ -1,4 +1,4 @@
-# imputado, un chileno de 45 años
+# detectives de la Brigada de Homicidios La Serena
 
 Tipo: Persona
 
@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N010|N010]]
 
 ## Roles explícitos observados
-- imputado
+- detenido

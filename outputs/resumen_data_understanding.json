@@ -6,8 +6,9 @@
     "BioBioChile": 4
   },
   "delitos_frecuentes": {
-    "homicidio": 6,
+    "homicidio": 7,
     "tráfico de drogas": 3,
+    "asesinato": 2,
     "tráfico de drogas en pequeñas cantidades": 1,
     "robo": 1,
     "usurpación de funciones públicas": 1,
@@ -19,7 +20,6 @@
     "cohecho": 1,
     "ingreso de elementos ilícitos a un recinto penitenciario": 1,
     "lavado de activos": 1,
-    "asesinato": 1,
     "disparos injustificados en la vía pública": 1,
     "homicidio frustrado": 1,
     "tenencia de armas": 1,
@@ -27,9 +27,9 @@
     "lesiones": 1
   },
   "lugares_frecuentes": {
-    "Coquimbo": 7,
     "La Serena": 6,
     "Región de Coquimbo": 6,
+    "Coquimbo": 5,
     "Salamanca": 2,
     "Juzgado de Garantía de Coquimbo": 2,
     "Terminal de Buses de Coquimbo": 2,
@@ -38,48 +38,47 @@
     "Avenida Francisco de Aguirre": 1,
     "Arcos de Pinamar": 1,
     "Hospital de La Serena": 1,
-    "comunas de Salamanca y Coquimbo": 1,
+    "comunas de Salamanca": 1,
     "Hospital de Coquimbo": 1,
     "Barrio Inglés": 1,
     "hospital local": 1,
     "cerros de la ciudad puerto": 1,
-    "Diaguitas": 1,
     "Vicuña": 1,
+    "Diaguitas": 1,
     "Provincia de Elqui": 1,
     "Andacollito": 1,
-    "cárcel de Illapel": 1,
     "Illapel": 1,
     "Santiago": 1,
     "Tomé": 1,
     "Región del Biobío": 1,
     "sector rural de Panulcillo": 1,
-    "Ovalle": 1,
+    "comuna de Ovalle": 1,
     "pozo": 1,
     "Chile": 1,
-    "región": 1,
-    "Tierras Blancas": 1
+    "Tierras Blancas": 1,
+    "Tribunal de Garantía de Coquimbo": 1
   },
-  "personas_unicas": 35,
-  "organizaciones_unicas": 24,
-  "relaciones_extraidas": 26,
+  "personas_unicas": 34,
+  "organizaciones_unicas": 23,
+  "relaciones_extraidas": 41,
   "porcentaje_campos_faltantes": {
-    "fecha_publicacion": 66.67,
+    "objetos": 8.33,
     "relaciones": 8.33,
     "titulo": 0.0,
     "fuente": 0.0,
+    "fecha_publicacion": 0.0,
     "url": 0.0,
-    "delitos": 0.0,
     "resumen": 0.0,
     "personas": 0.0,
-    "organizaciones": 0.0,
+    "delitos": 0.0,
     "lugares": 0.0,
-    "objetos": 0.0
+    "organizaciones": 0.0
   },
   "noticias_duplicadas": [],
   "entidades_inconsistentes": [],
   "relaciones_dudosas": [
-    "N005.validation: Relación 1: destino no aparece entre entidades: personal de seguridad municipal",
-    "N012.validation: Relación 1: destino no aparece entre entidades: centro de acopio de drogas"
+    "N008.validation: Relación 2: origen no aparece entre entidades: Brigada de Homicidios (BH) de la Policía de Investigaciones (PDI)",
+    "N011.validation: Relación 1: destino no aparece entre entidades: 13 viviendas en La Serena y Coquimbo"
   ],
   "json_invalidos_detalle": []
 }

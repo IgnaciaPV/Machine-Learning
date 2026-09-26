@@ -1,9 +1,9 @@
-# presunto autor del homicidio
+# un delincuente baleado
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N005|N005]]
+- [[Noticias/N002|N002]]
 
 ## Roles explícitos observados
-- detenido
+- delincuente

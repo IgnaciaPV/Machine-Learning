@@ -1,9 +1,9 @@
-# la víctima
+# una persona
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N006|N006]]
+- [[Noticias/N002|N002]]
 
 ## Roles explícitos observados
 - víctima

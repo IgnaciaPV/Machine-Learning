@@ -1,3 +1,5 @@
+test_recupera_fecha_url_amp (test_adquisicion.TestCapturadorCooperativa.test_recupera_fecha_url_amp) ... ok
+test_recupera_fecha_url_no_amp (test_adquisicion.TestCapturadorCooperativa.test_recupera_fecha_url_no_amp) ... ok
 test_genera_resumen_y_visualizaciones (test_analisis.TestAnalisis.test_genera_resumen_y_visualizaciones) ... ok
 test_prompt_contiene_reglas_eticas_y_trazabilidad (test_extraccion.TestExtractorGemini.test_prompt_contiene_reglas_eticas_y_trazabilidad) ... ok
 test_recupera_json_con_fences (test_extraccion.TestExtractorGemini.test_recupera_json_con_fences) ... ok
@@ -8,6 +10,6 @@ test_detecta_campo_faltante (test_validacion.TestValidadorJSON.test_detecta_camp
 test_valido_y_trazable (test_validacion.TestValidadorJSON.test_valido_y_trazable) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.965s
+Ran 10 tests in 0.994s
 
 OK

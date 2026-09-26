@@ -1,9 +1,9 @@
-# tres menores de edad
+# cinco gendarmes
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N002|N002]]
+- [[Noticias/N007|N007]]
 
 ## Roles explícitos observados
-- detenidos
+- detenido

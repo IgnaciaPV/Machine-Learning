@@ -3,4 +3,4 @@
 Tipo: Organizacione
 
 ## Noticias relacionadas
-- [[Noticias/N010|N010]]
+- [[Noticias/N005|N005]]
