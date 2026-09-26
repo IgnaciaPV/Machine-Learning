@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-03-04",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/rina-termino-en-homicidio-en-el-barrio-ingles-de-coquimbo/2026-03-04/104350.html",
-  "resumen": "Una riña en el Barrio Inglés de Coquimbo terminó con un hombre fallecido tras recibir tres estocadas con un arma cortopunzante. Los involucrados huyeron, pero personal de seguridad municipal detuvo al presunto autor, quien pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
+  "resumen": "Un hombre falleció tras una riña en el Barrio Inglés de Coquimbo, luego de ser agredido con un arma cortopunzante por un grupo de individuos. Posteriormente, personal de seguridad municipal detuvo al presunto autor, quien pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
   "delitos": [
     "homicidio"
   ],
@@ -24,8 +24,7 @@
   ],
   "organizaciones": [
     "seguridad municipal",
-    "Ministerio Público",
-    "Juzgado de Garantía de Coquimbo"
+    "Ministerio Público"
   ],
   "lugares": [
     "Barrio Inglés",
@@ -38,30 +37,25 @@
     {
       "tipo": "arma",
       "nombre": "arma cortopunzante",
-      "cantidad": 3,
-      "unidad": "estocadas"
+      "cantidad": null,
+      "unidad": null
     }
   ],
   "relaciones": [
     {
-      "origen": "el presunto autor del homicidio",
-      "tipo": "PRESUNTO_AUTOR_DE",
-      "destino": "homicidio"
-    },
-    {
       "origen": "un hombre",
-      "tipo": "VICTIMA_DE",
+      "tipo": "VICTIMA_DE_HOMICIDIO",
       "destino": "homicidio"
     },
     {
-      "origen": "seguridad municipal",
-      "tipo": "DETUVO_A",
-      "destino": "el presunto autor del homicidio"
+      "origen": "el presunto autor del homicidio",
+      "tipo": "SOSPECHOSO_DE",
+      "destino": "homicidio"
     },
     {
       "origen": "el presunto autor del homicidio",
-      "tipo": "PASO_A",
-      "destino": "Juzgado de Garantía de Coquimbo"
+      "tipo": "DETENIDO_EN",
+      "destino": "Coquimbo"
     }
   ]
 }

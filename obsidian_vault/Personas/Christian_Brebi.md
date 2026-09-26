@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N011|N011]]
 
 ## Roles explícitos observados
-- general
+- jefe de Zona de Carabineros Coquimbo

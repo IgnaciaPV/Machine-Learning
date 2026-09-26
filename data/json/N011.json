@@ -4,25 +4,29 @@
   "fecha_publicacion": "2026-03-19T14:23:35-03:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/03/19/cae-clan-familiar-los-shein-18-detenidos-tras-operativo-en-13-viviendas-de-coquimbo-y-la-serena.shtml",
-  "resumen": "Una intervención territorial simultánea desarrollada por Carabineros y el OS7 permitió desarticular la organización criminal \"Los Shein\" en La Serena y Coquimbo, con un saldo de 18 detenidos, además de la incautación de armas, municiones, vehículos, motocicletas y diversas drogas.",
+  "resumen": "Una intervención territorial simultánea de Carabineros y el OS7 en 13 viviendas de La Serena y Coquimbo permitió desarticular a la organización criminal 'Los Shein', resultando en 18 detenidos (incluyendo un adolescente de 16 años y al cabecilla Y.A.P.L.). Durante el operativo se decomisaron armas de fuego, municiones, vehículos, una motocicleta y diversas dosis de drogas.",
   "delitos": [
     "tráfico de drogas",
     "disparos injustificados en la vía pública",
     "homicidio frustrado",
-    "homicidio"
+    "homicidio de hincha de fútbol"
   ],
   "personas": [
+    {
+      "nombre": "Y.A.P.L.",
+      "rol": "cabecilla"
+    },
     {
       "nombre": "un adolescente de 16 años",
       "rol": "detenido"
     },
     {
-      "nombre": "Y.A.P.L.",
-      "rol": "detenido"
+      "nombre": "Christian Brebi",
+      "rol": "jefe de Zona de Carabineros Coquimbo"
     },
     {
-      "nombre": "Christian Brebi",
-      "rol": "general"
+      "nombre": "dos extranjeros extraditados a Chile",
+      "rol": "extraditado"
     }
   ],
   "organizaciones": [
@@ -33,7 +37,8 @@
   "lugares": [
     "La Serena",
     "Coquimbo",
-    "Chile"
+    "Chile",
+    "barrios"
   ],
   "objetos": [
     {
@@ -43,7 +48,7 @@
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "drogas",
       "cantidad": null,
       "unidad": null
@@ -85,19 +90,19 @@
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "marihuana",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "pasta base",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "ketamina",
       "cantidad": null,
       "unidad": null
@@ -129,34 +134,39 @@
   ],
   "relaciones": [
     {
-      "origen": "Carabineros",
-      "tipo": "INTERVINO",
-      "destino": "13 viviendas en La Serena y Coquimbo"
-    },
-    {
       "origen": "Los Shein",
       "tipo": "VINCULADO_A",
       "destino": "tráfico de drogas"
     },
     {
       "origen": "Y.A.P.L.",
-      "tipo": "TIENE_ORDEN_VIGENTE_POR",
+      "tipo": "MANTENIA_ORDEN_VIGENTE_POR",
       "destino": "disparos injustificados en la vía pública"
     },
     {
       "origen": "Y.A.P.L.",
-      "tipo": "TIENE_ORDEN_VIGENTE_POR",
+      "tipo": "MANTENIA_ORDEN_VIGENTE_POR",
       "destino": "tráfico de drogas"
     },
     {
       "origen": "Y.A.P.L.",
-      "tipo": "TIENE_ORDEN_VIGENTE_POR",
+      "tipo": "MANTENIA_ORDEN_VIGENTE_POR",
       "destino": "homicidio frustrado"
     },
     {
-      "origen": "Christian Brebi",
-      "tipo": "PERTENECE_A",
-      "destino": "Carabineros"
+      "origen": "Carabineros",
+      "tipo": "DESARTICULO",
+      "destino": "Los Shein"
+    },
+    {
+      "origen": "Carabineros",
+      "tipo": "INCAUTO",
+      "destino": "armamento"
+    },
+    {
+      "origen": "Carabineros",
+      "tipo": "DECOMISAR",
+      "destino": "drogas"
     }
   ]
 }

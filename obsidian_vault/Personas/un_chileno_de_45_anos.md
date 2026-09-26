@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N010|N010]]
 
 ## Roles explícitos observados
-- imputado
+- presunto autor

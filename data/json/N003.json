@@ -4,13 +4,14 @@
   "fecha_publicacion": "2026-08-22",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/pdi-investiga-dos-homicidios-en-la-region-de-coquimbo/2026-08-22/095503.html",
-  "resumen": "La PDI investiga dos homicidios separados en las comunas de Salamanca y Coquimbo. El primer caso corresponde a un hombre de unos 37 años que ingresó fallecido por impactos balísticos al Hospital de Coquimbo tras ser trasladado por sujetos desconocidos. El segundo caso involucra la muerte de un adulto mayor de 85 años en Salamanca, descubierto por sus familiares con lesiones contusas graves, por el cual una mujer de 56 años fue detenida y su detención ampliada hasta el martes 25 de agosto.",
+  "resumen": "La PDI investiga dos homicidios ocurridos en las comunas de Salamanca y Coquimbo. El primer caso corresponde a un hombre de unos 37 años que ingresó fallecido por impactos balísticos al Hospital de Coquimbo. El segundo caso involucra la detención de una mujer de 56 años como presunta autora del homicidio de un hombre de 85 años en Salamanca.",
   "delitos": [
+    "homicidio",
     "homicidio"
   ],
   "personas": [
     {
-      "nombre": "hombre de unos 37 años",
+      "nombre": "un hombre de unos 37 años",
       "rol": "víctima"
     },
     {
@@ -18,20 +19,28 @@
       "rol": null
     },
     {
-      "nombre": "mujer de 56 años",
-      "rol": "imputada"
-    },
-    {
-      "nombre": "hombre de 85 años",
+      "nombre": "una persona de sexo masculino, no identificado",
       "rol": "víctima"
     },
     {
-      "nombre": "familiares",
+      "nombre": "una mujer de 56 años",
+      "rol": "detenido"
+    },
+    {
+      "nombre": "un hombre de 85 años",
+      "rol": "víctima"
+    },
+    {
+      "nombre": "sus propios familiares",
       "rol": null
     },
     {
       "nombre": "fiscal Soto",
       "rol": "fiscal"
+    },
+    {
+      "nombre": "esta persona imputada",
+      "rol": "imputado"
     }
   ],
   "organizaciones": [
@@ -43,23 +52,27 @@
   ],
   "lugares": [
     "Región de Coquimbo",
-    "comunas de Salamanca",
+    "Salamanca",
     "Coquimbo",
-    "La Serena",
     "Hospital de Coquimbo",
-    "Salamanca"
+    "La Serena"
   ],
   "objetos": [],
   "relaciones": [
     {
-      "origen": "sujetos desconocidos",
-      "tipo": "TRASLADO_A",
-      "destino": "hombre de unos 37 años"
+      "origen": "Brigada de Homicidios de la PDI La Serena",
+      "tipo": "INVESTIGA",
+      "destino": "homicidio"
     },
     {
-      "origen": "mujer de 56 años",
+      "origen": "una mujer de 56 años",
       "tipo": "PRESUNTA_AUTORA_DE",
-      "destino": "hombre de 85 años"
+      "destino": "homicidio"
+    },
+    {
+      "origen": "esta persona imputada",
+      "tipo": "IMPUTADO_EN",
+      "destino": "homicidio"
     }
   ]
 }
