@@ -82,7 +82,16 @@ class CapturadorBioBioChile(CapturadorFuente):
         return "biobiochile.cl" in urlparse(url).netloc.lower() or (fuente or "").lower().startswith("biobio")
 
     def selectores_articulo(self) -> Iterable[str]:
-        return ("article", ".post-content", ".article-content", "main")
+        # BioBioChile incluye muchos elementos <article> de tarjetas/recomendaciones antes
+        # del cuerpo. El contenedor banners-contenido-nota-* contiene el texto editorial
+        # de la noticia y excluye el resumen automático mostrado por el sitio.
+        return (
+            "[class^='banners-contenido-nota-']",
+            ".post-content",
+            ".article-content",
+            "article",
+            "main",
+        )
 
 
 class CapturadorCooperativa(CapturadorFuente):
