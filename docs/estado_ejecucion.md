@@ -2,58 +2,61 @@
 
 **Fecha de verificación:** 26-09-2026  
 **Repositorio:** `IgnaciaPV/Machine-Learning`  
-**Workflow final:** `LAB01 - Pipeline completo`, run **#7**  
+**Workflow final:** `LAB01 - Pipeline completo`, run **#11**  
+**Run ID:** `36276952811`  
 **Resultado:** **SUCCESS**
 
 ## Ejecución validada
 
-La ejecución final completó correctamente, en este orden:
+El workflow final completó correctamente:
 
-1. verificación del secreto `GEMINI_API_KEY`;
-2. instalación de Miniforge y creación del entorno desde `environment.yml`;
-3. captura HTTP real de las fuentes;
-4. ejecución de pruebas automatizadas;
+1. verificación de `GEMINI_API_KEY`;
+2. creación del entorno Conda desde `environment.yml`;
+3. captura HTTP real;
+4. pruebas automatizadas;
 5. extracción real con Gemini y validación;
-6. generación del vault Obsidian;
+6. generación de la bóveda Obsidian;
 7. Data Understanding y visualizaciones;
-8. auditoría de muestra;
-9. auditoría de secretos;
+8. auditoría;
+9. revisión de secretos;
 10. publicación de salidas estructuradas;
-11. empaquetado de evidencia como artifact.
+11. empaquetado de evidencia.
 
-## Resultados finales
+## Indicadores finales
 
-- Noticias del corpus: **12**
-- Captura/limpieza procesada: **12/12**
-- JSON Gemini válidos: **12/12**
-- JSON fallidos: **0**
-- JSON sintácticamente inválidos: **0**
-- Fuentes: **8 Cooperativa, 4 BioBioChile**
-- Relaciones extraídas: **31**
-- Advertencias de relaciones no trazables: **0**
+- Noticias procesadas: **12**
+- Fuentes: **8 Cooperativa / 4 BioBioChile**
+- JSON Gemini válidos / fallidos: **12 / 0**
+- JSON estructuralmente inválidos: **0**
+- Relaciones extraídas: **37**
+- Relaciones dudosas detectadas por validador: **0**
 - Noticias duplicadas: **0**
-- Pruebas automatizadas: **10/10 aprobadas**
-- Auditoría manual: **12/12 noticias**
-- Archivos Markdown del vault: **generados automáticamente para las 12 noticias y sus entidades**
-- Enlaces rotos del vault: **0**
+- Variantes nominales potenciales: **1 grupo**
+- Personas únicas: **39**
+- Organizaciones únicas: **24**
+- Archivos Markdown en Obsidian: **195**
+- Enlaces rotos en Obsidian: **0**
 - Visualizaciones de Data Understanding: **7**
+- Auditoría manual: **12/12 noticias**
+- Pruebas automatizadas: **14/14 aprobadas**
 
-## Hallazgos de Data Understanding
+## Data Understanding
 
-El delito más frecuente en el corpus estructurado es **homicidio (6 noticias)** y la fuente con mayor presencia es **Cooperativa (8 de 12)**. La **Región de Coquimbo** aparece en 6 noticias; La Serena y Coquimbo registran 5 menciones cada una. El 8,33% de las noticias queda sin relaciones explícitas, mientras que el resto de los campos estructurales presenta 0% de ausencia en la ejecución final.
+El delito más frecuente del corpus es **homicidio (6 noticias)**, seguido por **tráfico de drogas (3)**. El lugar con mayor mención es **Región de Coquimbo (7)**; La Serena aparece en 5 y Coquimbo en 4. El único campo con ausencia a nivel de noticia es **objetos (8,33%)**; los demás campos auditados registran 0% de ausencia.
 
-Estos recuentos describen únicamente el corpus periodístico seleccionado y no representan tasas oficiales de delincuencia.
+Estos valores caracterizan el corpus periodístico seleccionado y no constituyen estadísticas oficiales de criminalidad.
 
 ## Seguridad y reproducibilidad
 
 - La API key no está versionada.
-- `.env` está ignorado por Git.
+- `.env` se excluye mediante `.gitignore`.
 - GitHub Actions consume `secrets.GEMINI_API_KEY`.
-- No existe `requirements.txt`; el entorno oficial se reproduce con `environment.yml`.
+- El entorno oficial se reproduce mediante `environment.yml`; no se usa `requirements.txt`.
 - `main.py` actúa como orquestador.
-- La lógica se organiza en módulos OOP dentro de `src/`.
-- Los HTML completos y textos procesados se generan durante la ejecución y se preservan como evidencia temporal del workflow, evitando publicar masivamente contenido periodístico completo en el repositorio.
+- La lógica se distribuye en clases/módulos dentro de `src/`.
+- El workflow recaptura fuentes, reextrae con Gemini, valida, reconstruye Obsidian y reproduce los análisis.
+- La auditoría de secretos del workflow final terminó correctamente.
 
-## Limitaciones pendientes
+## Limitaciones
 
-No quedan bloqueos técnicos para ejecutar el laboratorio. Las limitaciones restantes son metodológicas: tamaño pequeño del corpus, sesgo de selección por medio y fecha, variabilidad semántica del LLM y necesidad de revisión humana para correferencias y normalización de entidades.
+No quedan bloqueos técnicos para reproducir el laboratorio. Permanecen limitaciones metodológicas documentadas: tamaño pequeño del corpus, sesgo por selección de medios, variabilidad del LLM, correferencias y necesidad de validación humana para decisiones semánticas finas.
