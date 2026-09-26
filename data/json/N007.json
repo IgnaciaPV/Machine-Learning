@@ -4,10 +4,8 @@
   "fecha_publicacion": "2026-06-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/cinco-gendarmes-detenidos-por-presunta-vinculacion-a-red-narco-en-carcel/2026-06-10/133653.html",
-  "resumen": "Cinco gendarmes fueron detenidos por su presunta vinculación a una red de narcotráfico y corrupción en la cárcel de Illapel, en el marco de una operación conjunta que incluyó allanamientos y la incautación de diversos objetos ilícitos en múltiples comunas.",
+  "resumen": "Cinco gendarmes fueron detenidos en el marco de una investigación contra una red de narcotráfico y corrupción en la cárcel de Illapel y domicilios de distintas comunas, en un operativo que involucró a la Fiscalía y a la Policía de Investigaciones.",
   "delitos": [
-    "narcotráfico",
-    "corrupción",
     "asociación criminal",
     "tráfico de drogas",
     "cohecho",
@@ -17,15 +15,7 @@
   "personas": [
     {
       "nombre": "cinco gendarmes",
-      "rol": "detenido"
-    },
-    {
-      "nombre": "seremi de Gobierno de Coquimbo",
-      "rol": null
-    },
-    {
-      "nombre": "diputado",
-      "rol": null
+      "rol": "detenidos"
     },
     {
       "nombre": "Castillo",
@@ -37,7 +27,6 @@
     "Policía de Investigaciones de La Serena",
     "Fiscalía de Illapel",
     "Gendarmería",
-    "Gobierno",
     "Partido Comunista"
   ],
   "lugares": [
@@ -46,35 +35,36 @@
     "Santiago",
     "Tomé",
     "Región del Biobío",
-    "Coquimbo"
+    "Región de Coquimbo",
+    "cárcel de Illapel"
   ],
   "objetos": [
     {
-      "tipo": "dispositivo electrónico",
+      "tipo": "teléfonos celulares",
       "nombre": "teléfonos celulares",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "marihuana",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "ketamina",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "éxtasis",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "sustancia",
+      "tipo": "fármaco",
       "nombre": "clonazepam",
       "cantidad": null,
       "unidad": null
@@ -96,7 +86,7 @@
     {
       "origen": "cinco gendarmes",
       "tipo": "PRESUNTA_VINCULACION_A",
-      "destino": "narcotráfico"
+      "destino": "cárcel de Illapel"
     }
   ]
 }

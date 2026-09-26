@@ -1,20 +1,23 @@
 lugar,delito,co_menciones
 Región de Coquimbo,homicidio,3
-Coquimbo,tráfico de drogas,3
 Coquimbo,homicidio,2
 Juzgado de Garantía de Coquimbo,homicidio,2
 Terminal de Buses de Coquimbo,homicidio,2
+Coquimbo,tráfico de drogas,2
 La Serena,tráfico de drogas en pequeñas cantidades,1
 Región de Coquimbo,tráfico de drogas en pequeñas cantidades,1
 Río Elqui,tráfico de drogas en pequeñas cantidades,1
-Arcos de Pinamar,robo,1
-Avenida Francisco de Aguirre,robo,1
-Avenida del Mar,robo,1
-Hospital de La Serena,robo,1
-La Serena,robo,1
-Región de Coquimbo,robo,1
+Arcos de Pinamar,robo de auto,1
+Avenida Francisco de Aguirre,robo de auto,1
+Avenida del Mar,robo de auto,1
+Hospital de La Serena,robo de auto,1
+La Serena,robo de auto,1
+Región de Coquimbo,robo de auto,1
 Hospital de Coquimbo,homicidio,1
+Juzgado de Garantía de Illapel,homicidio,1
+La Serena,homicidio,1
 Salamanca,homicidio,1
+domicilio,homicidio,1
 La Serena,infracción a la Ley de Control de Armas,1
 Región de Coquimbo,infracción a la Ley de Control de Armas,1
 La Serena,receptación de vehículo,1
@@ -28,51 +31,45 @@ Andacollito,homicidio,1
 Diaguitas,homicidio,1
 Provincia de Elqui,homicidio,1
 Vicuña,homicidio,1
-Coquimbo,asociación criminal,1
 Illapel,asociación criminal,1
+Región de Coquimbo,asociación criminal,1
 Región del Biobío,asociación criminal,1
 Salamanca,asociación criminal,1
 Santiago,asociación criminal,1
 Tomé,asociación criminal,1
-Coquimbo,cohecho,1
+cárcel de Illapel,asociación criminal,1
 Illapel,cohecho,1
+Región de Coquimbo,cohecho,1
 Región del Biobío,cohecho,1
 Salamanca,cohecho,1
 Santiago,cohecho,1
 Tomé,cohecho,1
-Coquimbo,corrupción,1
-Illapel,corrupción,1
-Región del Biobío,corrupción,1
-Salamanca,corrupción,1
-Santiago,corrupción,1
-Tomé,corrupción,1
-Coquimbo,ingreso de elementos ilícitos a un recinto penitenciario,1
+cárcel de Illapel,cohecho,1
 Illapel,ingreso de elementos ilícitos a un recinto penitenciario,1
+Región de Coquimbo,ingreso de elementos ilícitos a un recinto penitenciario,1
 Región del Biobío,ingreso de elementos ilícitos a un recinto penitenciario,1
 Salamanca,ingreso de elementos ilícitos a un recinto penitenciario,1
 Santiago,ingreso de elementos ilícitos a un recinto penitenciario,1
 Tomé,ingreso de elementos ilícitos a un recinto penitenciario,1
-Coquimbo,lavado de activos,1
+cárcel de Illapel,ingreso de elementos ilícitos a un recinto penitenciario,1
 Illapel,lavado de activos,1
+Región de Coquimbo,lavado de activos,1
 Región del Biobío,lavado de activos,1
 Salamanca,lavado de activos,1
 Santiago,lavado de activos,1
 Tomé,lavado de activos,1
-Coquimbo,narcotráfico,1
-Illapel,narcotráfico,1
-Región del Biobío,narcotráfico,1
-Salamanca,narcotráfico,1
-Santiago,narcotráfico,1
-Tomé,narcotráfico,1
+cárcel de Illapel,lavado de activos,1
 Illapel,tráfico de drogas,1
+Región de Coquimbo,tráfico de drogas,1
 Región del Biobío,tráfico de drogas,1
 Salamanca,tráfico de drogas,1
 Santiago,tráfico de drogas,1
 Tomé,tráfico de drogas,1
+cárcel de Illapel,tráfico de drogas,1
 comuna de Ovalle,homicidio,1
 pozo,homicidio,1
 sector rural de Panulcillo,homicidio,1
-La Serena,homicidio,1
+sitio del suceso,homicidio,1
 Coquimbo,disparos injustificados en la vía pública,1
 La Serena,disparos injustificados en la vía pública,1
 Coquimbo,homicidio frustrado,1

@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N003|N003]]
 
 ## Roles explícitos observados
-- imputada
+- imputado

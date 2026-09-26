@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N007|N007]]
 
 ## Roles explícitos observados
-- detenido
+- detenidos

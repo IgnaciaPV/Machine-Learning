@@ -4,22 +4,23 @@
   "fecha_publicacion": "2026-07-17T12:51:22-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/detienen-a-presunto-autor-del-asesinato-de-hombre-al-interior-de-terminal-de-buses-en-coquimbo.shtml",
-  "resumen": "Detectives detuvieron a un hombre chileno de 45 años, sindicado como presunto autor del homicidio de un hombre de 42 años cometido con un arma cortante al interior del Terminal de Buses de Coquimbo.",
+  "resumen": "Detectives de la Brigada de Homicidios La Serena detuvieron al presunto autor del homicidio de un hombre chileno de 42 años en el Terminal de Buses de Coquimbo, tras agredirlo con un arma cortante. El detenido será puesto a disposición del Juzgado de Garantía de Coquimbo.",
   "delitos": [
     "homicidio"
   ],
   "personas": [
     {
-      "nombre": "un hombre chileno de 42 años",
+      "nombre": "hombre chileno de 42 años",
       "rol": "víctima"
     },
     {
-      "nombre": "el imputado, un chileno de 45 años",
+      "nombre": "un chileno de 45 años",
       "rol": "imputado"
     }
   ],
   "organizaciones": [
-    "Brigada de Homicidios La Serena"
+    "Brigada de Homicidios La Serena",
+    "Juzgado de Garantía de Coquimbo"
   ],
   "lugares": [
     "Terminal de Buses de Coquimbo",
@@ -35,19 +36,24 @@
   ],
   "relaciones": [
     {
-      "origen": "el imputado, un chileno de 45 años",
+      "origen": "Brigada de Homicidios La Serena",
+      "tipo": "DETUVO_A",
+      "destino": "un chileno de 45 años"
+    },
+    {
+      "origen": "un chileno de 45 años",
       "tipo": "PRESUNTO_AUTOR_DE",
       "destino": "homicidio"
     },
     {
-      "origen": "el imputado, un chileno de 45 años",
-      "tipo": "AGREDIO_A",
-      "destino": "un hombre chileno de 42 años"
-    },
-    {
-      "origen": "el imputado, un chileno de 45 años",
+      "origen": "un chileno de 45 años",
       "tipo": "USO",
       "destino": "arma cortante"
+    },
+    {
+      "origen": "un chileno de 45 años",
+      "tipo": "SERA_PUESTO_A_DISPOSICION_DE",
+      "destino": "Juzgado de Garantía de Coquimbo"
     }
   ]
 }

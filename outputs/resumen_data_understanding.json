@@ -9,12 +9,10 @@
     "homicidio": 6,
     "tráfico de drogas": 3,
     "tráfico de drogas en pequeñas cantidades": 1,
-    "robo": 1,
+    "robo de auto": 1,
     "usurpación de funciones públicas": 1,
     "infracción a la Ley de Control de Armas": 1,
     "receptación de vehículo": 1,
-    "narcotráfico": 1,
-    "corrupción": 1,
     "asociación criminal": 1,
     "cohecho": 1,
     "ingreso de elementos ilícitos a un recinto penitenciario": 1,
@@ -26,9 +24,9 @@
     "lesiones": 1
   },
   "lugares_frecuentes": {
-    "Región de Coquimbo": 6,
+    "Región de Coquimbo": 7,
     "La Serena": 5,
-    "Coquimbo": 5,
+    "Coquimbo": 4,
     "Salamanca": 2,
     "Juzgado de Garantía de Coquimbo": 2,
     "Terminal de Buses de Coquimbo": 2,
@@ -38,6 +36,8 @@
     "Arcos de Pinamar": 1,
     "Hospital de La Serena": 1,
     "Hospital de Coquimbo": 1,
+    "domicilio": 1,
+    "Juzgado de Garantía de Illapel": 1,
     "Barrio Inglés": 1,
     "hospital local": 1,
     "cerros de la ciudad puerto": 1,
@@ -49,32 +49,40 @@
     "Santiago": 1,
     "Tomé": 1,
     "Región del Biobío": 1,
-    "pozo": 1,
+    "cárcel de Illapel": 1,
     "sector rural de Panulcillo": 1,
     "comuna de Ovalle": 1,
+    "pozo": 1,
+    "sitio del suceso": 1,
     "Tierras Blancas": 1,
     "Tribunal de Garantía de Coquimbo": 1
   },
-  "personas_unicas": 36,
-  "organizaciones_unicas": 21,
-  "relaciones_extraidas": 40,
+  "personas_unicas": 39,
+  "organizaciones_unicas": 24,
+  "relaciones_extraidas": 37,
   "porcentaje_campos_faltantes": {
-    "titulo": 0.0,
+    "objetos": 8.33,
     "fecha_publicacion": 0.0,
+    "titulo": 0.0,
     "fuente": 0.0,
     "url": 0.0,
-    "resumen": 0.0,
     "delitos": 0.0,
+    "resumen": 0.0,
     "personas": 0.0,
     "organizaciones": 0.0,
     "lugares": 0.0,
-    "objetos": 0.0,
     "relaciones": 0.0
   },
   "noticias_duplicadas": [],
-  "entidades_inconsistentes": [],
-  "relaciones_dudosas": [
-    "N003.validation: Relación 1 usa tipo no normalizado: TRASLADó"
+  "entidades_inconsistentes": [
+    {
+      "clave": "un hombre",
+      "variantes": [
+        "Un hombre",
+        "un hombre"
+      ]
+    }
   ],
+  "relaciones_dudosas": [],
   "json_invalidos_detalle": []
 }

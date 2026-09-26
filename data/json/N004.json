@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-07-03",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260703/pags-amp/20260703202824.html",
-  "resumen": "El exseremi Matías Letelier fue detenido en La Serena por disfrazarse de carabinero e intentar realizar controles de tránsito utilizando un vehículo con encargo por robo, balizas y elementos simulados, enfrentando cargos por usurpación de funciones públicas, infracción a la Ley de Control de Armas y receptación de vehículo.",
+  "resumen": "El exseremi Matías Letelier fue detenido en La Serena tras disfrazarse de carabinero e intentar realizar controles de tránsito utilizando un vehículo con encargo por robo y balizas. Se le imputan los delitos de usurpación de funciones públicas, infracción a la Ley de Control de Armas y receptación de vehículo.",
   "delitos": [
     "usurpación de funciones públicas",
     "infracción a la Ley de Control de Armas",
@@ -14,19 +14,23 @@
     {
       "nombre": "Matías Letelier",
       "rol": "detenido"
+    },
+    {
+      "nombre": "Sebastián Piñera",
+      "rol": null
     }
   ],
   "organizaciones": [
     "Ministerio Público"
   ],
   "lugares": [
-    "Región de Coquimbo",
-    "La Serena"
+    "La Serena",
+    "Región de Coquimbo"
   ],
   "objetos": [
     {
       "tipo": "vehículo",
-      "nombre": "vehículo",
+      "nombre": "vehículo con encargo por robo",
       "cantidad": null,
       "unidad": null
     },
@@ -39,6 +43,12 @@
     {
       "tipo": "implemento",
       "nombre": "elementos que simulaban pertenecer a la institución",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "vestimenta",
+      "nombre": "disfraz de carabinero",
       "cantidad": null,
       "unidad": null
     }
@@ -58,11 +68,6 @@
       "origen": "Matías Letelier",
       "tipo": "DETENIDO_POR",
       "destino": "receptación de vehículo"
-    },
-    {
-      "origen": "Matías Letelier",
-      "tipo": "UTILIZÓ",
-      "destino": "vehículo"
     }
   ]
 }

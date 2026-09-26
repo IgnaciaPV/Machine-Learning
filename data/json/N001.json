@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-08-16",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260816/pags-amp/20260816121717.html",
-  "resumen": "Una persecución policial en La Serena culminó con la detención de un hombre tras intentar evadir un control fiscalizador de Carabineros y escapar lanzándose al Río Elqui. Durante el procedimiento se incautaron jarabes de codeína desde el interior del vehículo abandonado por el sujeto, quien registra antecedentes policiales por tráfico de drogas en pequeñas cantidades.",
+  "resumen": "Una persecución policial en La Serena culminó con la detención de un hombre que intentó escapar lanzándose al Río Elqui tras evadir un control. Personal policial incautó jarabes de codeína desde el interior de su vehículo.",
   "delitos": [
     "tráfico de drogas en pequeñas cantidades"
   ],
@@ -14,6 +14,26 @@
       "rol": "detenido"
     },
     {
+      "nombre": "el sujeto",
+      "rol": "detenido"
+    },
+    {
+      "nombre": "el imputado",
+      "rol": "imputado"
+    },
+    {
+      "nombre": "los uniformados",
+      "rol": null
+    },
+    {
+      "nombre": "el detenido",
+      "rol": "detenido"
+    },
+    {
+      "nombre": "nuestros carabineros",
+      "rol": null
+    },
+    {
       "nombre": "Eugenio Olea",
       "rol": "Tte. Crl."
     }
@@ -21,7 +41,8 @@
   "organizaciones": [
     "Primera Comisaría",
     "Carabineros",
-    "Carabineros Región de Coquimbo"
+    "Carabineros Región de Coquimbo",
+    "1ª Comisaría"
   ],
   "lugares": [
     "La Serena",
@@ -40,28 +61,46 @@
       "nombre": "jarabes de codeína",
       "cantidad": null,
       "unidad": null
+    },
+    {
+      "tipo": "medicamento",
+      "nombre": "automóvil",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "medicamento",
+      "nombre": "jarabes",
+      "cantidad": null,
+      "unidad": null
+    },
+    {
+      "tipo": "medicamento",
+      "nombre": "jarabes con codeína",
+      "cantidad": null,
+      "unidad": null
     }
   ],
   "relaciones": [
     {
       "origen": "un hombre",
-      "tipo": "DETENIDO_EN",
+      "tipo": "SE_LANZO_A",
+      "destino": "Río Elqui"
+    },
+    {
+      "origen": "Primera Comisaría",
+      "tipo": "PROCEDIMIENTO_EN",
       "destino": "La Serena"
     },
     {
-      "origen": "un hombre",
-      "tipo": "EVADIO",
-      "destino": "Primera Comisaría"
-    },
-    {
-      "origen": "un hombre",
-      "tipo": "REGISTRA_ANTECEDENTES_POR",
-      "destino": "tráfico de drogas en pequeñas cantidades"
+      "origen": "el sujeto",
+      "tipo": "FUE_APREHENDIDO_POR",
+      "destino": "los uniformados"
     },
     {
       "origen": "Carabineros",
-      "tipo": "INCAUTO",
-      "destino": "jarabes de codeína"
+      "tipo": "INFORMO_QUE",
+      "destino": "el detenido"
     }
   ]
 }
