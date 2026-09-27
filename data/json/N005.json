@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-03-04",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/pais/region-de-coquimbo/rina-termino-en-homicidio-en-el-barrio-ingles-de-coquimbo/2026-03-04/104350.html",
-  "resumen": "Un hombre falleció tras una riña en el Barrio Inglés de Coquimbo, donde se enfrentó con al menos cuatro individuos y recibió tres estocadas con un arma cortopunzante. La víctima murió en el hospital local y personal de seguridad municipal detuvo al presunto autor, quien pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
+  "resumen": "Un hombre falleció tras enfrentarse con al menos cuatro individuos en el Barrio Inglés de Coquimbo y recibir tres estocadas con un arma cortopunzante. Los involucrados huyeron, pero personal de seguridad municipal detuvo al presunto autor, quien pasó a control de detención en el Juzgado de Garantía de Coquimbo.",
   "delitos": [
     "homicidio"
   ],
@@ -18,7 +18,7 @@
       "rol": null
     },
     {
-      "nombre": "presunto autor del homicidio",
+      "nombre": "el presunto autor del homicidio",
       "rol": "detenido"
     }
   ],
@@ -44,23 +44,23 @@
   "relaciones": [
     {
       "origen": "Un hombre",
-      "tipo": "VICTIMA_DE_DELITO",
+      "tipo": "VICTIMA_DE",
       "destino": "homicidio"
     },
     {
-      "origen": "Barrio Inglés",
-      "tipo": "LUGAR_DE_HECHO",
-      "destino": "homicidio"
-    },
-    {
-      "origen": "Coquimbo",
-      "tipo": "LUGAR_DE_HECHO",
-      "destino": "homicidio"
-    },
-    {
-      "origen": "presunto autor del homicidio",
+      "origen": "el presunto autor del homicidio",
       "tipo": "PRESUNTO_AUTOR_DE",
       "destino": "homicidio"
+    },
+    {
+      "origen": "el presunto autor del homicidio",
+      "tipo": "DETENIDO_EN",
+      "destino": "Coquimbo"
+    },
+    {
+      "origen": "Un hombre",
+      "tipo": "UBICADO_EN",
+      "destino": "Barrio Inglés"
     }
   ]
 }

@@ -1,6 +1,6 @@
-# una locataria
+# sitio del suceso
 
-Tipo: Persona
+Tipo: Lugare
 
 ## Noticias relacionadas
 - [[Noticias/N009|N009]]

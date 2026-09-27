@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-03-19T14:23:35-03:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/03/19/cae-clan-familiar-los-shein-18-detenidos-tras-operativo-en-13-viviendas-de-coquimbo-y-la-serena.shtml",
-  "resumen": "Un operativo simultáneo e interregional de Carabineros, encabezado por el OS7 en 13 viviendas de La Serena y Coquimbo, permitió desarticular a la organización criminal \"Los Shein\" y detener a 18 personas, incautando armamento, municiones, vehículos, motocicleta y drogas.",
+  "resumen": "Carabineros desarticuló a la organización criminal \"Los Shein\" dedicada al tráfico de drogas en La Serena y Coquimbo, tras un operativo en 13 viviendas que dejó 18 detenidos y el decomiso de armas, municiones, vehículos, motocicleta y drogas.",
   "delitos": [
     "tráfico de drogas",
     "disparos injustificados en la vía pública",
@@ -21,7 +21,7 @@
     },
     {
       "nombre": "Christian Brebi",
-      "rol": "jefe de Zona de Carabineros Coquimbo"
+      "rol": null
     }
   ],
   "organizaciones": [
@@ -122,23 +122,33 @@
   "relaciones": [
     {
       "origen": "Y.A.P.L.",
-      "tipo": "VINCULADO_A",
+      "tipo": "TIENE_ORDEN_VIGENTE_POR",
       "destino": "disparos injustificados en la vía pública"
     },
     {
       "origen": "Y.A.P.L.",
-      "tipo": "VINCULADO_A",
+      "tipo": "TIENE_ORDEN_VIGENTE_POR",
       "destino": "tráfico de drogas"
     },
     {
       "origen": "Y.A.P.L.",
-      "tipo": "VINCULADO_A",
+      "tipo": "TIENE_ORDEN_VIGENTE_POR",
       "destino": "homicidio frustrado"
     },
     {
       "origen": "Los Shein",
       "tipo": "VINCULADO_A",
       "destino": "tráfico de drogas"
+    },
+    {
+      "origen": "Carabineros",
+      "tipo": "INTERVINO",
+      "destino": "La Serena"
+    },
+    {
+      "origen": "Carabineros",
+      "tipo": "INTERVINO",
+      "destino": "Coquimbo"
     }
   ]
 }

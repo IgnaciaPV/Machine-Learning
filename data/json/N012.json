@@ -4,15 +4,16 @@
   "fecha_publicacion": "2026-06-23T14:55:09-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/06/23/carabineros-desarticula-centro-de-acopio-de-drogas-y-detiene-a-dos-hombres-tras-operativo-en-coquimbo.shtml",
-  "resumen": "Carabineros desarticuló un centro de acopio de drogas en el sector de Tierras Blancas en Coquimbo y detuvo a dos hombres adultos durante un operativo de allanamiento.",
+  "resumen": "Carabineros desarticuló un centro de acopio de drogas en Tierras Blancas, comuna de Coquimbo, y detuvo a dos hombres adultos que contaban con prontuario policial por tenencia de armas, tráfico de drogas, robo con violencia y lesiones.",
   "delitos": [
     "tráfico de drogas",
     "robo con violencia",
-    "lesiones"
+    "lesiones",
+    "tenencia de armas"
   ],
   "personas": [
     {
-      "nombre": "dos hombres",
+      "nombre": "dos hombres adultos",
       "rol": "detenido"
     }
   ],
@@ -26,7 +27,7 @@
   ],
   "objetos": [
     {
-      "tipo": "droga",
+      "tipo": "sustancia",
       "nombre": "droga",
       "cantidad": null,
       "unidad": null
@@ -35,8 +36,28 @@
   "relaciones": [
     {
       "origen": "Carabineros",
-      "tipo": "DETUVO",
-      "destino": "dos hombres"
+      "tipo": "DESARTICULO",
+      "destino": "dos hombres adultos"
+    },
+    {
+      "origen": "dos hombres adultos",
+      "tipo": "ASOCIADO_A",
+      "destino": "tráfico de drogas"
+    },
+    {
+      "origen": "dos hombres adultos",
+      "tipo": "ASOCIADO_A",
+      "destino": "robo con violencia"
+    },
+    {
+      "origen": "dos hombres adultos",
+      "tipo": "ASOCIADO_A",
+      "destino": "lesiones"
+    },
+    {
+      "origen": "dos hombres adultos",
+      "tipo": "ASOCIADO_A",
+      "destino": "tenencia de armas"
     }
   ]
 }

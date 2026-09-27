@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-08-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260810/pags-amp/20260810131415.html",
-  "resumen": "Una mujer extranjera fue asesinada a puñaladas en la vía pública en la localidad de Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes, siendo puesto a disposición del Ministerio Público.",
+  "resumen": "Una mujer de nacionalidad extranjera fue asesinada a puñaladas en la vía pública en la localidad de Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia el sector de Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes, siendo puesto a disposición del Ministerio Público.",
   "delitos": [
     "homicidio"
   ],
@@ -18,7 +18,7 @@
       "rol": null
     },
     {
-      "nombre": "sujeto",
+      "nombre": "el sospechoso",
       "rol": "detenido"
     }
   ],
@@ -27,8 +27,8 @@
     "Ministerio Público"
   ],
   "lugares": [
-    "Vicuña",
     "Diaguitas",
+    "Vicuña",
     "Provincia de Elqui",
     "Región de Coquimbo",
     "Andacollito"
@@ -43,7 +43,7 @@
     {
       "tipo": "arma",
       "nombre": "pistola de aire comprimido",
-      "cantidad": 1,
+      "cantidad": null,
       "unidad": null
     },
     {
@@ -55,33 +55,23 @@
   ],
   "relaciones": [
     {
-      "origen": "sujeto",
-      "tipo": "ES_AUTOR_DE",
-      "destino": "homicidio"
-    },
-    {
-      "origen": "sujeto",
-      "tipo": "FUE_CAPTURADO_EN",
-      "destino": "Andacollito"
-    },
-    {
       "origen": "Carabineros",
-      "tipo": "CAPTURO_A",
-      "destino": "sujeto"
+      "tipo": "CAPTURÓ",
+      "destino": "el sospechoso"
     },
     {
-      "origen": "sujeto",
-      "tipo": "TENIA_EN_POSESION",
+      "origen": "el sospechoso",
+      "tipo": "TENÍA_EN_POSESIÓN",
       "destino": "arma cortopunzante"
     },
     {
-      "origen": "sujeto",
-      "tipo": "TENIA_EN_POSESION",
+      "origen": "el sospechoso",
+      "tipo": "TENÍA_EN_POSESIÓN",
       "destino": "pistola de aire comprimido"
     },
     {
-      "origen": "sujeto",
-      "tipo": "TENIA_EN_POSESION",
+      "origen": "el sospechoso",
+      "tipo": "TENÍA_EN_POSESIÓN",
       "destino": "elementos contundentes"
     }
   ]

@@ -1,4 +1,4 @@
-# una mujer de 56 años
+# Una persona de sexo masculino, no identificado
 
 Tipo: Persona
 
@@ -6,4 +6,4 @@ Tipo: Persona
 - [[Noticias/N003|N003]]
 
 ## Roles explícitos observados
-- detenido
+- víctima

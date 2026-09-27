@@ -4,7 +4,7 @@
   "fecha_publicacion": "2026-07-17T09:20:09-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/07/17/hombre-es-asesinado-con-arma-cortante-al-interior-de-terminal-de-buses-de-coquimbo-pdi-busca-al-autor.shtml",
-  "resumen": "Un hombre de 42 años fue asesinado con un arma cortante al interior del Terminal de Buses de Coquimbo tras sostener una discusión y ser atacado por un tercer sujeto que huyó del lugar. La PDI y el Ministerio Público realizan diligencias para dar con el responsable.",
+  "resumen": "Un hombre de 42 años murió tras ser atacado con un arma cortante al interior del Terminal de Buses de Coquimbo, luego de sostener una discusión. La PDI y el Ministerio Público realizan diligencias para dar con el autor, quien se encuentra prófugo.",
   "delitos": [
     "homicidio"
   ],
@@ -14,11 +14,15 @@
       "rol": "víctima"
     },
     {
-      "nombre": "una locataria",
+      "nombre": "una locataria del terminal",
       "rol": null
     },
     {
       "nombre": "un tercer sujeto",
+      "rol": null
+    },
+    {
+      "nombre": "presunto autor",
       "rol": null
     }
   ],
@@ -26,11 +30,13 @@
     "Policía de Investigaciones (PDI)",
     "Ministerio Público",
     "Brigada de Homicidios (BH) de La Serena",
-    "Laboratorio de Criminalística Regional (Lacrim)"
+    "Laboratorio de Criminalística Regional (Lacrim)",
+    "Brigada de Homicidios de La Serena"
   ],
   "lugares": [
     "Terminal de Buses de Coquimbo",
-    "La Serena"
+    "La Serena",
+    "sitio del suceso"
   ],
   "objetos": [
     {
@@ -42,14 +48,19 @@
   ],
   "relaciones": [
     {
-      "origen": "un hombre de 42 años",
-      "tipo": "VICTIMA_DE",
-      "destino": "homicidio"
+      "origen": "un tercer sujeto",
+      "tipo": "ATACÓ",
+      "destino": "un hombre de 42 años"
     },
     {
-      "origen": "homicidio",
-      "tipo": "OCURRIO_EN",
-      "destino": "Terminal de Buses de Coquimbo"
+      "origen": "presunto autor",
+      "tipo": "BUSCADO_POR",
+      "destino": "Policía de Investigaciones (PDI)"
+    },
+    {
+      "origen": "Brigada de Homicidios (BH) de La Serena",
+      "tipo": "REALIZÓ_DILIGENCIAS_EN",
+      "destino": "sitio del suceso"
     }
   ]
 }

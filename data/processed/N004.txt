@@ -1,0 +1,14 @@
+ID_NOTICIA: N004
+TITULO: Exseremi Matías Letelier fue detenido por disfrazarse de carabinero y realizar controles
+FECHA_PUBLICACION: 2026-07-03
+FUENTE: Cooperativa
+URL: https://www.cooperativa.cl/noticias/site/artic/20260703/pags-amp/20260703202824.html
+
+CUERPO_NOTICIA:
+El exseremi de Salud de la Región de Coquimbo
+por disfrazarse de carabinero e intentar realizar controles de tránsito en La Serena.
+la exautoridad durante el segundo Gobierno de Sebastián Piñera
+utilizó un vehículo con encargo por robo, que contaba con balizas y elementos que simulaban pertenecer a la institución con el fin de detener a conductores.
+Letelier fue detenido por los delitos de
+usurpación de funciones públicas, infracción a la Ley de Control de Armas y receptación de vehículo.
+Quedó a disposición del Ministerio Público para su respectivo control de detención.

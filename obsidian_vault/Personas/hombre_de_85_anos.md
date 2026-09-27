@@ -1,9 +1,9 @@
-# hombre chileno de 42 años
+# hombre de 85 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N010|N010]]
+- [[Noticias/N003|N003]]
 
 ## Roles explícitos observados
 - víctima

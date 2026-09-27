@@ -4,8 +4,10 @@
   "fecha_publicacion": "2026-08-16",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260816/pags-amp/20260816121717.html",
-  "resumen": "Una persecución en La Serena terminó con la detención de un hombre que intentó escapar de un control policial lanzándose al Río Elqui. Personal de Carabineros incautó medicamentos y un vehículo, y se informó que el detenido registra antecedentes policiales por tráfico de drogas en pequeñas cantidades.",
-  "delitos": [],
+  "resumen": "Una persecución policial en La Serena culminó con la detención de un hombre tras intentar escapar lanzándose al Río Elqui. Personal de Carabineros incautó un vehículo y jarabes de codeína valorados en más de un millón de pesos.",
+  "delitos": [
+    "tráfico de drogas en pequeñas cantidades"
+  ],
   "personas": [
     {
       "nombre": "un hombre",
@@ -19,7 +21,7 @@
   "organizaciones": [
     "Primera Comisaría",
     "Carabineros",
-    "1ª Comisaría"
+    "Carabineros Región de Coquimbo"
   ],
   "lugares": [
     "La Serena",
@@ -28,14 +30,14 @@
   ],
   "objetos": [
     {
-      "tipo": "medicamento",
-      "nombre": "jarabes de codeína",
+      "tipo": "vehículo",
+      "nombre": "vehículo",
       "cantidad": null,
       "unidad": null
     },
     {
-      "tipo": "vehículo",
-      "nombre": "vehículo",
+      "tipo": "medicamento",
+      "nombre": "jarabes de codeína",
       "cantidad": null,
       "unidad": null
     }
@@ -44,17 +46,12 @@
     {
       "origen": "un hombre",
       "tipo": "DETENIDO_EN",
-      "destino": "La Serena"
-    },
-    {
-      "origen": "un hombre",
-      "tipo": "EVADIO_CONTROL_DE",
-      "destino": "Primera Comisaría"
+      "destino": "Río Elqui"
     },
     {
       "origen": "Carabineros",
-      "tipo": "INCAUTO_EN",
-      "destino": "La Serena"
+      "tipo": "INCAUTO",
+      "destino": "jarabes de codeína"
     }
   ]
 }

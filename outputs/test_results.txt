@@ -2,6 +2,8 @@ test_recupera_fecha_url_amp (test_adquisicion.TestCapturadorCooperativa.test_rec
 test_recupera_fecha_url_no_amp (test_adquisicion.TestCapturadorCooperativa.test_recupera_fecha_url_no_amp) ... ok
 test_genera_resumen_y_visualizaciones (test_analisis.TestAnalisis.test_genera_resumen_y_visualizaciones) ... ok
 test_postprocesado_descarta_actor_policial_generico_como_persona (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_actor_policial_generico_como_persona) ... ok
+test_postprocesado_descarta_agresion_afirmativa_con_acento (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_agresion_afirmativa_con_acento) ... Relación descartada por sobreafirmar culpabilidad: un imputado --AGREDIÓ_CON--> arma cortante (rol=imputado)
+ok
 test_postprocesado_descarta_relacion_huerfana (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_relacion_huerfana) ... Relación descartada por endpoint no trazable: víctima --VIO_A--> entidad inexistente
 ok
 test_postprocesado_descarta_uso_afirmativo_para_imputado (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_uso_afirmativo_para_imputado) ... Relación descartada por sobreafirmar culpabilidad: un imputado --USO--> arma cortante (rol=imputado)
@@ -22,6 +24,6 @@ test_detecta_campo_faltante (test_validacion.TestValidadorJSON.test_detecta_camp
 test_valido_y_trazable (test_validacion.TestValidadorJSON.test_valido_y_trazable) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 0.774s
+Ran 19 tests in 1.018s
 
 OK

@@ -1,9 +1,9 @@
-# presunto autor del homicidio
+# un hombre chileno de 42 años
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N005|N005]]
+- [[Noticias/N010|N010]]
 
 ## Roles explícitos observados
-- detenido
+- víctima

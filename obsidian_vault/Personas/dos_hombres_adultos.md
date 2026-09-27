@@ -1,9 +1,9 @@
-# un hombre de 85 años
+# dos hombres adultos
 
 Tipo: Persona
 
 ## Noticias relacionadas
-- [[Noticias/N003|N003]]
+- [[Noticias/N012|N012]]
 
 ## Roles explícitos observados
-- víctima
+- detenido
