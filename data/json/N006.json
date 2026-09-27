@@ -4,13 +4,13 @@
   "fecha_publicacion": "2026-08-10",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260810/pags-amp/20260810131415.html",
-  "resumen": "Una mujer de nacionalidad extranjera fue asesinada a puñaladas en la vía pública en la localidad de Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia el sector de Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes antes de ponerlo a disposición del Ministerio Público.",
+  "resumen": "Una mujer extranjera fue asesinada a puñaladas en la vía pública en la localidad de Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes, siendo puesto a disposición del Ministerio Público.",
   "delitos": [
     "homicidio"
   ],
   "personas": [
     {
-      "nombre": "mujer",
+      "nombre": "mujer de nacionalidad extranjera",
       "rol": "víctima"
     },
     {
@@ -18,7 +18,7 @@
       "rol": null
     },
     {
-      "nombre": "el sospechoso",
+      "nombre": "sujeto",
       "rol": "detenido"
     }
   ],
@@ -27,8 +27,8 @@
     "Ministerio Público"
   ],
   "lugares": [
-    "Diaguitas",
     "Vicuña",
+    "Diaguitas",
     "Provincia de Elqui",
     "Región de Coquimbo",
     "Andacollito"
@@ -43,41 +43,46 @@
     {
       "tipo": "arma",
       "nombre": "pistola de aire comprimido",
-      "cantidad": null,
+      "cantidad": 1,
       "unidad": null
     },
     {
       "tipo": "objeto",
-      "nombre": "otros elementos contundentes",
+      "nombre": "elementos contundentes",
       "cantidad": null,
       "unidad": null
     }
   ],
   "relaciones": [
     {
-      "origen": "el sospechoso",
-      "tipo": "UBICADO_EN",
+      "origen": "sujeto",
+      "tipo": "ES_AUTOR_DE",
+      "destino": "homicidio"
+    },
+    {
+      "origen": "sujeto",
+      "tipo": "FUE_CAPTURADO_EN",
       "destino": "Andacollito"
     },
     {
       "origen": "Carabineros",
-      "tipo": "CAPTURO",
-      "destino": "el sospechoso"
+      "tipo": "CAPTURO_A",
+      "destino": "sujeto"
     },
     {
-      "origen": "el sospechoso",
-      "tipo": "POSEYÓ",
+      "origen": "sujeto",
+      "tipo": "TENIA_EN_POSESION",
       "destino": "arma cortopunzante"
     },
     {
-      "origen": "el sospechoso",
-      "tipo": "POSEYÓ",
+      "origen": "sujeto",
+      "tipo": "TENIA_EN_POSESION",
       "destino": "pistola de aire comprimido"
     },
     {
-      "origen": "el sospechoso",
-      "tipo": "POSEYÓ",
-      "destino": "otros elementos contundentes"
+      "origen": "sujeto",
+      "tipo": "TENIA_EN_POSESION",
+      "destino": "elementos contundentes"
     }
   ]
 }

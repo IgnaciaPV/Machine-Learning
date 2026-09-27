@@ -4,9 +4,9 @@
   "fecha_publicacion": "2026-06-01",
   "fuente": "Cooperativa",
   "url": "https://www.cooperativa.cl/noticias/site/artic/20260601/pags-amp/20260601102915.html",
-  "resumen": "Una persecución policial originada por el robo de una camioneta en La Serena terminó con un delincuente baleado y tres menores de edad detenidos tras colisionar con una casa.",
+  "resumen": "Una persecución policial por el robo de una camioneta en La Serena terminó con un delincuente baleado, quien es atendido en el Hospital de La Serena, y tres menores de edad detenidos tras colisionar con una casa.",
   "delitos": [
-    "robo de auto"
+    "robo"
   ],
   "personas": [
     {
@@ -14,7 +14,7 @@
       "rol": "víctima"
     },
     {
-      "nombre": "un delincuente baleado",
+      "nombre": "un delincuente",
       "rol": "detenido"
     },
     {
@@ -37,15 +37,20 @@
     {
       "tipo": "vehículo",
       "nombre": "camioneta",
-      "cantidad": null,
+      "cantidad": 1,
       "unidad": null
     }
   ],
   "relaciones": [
     {
       "origen": "Carabineros",
-      "tipo": "INICIÓ_SEGUIMIENTO_DE",
+      "tipo": "INICIO_SEGUIMIENTO",
       "destino": "camioneta"
+    },
+    {
+      "origen": "un delincuente",
+      "tipo": "ATENDIDO_EN",
+      "destino": "Hospital de La Serena"
     }
   ]
 }

@@ -4,30 +4,29 @@
   "fecha_publicacion": "2026-06-23T14:55:09-04:00",
   "fuente": "BioBioChile",
   "url": "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/06/23/carabineros-desarticula-centro-de-acopio-de-drogas-y-detiene-a-dos-hombres-tras-operativo-en-coquimbo.shtml",
-  "resumen": "Carabineros desarticuló un centro de acopio de drogas y detuvo a dos hombres adultos en Tierras Blancas, comuna de Coquimbo, tras allanar su domicilio e incautar droga. Los sujetos cuentan con prontuario policial por tráfico de drogas, tenencia de armas, robo con violencia y lesiones.",
+  "resumen": "Carabineros desarticuló un centro de acopio de drogas en el sector de Tierras Blancas en Coquimbo y detuvo a dos hombres adultos durante un operativo de allanamiento.",
   "delitos": [
     "tráfico de drogas",
-    "tenencia de armas",
     "robo con violencia",
     "lesiones"
   ],
   "personas": [
     {
-      "nombre": "dos hombres adultos",
+      "nombre": "dos hombres",
       "rol": "detenido"
     }
   ],
   "organizaciones": [
-    "Carabineros"
+    "Carabineros",
+    "Tribunal de Garantía de Coquimbo"
   ],
   "lugares": [
     "Tierras Blancas",
-    "Coquimbo",
-    "Tribunal de Garantía de Coquimbo"
+    "Coquimbo"
   ],
   "objetos": [
     {
-      "tipo": "sustancia",
+      "tipo": "droga",
       "nombre": "droga",
       "cantidad": null,
       "unidad": null
@@ -37,27 +36,7 @@
     {
       "origen": "Carabineros",
       "tipo": "DETUVO",
-      "destino": "dos hombres adultos"
-    },
-    {
-      "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A_DELITO",
-      "destino": "tráfico de drogas"
-    },
-    {
-      "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A_DELITO",
-      "destino": "tenencia de armas"
-    },
-    {
-      "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A_DELITO",
-      "destino": "robo con violencia"
-    },
-    {
-      "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A_DELITO",
-      "destino": "lesiones"
+      "destino": "dos hombres"
     }
   ]
 }
