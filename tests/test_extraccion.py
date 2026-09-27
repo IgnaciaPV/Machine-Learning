@@ -114,6 +114,20 @@ class TestExtractorGemini(unittest.TestCase):
         limpio = ExtractorGemini._postprocesar_estructurado(data)
         self.assertEqual(limpio["relaciones"], [])
 
+    def test_postprocesado_descarta_agresion_afirmativa_con_acento(self):
+        data = {
+            "delitos": ["homicidio"],
+            "personas": [{"nombre": "un imputado", "rol": "imputado"}],
+            "organizaciones": [],
+            "lugares": [],
+            "objetos": [{"tipo": "arma", "nombre": "arma cortante", "cantidad": None, "unidad": None}],
+            "relaciones": [
+                {"origen": "un imputado", "tipo": "AGREDIÓ_CON", "destino": "arma cortante"}
+            ],
+        }
+        limpio = ExtractorGemini._postprocesar_estructurado(data)
+        self.assertEqual(limpio["relaciones"], [])
+
 
 if __name__ == "__main__":
     unittest.main()
