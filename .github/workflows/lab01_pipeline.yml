@@ -111,6 +111,7 @@ jobs:
             echo "No hay salidas nuevas que versionar."
           else
             git commit -m "data: generar salidas validadas del laboratorio"
+            git pull --rebase origin main
             git push
           fi
 
