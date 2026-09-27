@@ -260,6 +260,20 @@ TEXTO PROCESADO:
                     limpios.append(texto)
             data[campo] = limpios
 
+        # Tribunales y juzgados pertenecen al modelo de ORGANIZACIÓN del laboratorio.
+        # Si el LLM los entrega como lugar por tratarse de un edificio físico, se corrige
+        # de forma determinista para no mezclar instituciones con comunas/ciudades.
+        organizaciones = list(data.get("organizaciones", []) or [])
+        lugares_corregidos: list[str] = []
+        for lugar in data.get("lugares", []) or []:
+            texto = str(lugar).strip()
+            if re.search(r"\b(juzgado|tribunal)\b", texto, re.IGNORECASE):
+                organizaciones.append(texto)
+            else:
+                lugares_corregidos.append(texto)
+        data["lugares"] = list(dict.fromkeys(lugares_corregidos))
+        data["organizaciones"] = list(dict.fromkeys(organizaciones))
+
         for campo, clave_nombre in (("personas", "nombre"), ("objetos", "nombre")):
             vistos: set[str] = set()
             limpios: list[dict[str, Any]] = []
@@ -269,6 +283,15 @@ TEXTO PROCESADO:
                 clave = str(item.get(clave_nombre, "")).strip().casefold()
                 if not clave or clave in vistos:
                     continue
+
+                # Expresiones colectivas policiales son organizaciones/actores
+                # institucionales, no personas individuales.
+                if campo == "personas" and re.fullmatch(
+                    r"(los\s+)?uniformados|(nuestros\s+)?carabineros|detectives|personal\s+policial|funcionarios\s+policiales",
+                    clave,
+                ):
+                    continue
+
                 vistos.add(clave)
                 # Una valorización monetaria no es cantidad física del objeto.
                 if campo == "objetos":
@@ -327,7 +350,7 @@ TEXTO PROCESADO:
             )
             relacion_afirmativa = tipo_norm in {
                 "cometio", "cometio_delito", "autor_de", "culpable_de",
-                "agredio_a", "ataco_a", "asesino_a"
+                "agredio_a", "ataco_a", "asesino_a", "uso"
             }
             conserva_incertidumbre = any(
                 marca in tipo_norm for marca in ("presunt", "habria", "sospech", "investig")
@@ -336,6 +359,17 @@ TEXTO PROCESADO:
                 LOGGER.warning(
                     "Relación descartada por sobreafirmar culpabilidad: %s --%s--> %s (rol=%s)",
                     origen, tipo, destino, rol,
+                )
+                continue
+
+            # Una relación de "vinculación" no debe apuntar a un lugar físico.
+            # Si el modelo no extrajo la organización/red correspondiente, es más
+            # seguro descartar la relación que reinterpretarla.
+            lugares_cf = {str(x).strip().casefold() for x in data.get("lugares", [])}
+            if "vincul" in tipo_norm and destino.casefold() in lugares_cf:
+                LOGGER.warning(
+                    "Relación descartada por destino semánticamente incompatible: %s --%s--> %s",
+                    origen, tipo, destino,
                 )
                 continue
 
