@@ -4,19 +4,21 @@ Laboratorio 01 del Minor de Sistemas Inteligentes / Machine Learning de la Unive
 
 ## Estado final verificado
 
-La versión final fue ejecutada de extremo a extremo en **GitHub Actions (run #11, 26-09-2026)** con estado **SUCCESS**:
+La versión usada para la entrega se ejecutó nuevamente de extremo a extremo en **GitHub Actions (run #14, 27-09-2026)** y terminó con estado **SUCCESS**. La ejecución no usa resultados escritos a mano: vuelve a capturar las fuentes, limpia los textos, consulta Gemini, valida los JSON, reconstruye la bóveda y recalcula el análisis.
 
-- 12 noticias procesadas;
+Resultados de ese run:
+
+- 12 noticias capturadas y limpiadas;
 - 12 JSON válidos y 0 fallidos;
-- 37 relaciones extraídas;
-- 195 archivos Markdown en la bóveda;
+- 38 relaciones conservadas después de los controles;
+- 36 personas y 26 organizaciones únicas en el corpus estructurado;
+- 185 archivos Markdown en la bóveda;
 - 0 enlaces rotos;
 - 7 visualizaciones de Data Understanding;
-- 14/14 pruebas automatizadas aprobadas;
-- auditoría manual de 12/12 noticias;
-- 0 relaciones dudosas detectadas por el validador final.
+- 19/19 pruebas automatizadas aprobadas;
+- auditoría manual de 12/12 noticias.
 
-El detalle de ejecución está en [`docs/estado_ejecucion.md`](docs/estado_ejecucion.md) y la revisión humana caso a caso en [`docs/auditoria_manual_final.md`](docs/auditoria_manual_final.md).
+El detalle técnico está en [`docs/estado_ejecucion.md`](docs/estado_ejecucion.md), la evidencia del run en [`docs/evidencia_ejecucion.md`](docs/evidencia_ejecucion.md) y la revisión caso a caso en [`docs/auditoria_manual_final.md`](docs/auditoria_manual_final.md).
 
 ## Objetivo
 
@@ -90,7 +92,7 @@ GEMINI_API_KEY=su_clave
 3. Opcionalmente fijar un modelo:
 
 ```dotenv
-GEMINI_MODEL=gemini-3.8-flash
+GEMINI_MODEL=gemini-3.5-flash-lite
 ```
 
 `.env` está excluido de Git. El código nunca imprime la clave.
@@ -111,7 +113,7 @@ Documentación oficial de referencia:
 - revisar manualmente al menos 10 noticias;
 - mantener trazabilidad y calidad antes que volumen.
 
-La adquisición en vivo es reproducible. Los archivos `data/raw/` y `data/processed/` se generan al ejecutar `capturar`; no se publican copias completas de las noticias en Git para evitar redistribuir contenido periodístico. En una máquina o GitHub Actions con Internet, `capturar --forzar` recaptura desde la URL original.
+La adquisición en vivo es reproducible. Los HTML completos de `data/raw/` se regeneran desde las URLs y se conservan como evidencia del workflow, mientras que los textos ya limpiados de `data/processed/` sí se versionan porque son parte directa del laboratorio. En una máquina o en GitHub Actions con Internet, `capturar --forzar` vuelve a obtener las fuentes originales.
 
 ## Comandos
 
@@ -235,7 +237,7 @@ Los metadatos de trazabilidad (`id_noticia`, `fuente`, `url`) no se confían al 
 python -m unittest discover -s tests -v
 ```
 
-Las pruebas cubren limpieza, prompt/parsing estructurado, validación, generación de Obsidian, enlaces internos, Data Understanding y trazabilidad del corpus.
+Las pruebas cubren adquisición, fechas, limpieza, eliminación de bloques editoriales ajenos, prompt y parsing estructurado, controles de presunción, reclasificación de tribunales, validación, Obsidian, enlaces internos, Data Understanding y trazabilidad. El run final aprobó 19/19.
 
 ## Abrir la bóveda
 
@@ -260,8 +262,12 @@ Este proyecto es académico y exploratorio. Una investigación, detención o imp
 - `docs/referencia_auditoria_manual.json`
 - `docs/auditoria_llm.md` (guía generada al ejecutar la auditoría)
 - `docs/auditoria_manual_final.md` (revisión humana final N001-N012)
-- `docs/estado_ejecucion.md` (evidencia y métricas del run final)
-- `report/LAB01_Informe_Final.pdf` (informe académico final, cuando se compila/publica)
+- `docs/esquema_json.md` (estructura y reglas de modelado)
+- `docs/trazabilidad.md` (rutas N001-N012 desde fuente hasta Obsidian)
+- `docs/evidencia_ejecucion.md` (archivos que permiten comprobar las cifras del informe)
+- `docs/estado_ejecucion.md` (métricas y entorno del run final)
+- `outputs/environment_runtime.txt` (modelo, Python y versiones de dependencias)
+- `report/LAB01_Informe_Final.pdf` (informe académico final)
 
 ## Seguridad
 
