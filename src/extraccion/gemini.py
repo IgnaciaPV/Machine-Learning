@@ -6,6 +6,7 @@ import logging
 import os
 import re
 import time
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -345,15 +346,19 @@ TEXTO PROCESADO:
             # autor culpable mediante un tipo afirmativo como COMETIO_DELITO.
             rol = roles_persona.get(origen.casefold(), "")
             tipo_norm = tipo.casefold()
+            tipo_sem = "".join(
+                c for c in unicodedata.normalize("NFKD", tipo_norm)
+                if not unicodedata.combining(c)
+            )
             rol_no_condenatorio = any(
                 marca in rol for marca in ("deten", "imput", "sospech", "presunt", "investig")
             )
-            relacion_afirmativa = tipo_norm in {
-                "cometio", "cometio_delito", "autor_de", "culpable_de",
-                "agredio_a", "ataco_a", "asesino_a", "uso"
-            }
+            relacion_afirmativa = (
+                tipo_sem in {"cometio", "cometio_delito", "autor_de", "culpable_de", "uso"}
+                or tipo_sem.startswith(("agredio", "ataco", "asesino", "uso_"))
+            )
             conserva_incertidumbre = any(
-                marca in tipo_norm for marca in ("presunt", "habria", "sospech", "investig")
+                marca in tipo_sem for marca in ("presunt", "habria", "sospech", "investig")
             )
             if rol_no_condenatorio and relacion_afirmativa and not conserva_incertidumbre:
                 LOGGER.warning(
