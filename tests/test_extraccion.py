@@ -56,6 +56,64 @@ class TestExtractorGemini(unittest.TestCase):
         limpio = ExtractorGemini._postprocesar_estructurado(data)
         self.assertIsNone(limpio["objetos"][0]["cantidad"])
 
+    def test_postprocesado_reclasifica_tribunal_como_organizacion(self):
+        data = {
+            "delitos": [],
+            "personas": [],
+            "organizaciones": [],
+            "lugares": ["Coquimbo", "Juzgado de Garantía de Coquimbo"],
+            "objetos": [],
+            "relaciones": [],
+        }
+        limpio = ExtractorGemini._postprocesar_estructurado(data)
+        self.assertIn("Juzgado de Garantía de Coquimbo", limpio["organizaciones"])
+        self.assertNotIn("Juzgado de Garantía de Coquimbo", limpio["lugares"])
+
+    def test_postprocesado_descarta_actor_policial_generico_como_persona(self):
+        data = {
+            "delitos": [],
+            "personas": [
+                {"nombre": "los uniformados", "rol": None},
+                {"nombre": "Eugenio Olea", "rol": "Tte. Crl."},
+            ],
+            "organizaciones": ["Carabineros"],
+            "lugares": [],
+            "objetos": [],
+            "relaciones": [],
+        }
+        limpio = ExtractorGemini._postprocesar_estructurado(data)
+        nombres = [p["nombre"] for p in limpio["personas"]]
+        self.assertNotIn("los uniformados", nombres)
+        self.assertIn("Eugenio Olea", nombres)
+
+    def test_postprocesado_descarta_vinculacion_hacia_lugar(self):
+        data = {
+            "delitos": ["tráfico de drogas"],
+            "personas": [{"nombre": "cinco gendarmes", "rol": "detenidos"}],
+            "organizaciones": [],
+            "lugares": ["cárcel de Illapel"],
+            "objetos": [],
+            "relaciones": [
+                {"origen": "cinco gendarmes", "tipo": "PRESUNTA_VINCULACION_A", "destino": "cárcel de Illapel"}
+            ],
+        }
+        limpio = ExtractorGemini._postprocesar_estructurado(data)
+        self.assertEqual(limpio["relaciones"], [])
+
+    def test_postprocesado_descarta_uso_afirmativo_para_imputado(self):
+        data = {
+            "delitos": ["homicidio"],
+            "personas": [{"nombre": "un imputado", "rol": "imputado"}],
+            "organizaciones": [],
+            "lugares": [],
+            "objetos": [{"tipo": "arma", "nombre": "arma cortante", "cantidad": None, "unidad": None}],
+            "relaciones": [
+                {"origen": "un imputado", "tipo": "USO", "destino": "arma cortante"}
+            ],
+        }
+        limpio = ExtractorGemini._postprocesar_estructurado(data)
+        self.assertEqual(limpio["relaciones"], [])
+
 
 if __name__ == "__main__":
     unittest.main()
