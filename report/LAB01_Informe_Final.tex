@@ -1,0 +1,287 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\renewcommand{\lstlistingname}{Código}
+\captionsetup[table]{skip=6pt}
+\lstset{language=Python,basicstyle=\ttfamily\scriptsize,frame=single,breaklines=true,showstringspaces=false,columns=fullflexible,keepspaces=true,numbers=left,numberstyle=\tiny,captionpos=b}
+
+\title{Laboratorio 01: Noticias delictuales, Gemini y Obsidian\\
+\vspace{0.35em}\large \textbf{Asignatura}: \textit{Machine Learning} (2026-02)\\
+\vspace{0.25em}\normalsize \textbf{Profesor}: Dr. Juan Bekios Calfa}
+
+\author{\IEEEauthorblockN{Ignacia Belén Peña Velásquez}
+\IEEEauthorblockA{\textit{Escuela de Ingeniería}\\
+\textit{Universidad Católica del Norte}\\
+Ingeniería Civil Industrial\\
+\texttt{ignacia.pena@alumnos.ucn.cl}}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+El laboratorio consistió en transformar noticias delictuales publicadas en Internet en una estructura que pudiera revisarse, validarse y navegarse en Obsidian. Se trabajó con 12 noticias de la Región de Coquimbo y se implementó el flujo completo: captura, limpieza, extracción con Gemini, validación del JSON, generación de notas Markdown y Data Understanding. La versión final obtuvo 12 JSON válidos y 0 fallidos. También se revisaron manualmente las 12 noticias. Esa revisión fue importante porque permitió encontrar problemas que una validación puramente sintáctica no detectaba, como contenido de ``Lee también'', tribunales clasificados como lugares o relaciones que podían perder la presunción indicada en la noticia. El resultado final corresponde a una base de conocimiento documental; no pretende reemplazar estadísticas oficiales ni determinar culpabilidad.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Gemini, extracción estructurada, JSON, Obsidian, grafo de conocimiento, Data Understanding, trazabilidad.
+\end{IEEEkeywords}
+
+\section{Introducción}
+La información de una noticia es fácil de leer para una persona, pero no necesariamente está preparada para comparar casos o seguir relaciones entre entidades. En este laboratorio el problema se abordó pensando en un \textbf{analista de información delictual}: el objetivo no fue acumular artículos, sino convertirlos en conocimiento consultable manteniendo siempre el vínculo con la fuente original \cite{bekios2026}.
+
+El alcance se fijó en noticias publicadas durante 2026 relacionadas con la Región de Coquimbo. Las fuentes del corpus semilla fueron Cooperativa y BioBioChile. Se trabajó con 12 noticias porque el propósito del laboratorio era comprobar el pipeline completo y poder revisar manualmente una muestra suficiente; no se buscó construir una base estadística representativa de la delincuencia regional.
+
+Se definió como relación útil un vínculo explícito dentro de la noticia o una entidad compartida entre documentos: mismo delito, persona, organización o lugar. No se utilizó clustering. Cuando un dato no aparecía, se dejó como \texttt{null} o lista vacía. Además, se mantuvo una distinción estricta entre detenido, imputado, sospechoso, víctima y otras condiciones, ya que ninguna de ellas equivale automáticamente a culpabilidad.
+
+Las herramientas principales fueron Python 3.12, \texttt{requests}, BeautifulSoup, \texttt{pandas}, \texttt{matplotlib}, Pydantic, el SDK \texttt{google-genai}, Conda, GitHub Actions y Obsidian.
+
+\section{Marco teórico}
+El trabajo sigue la adaptación de CRISP-DM planteada para el laboratorio: comprensión del problema, comprensión y preparación de los datos, extracción mediante LLM, validación del JSON, generación del conocimiento en Obsidian y evaluación crítica del resultado \cite{bekios2026}. En este caso el LLM no se considera la fuente de verdad. Su función es proponer una estructura a partir del texto; posteriormente el código verifica esa estructura y la auditoría humana revisa el significado.
+
+Para reducir respuestas libres se usó salida estructurada. Gemini recibe el texto limpio y un esquema basado en Pydantic, de modo que la respuesta debe ajustarse al JSON esperado. Este enfoque es compatible con la documentación oficial de Gemini sobre \emph{structured outputs} \cite{googleStructured}. Aun así, un JSON válido puede contener una interpretación discutible; por eso se separaron la validación estructural y la revisión semántica.
+
+La persistencia final no es una base SQL. Cada noticia y cada entidad relevante se guarda como Markdown y se conecta mediante enlaces internos de Obsidian. El grafo resultante sirve para navegar menciones y coapariciones; que dos noticias compartan una entidad no demuestra una relación causal entre los hechos.
+
+\section{Metodología}
+\subsection{Business Understanding y modelo de conocimiento}
+Antes de llamar a Gemini se definieron usuario, alcance, fuentes, entidades y reglas. Las entidades usadas fueron Noticia, Delito, Persona, Organización, Lugar, Objeto y Relación. De acuerdo con el modelo entregado por el profesor, tribunales, fiscalías e instituciones policiales se clasifican como \textbf{organizaciones}; comunas, ciudades, regiones y puntos geográficos se clasifican como \textbf{lugares} \cite{bekios2026}.
+
+El contrato JSON incluye \texttt{id\_noticia}, título, fecha, fuente, URL, resumen, delitos, personas, organizaciones, lugares, objetos y relaciones. Cada persona conserva \texttt{nombre} y \texttt{rol}; cada objeto usa \texttt{tipo}, \texttt{nombre}, \texttt{cantidad} y \texttt{unidad}; las relaciones usan \texttt{origen}, \texttt{tipo} y \texttt{destino}. El esquema completo y sus reglas quedaron documentados en \texttt{docs/esquema\_json.md}.
+
+\subsection{Adquisición y preparación}
+Cada noticia mantiene un ID estable \texttt{NXXX}. La captura usa \texttt{requests.Session}, timeout, User-Agent identificable, redirecciones y pausas. Los adaptadores de fuente localizan el artículo y el limpiador elimina \texttt{script}, \texttt{style}, navegación, pie de página, recomendaciones y repeticiones.
+
+Durante las primeras pruebas aparecieron dos errores concretos. Primero, algunas fechas de Cooperativa no se recuperaban por un patrón de URL mal escapado. Segundo, en BioBioChile una tarjeta ``Lee también'' podía quedar dentro del contenido y contaminar la noticia siguiente. Ambos problemas se corrigieron y se agregaron pruebas específicas para evitar regresiones.
+
+\subsection{Extracción con Gemini y validación}
+La ejecución final fijó el modelo mediante la variable \texttt{GEMINI\_MODEL=gemini-3.5-flash-lite}. El prompt exige extraer solo contenido explícito, devolver JSON, mantener la incertidumbre de expresiones como ``presunto'' o ``habría'' y no transformar una valorización monetaria en dinero incautado.
+
+Después de Gemini se aplica un postproceso conservador. Este elimina duplicados exactos, reclasifica juzgados y tribunales como organizaciones, descarta referencias policiales genéricas tratadas erróneamente como personas y elimina relaciones con extremos inexistentes. También se descartan relaciones que transformen a una persona detenida, imputada o sospechosa en autora afirmativa del delito sin respaldo explícito. Si una relación de ``vinculación'' termina en un lugar físico por error del LLM, se elimina en vez de reinterpretarla.
+
+Finalmente, \texttt{ValidadorJSON} verifica campos, tipos, ID, URL, fuente y estructura de personas, objetos y relaciones. De este modo la etapa de validación no depende de que Gemini ``se corrija a sí mismo''.
+
+\subsection{Obsidian y trazabilidad}
+Los JSON válidos generan notas en \texttt{Noticias/}, \texttt{Delitos/}, \texttt{Personas/}, \texttt{Organizaciones/}, \texttt{Lugares/}, \texttt{Objetos/} y \texttt{Relaciones/}. Las conexiones se escriben con \texttt{[[wikilinks]]} y el propio proyecto revisa que no existan enlaces rotos.
+
+La trazabilidad se mantiene de extremo a extremo. Por ejemplo, N005 se sigue por las rutas \path{data/urls.csv}, \path{data/raw/N005.html}, \path{data/processed/N005.txt}, \path{data/json/N005.json}, \path{data/validation/N005.validation.json} y \path{obsidian_vault/Noticias/N005.md}. La matriz completa para N001--N012 quedó en \path{docs/trazabilidad.md}.
+
+\subsection{Data Understanding y auditoría}
+Una vez generado el corpus estructurado se calcularon noticias por fuente, delitos frecuentes, lugares frecuentes, co-menciones delito--lugar, cantidad de personas y organizaciones por noticia, porcentaje de campos ausentes y evolución temporal. También se revisaron duplicados, JSON inválidos, variantes nominales y relaciones problemáticas.
+
+La revisión manual cubrió las 12 noticias. Para cada caso se contrastó la fuente con el texto procesado, el JSON y la nota generada. Esta etapa se mantuvo separada de los tests: los tests comprueban comportamiento del código; la auditoría revisa si el significado extraído sigue siendo defendible.
+
+\section{Resultados}
+La ejecución final corresponde a GitHub Actions, run \#14, con estado \textbf{SUCCESS}. Se procesaron 12 noticias; 8 pertenecen a Cooperativa y 4 a BioBioChile. Se obtuvieron 12 JSON válidos, 0 fallidos y 0 JSON estructuralmente inválidos. El conjunto final contiene 38 relaciones, 36 personas únicas y 26 organizaciones únicas. La bóveda quedó con 185 archivos Markdown y 0 enlaces rotos. Las pruebas automatizadas finalizaron con 19/19 casos aprobados.
+
+\begin{table}[!t]
+\centering
+\caption{Indicadores principales de la ejecución final.}
+\label{tab:final}
+\scriptsize
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Indicador} & \textbf{Resultado} \\
+\midrule
+Noticias procesadas & 12 \\
+JSON válidos / fallidos & 12 / 0 \\
+Relaciones extraídas & 38 \\
+Personas / organizaciones únicas & 36 / 26 \\
+Archivos Markdown & 185 \\
+Enlaces rotos & 0 \\
+Pruebas automatizadas & 19/19 \\
+Auditoría manual & 12/12 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\textwidth]{figuras/01_noticias_por_fuente.png}
+\caption{Noticias por fuente. Fuente: elaboración propia a partir de los JSON validados del run \#14.}
+\label{fig:fuentes}
+\end{figure}
+
+La Fig.~\ref{fig:fuentes} muestra una muestra desbalanceada por medio: dos tercios del corpus provienen de Cooperativa. Esta diferencia debe considerarse al interpretar el resto de los gráficos, porque describe cobertura periodística, no incidencia delictual.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\textwidth]{figuras/02_delitos_frecuentes.png}
+\caption{Delitos mencionados con mayor frecuencia. Fuente: elaboración propia, run \#14.}
+\label{fig:delitos}
+\end{figure}
+
+En la Fig.~\ref{fig:delitos}, homicidio es el delito más repetido con 6 noticias y tráfico de drogas aparece en 3. El resultado depende directamente del corpus seleccionado y no se interpreta como una tasa regional.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\textwidth]{figuras/03_lugares_frecuentes.png}
+\caption{Lugares más mencionados después de separar tribunales e instituciones. Fuente: elaboración propia, run \#14.}
+\label{fig:lugares}
+\end{figure}
+
+La corrección del modelo de entidades evita mezclar juzgados o tribunales con comunas. En la Fig.~\ref{fig:lugares} los primeros lugares corresponden a referencias geográficas del corpus; esto hace que el gráfico responda mejor a la pregunta ``¿dónde se mencionan los hechos?''.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\textwidth]{figuras/04_delitos_por_lugar.png}
+\caption{Co-menciones de delitos y lugares dentro de una misma noticia. Fuente: elaboración propia, run \#14.}
+\label{fig:delugar}
+\end{figure}
+
+La Fig.~\ref{fig:delugar} sirve para explorar qué delitos aparecen junto a determinados lugares. La co-mención no demuestra que un lugar tenga mayor riesgo ni que exista una relación causal; solamente resume el contenido de las noticias procesadas.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\textwidth]{figuras/05_entidades_por_noticia.png}
+\caption{Personas y organizaciones extraídas por noticia. Fuente: elaboración propia, run \#14.}
+\label{fig:entidades}
+\end{figure}
+
+La Fig.~\ref{fig:entidades} permite detectar noticias con alta densidad de entidades, como operativos con varias instituciones, y otras donde la fuente publica pocos nombres. Por tanto, una barra baja no significa que falten datos obligatoriamente; puede reflejar una redacción periodística más reservada.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\textwidth]{figuras/06_campos_faltantes.png}
+\caption{Porcentaje de noticias con campos estructurales ausentes. Fuente: elaboración propia, run \#14.}
+\label{fig:faltantes}
+\end{figure}
+
+Los campos \texttt{objetos} y \texttt{relaciones} presentan el mayor porcentaje de ausencia, ambos con 8,33\%. En este proyecto una lista vacía no se considera automáticamente un error: si una noticia no menciona un arma, sustancia, vehículo u objeto relevante, es preferible mantener \texttt{[]} antes que completar el dato por inferencia.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\textwidth]{figuras/07_evolucion_temporal.png}
+\caption{Distribución temporal de las noticias del corpus. Fuente: elaboración propia, run \#14.}
+\label{fig:temporal}
+\end{figure}
+
+La Fig.~\ref{fig:temporal} muestra cuándo se publicaron las noticias seleccionadas. Con solo 12 registros no es válido hablar de tendencia criminal; el gráfico se usa para revisar cobertura temporal y comprobar que las fechas fueron recuperadas de manera consistente.
+
+En calidad de datos se registraron 0 noticias duplicadas, 0 JSON inválidos y 1 grupo(s) de variantes nominales. Después de los controles automáticos no quedaron relaciones con extremos no trazables. La auditoría manual se mantuvo como una segunda capa, porque una relación puede ser estructuralmente válida y aun así necesitar contexto.
+
+\section{Discusión}
+Los errores encontrados durante el desarrollo fueron útiles para entender dónde falla realmente este tipo de pipeline. El caso de ``Lee también'' mostró que una limpieza aparentemente correcta puede incorporar texto que sí pertenece al sitio, pero no a la noticia analizada. Algo parecido ocurrió con la clasificación de un Juzgado de Garantía: el nombre puede referirse a un edificio físico, pero el modelo de conocimiento del laboratorio define tribunales como organizaciones. Se corrigió esa regla antes de regenerar los análisis.
+
+También se revisaron N007 y N010 porque en una versión anterior aparecían relaciones que, aunque cumplían la forma del JSON, simplificaban demasiado el significado. En N007 se descartó una ``vinculación'' cuyo destino era una cárcel en vez de la red u organización a la que hacía referencia el texto. En N010 se eliminaron relaciones afirmativas de agresión o uso de arma cuando la persona estaba descrita como imputada y la noticia mantenía expresiones de incertidumbre. En ambos casos se prefirió perder una relación antes que fortalecer una acusación.
+
+El principal límite que sigue presente es la correferencia. Un mismo individuo puede aparecer como ``un hombre'', ``el sujeto'' o ``el imputado''. Se evitó fusionar estas expresiones automáticamente porque un criterio demasiado agresivo puede unir personas distintas. Para un trabajo de mayor escala sería necesario construir un conjunto anotado manualmente y medir precisión y recall por entidad y relación.
+
+\section{Conclusiones}
+El laboratorio permitió completar el flujo solicitado desde una noticia pública hasta una red de notas navegables. La parte más útil no fue solamente obtener JSON, sino comprobar que la calidad depende de varias capas: limpieza, esquema, validación, reglas conservadoras, trazabilidad y revisión humana.
+
+La versión final procesa las 12 noticias sin fallos estructurales, genera el vault sin enlaces rotos y deja evidencia reproducible de pruebas, entorno y resultados. Aun así, las estadísticas obtenidas deben leerse como características de este corpus y no como información oficial sobre delincuencia. Como continuación natural sería conveniente ampliar el corpus solo después de disponer de un conjunto de referencia anotado, de modo que la calidad del extractor pueda medirse y no solo inspeccionarse.
+
+\section{Código y reproducibilidad}
+El proyecto se organiza con \texttt{main.py} como orquestador y módulos dentro de \texttt{src/} para adquisición, limpieza, extracción, validación, conocimiento y análisis. El entorno se define en \texttt{environment.yml}; no se utiliza \texttt{requirements.txt}. La clave de Gemini permanece fuera del repositorio y GitHub Actions la obtiene desde \texttt{secrets.GEMINI\_API\_KEY}.
+
+El run final registra el commit, versiones de Python y librerías, modelo Gemini y número de ejecución en \texttt{outputs/environment\_runtime.txt}. La configuración usada fue Python 3.12.14, \texttt{google-genai} 2.25.0 y \texttt{gemini-3.5-flash-lite}. Los resultados de las pruebas quedan en \texttt{outputs/test\_results.txt}; la auditoría completa está en \texttt{docs/auditoria\_manual\_final.md} y la matriz de trazabilidad en \texttt{docs/trazabilidad.md}.
+
+\begin{lstlisting}[caption={Ejecución del corpus semilla},label={lst:ejecucion}]
+conda env create -f environment.yml
+conda activate lab-noticias-obsidian
+python main.py capturar --forzar
+python main.py extraer --forzar
+python main.py obsidian
+python main.py analizar
+python main.py auditar
+python -m unittest discover -s tests -v
+\end{lstlisting}
+
+El repositorio de trabajo es \url{https://github.com/IgnaciaPV/Machine-Learning}. Al momento de preparar la entrega se mantiene privado, por lo que el profesor debe tener acceso como colaborador o recibir el paquete completo de evidencia.
+
+\appendices
+\section{Auditoría manual N001--N012}
+\begin{table*}[!t]
+\centering
+\caption{Resumen de la revisión manual del corpus final.}
+\label{tab:audit}
+\footnotesize
+\begin{tabular}{@{}p{0.05\textwidth}p{0.16\textwidth}p{0.70\textwidth}@{}}
+\toprule
+\textbf{ID} & \textbf{Estado} & \textbf{Revisión realizada} \\
+\midrule
+N001 & Con observación & Se mantuvieron el detenido, Río Elqui y los jarabes. Se eliminaron referencias policiales genéricas tratadas como personas y se anuló la valorización como cantidad física. Persisten correferencias del detenido. \\
+N002 & Conforme & Robo de camioneta, víctima, persecución y detenidos se mantienen sin agregar delitos adicionales. \\
+N003 & Con observación & Se distinguen los dos homicidios y se conserva la condición de presunta autora. Persisten algunas correferencias descriptivas. \\
+N004 & Conforme & Los delitos imputados se mantienen como tales; el postproceso impide convertir la detención en afirmación de culpabilidad. \\
+N005 & Conforme & Homicidio, víctima, arma y presunto autor quedan respaldados; el Juzgado de Garantía se clasifica como organización. \\
+N006 & Conforme & Se conservan víctima, captura y objetos incautados sin generar una relación afirmativa de autoría. \\
+N007 & Corregido & Se mantienen los cinco gendarmes y los delitos investigados. Se eliminó la relación de vinculación que apuntaba erróneamente a una cárcel como destino semántico. \\
+N008 & Conforme & El JSON indica que la víctima fue hallada en un pozo y que el caso se investiga como homicidio, sin afirmar que el pozo sea el lugar de ejecución. \\
+N009 & Conforme & Se mantienen víctima, terminal, arma y tercer sujeto sin inventar la identidad del autor. \\
+N010 & Corregido & Se conserva \texttt{PRESUNTO\_AUTOR\_DE}; se descartaron relaciones afirmativas de agresión/uso de arma que podían borrar la incertidumbre de la noticia. \\
+N011 & Conforme & La limpieza ya no incorpora la noticia recomendada del bloque ``Lee también''. \\
+N012 & Conforme & Se conservan los dos detenidos y los antecedentes delictuales mencionados; el Tribunal de Garantía se trata como organización. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Pauta oficial y autoevaluación}
+La pauta propuesta en la presentación del laboratorio distribuye la evaluación en siete criterios \cite{bekios2026}. La tabla no asigna una nota; únicamente indica dónde se encuentra la evidencia para que el criterio pueda revisarse.
+
+\begin{table}[!h]
+\centering
+\caption{Trazabilidad de la pauta de evaluación.}
+\label{tab:rubrica}
+\scriptsize
+\begin{tabular}{@{}p{0.23\textwidth}p{0.06\textwidth}p{0.13\textwidth}@{}}
+\toprule
+\textbf{Criterio} & \textbf{Peso} & \textbf{Evidencia} \\
+\midrule
+Business Understanding y alcance & 10\% & Sec. I y III-A \\
+Modelo de conocimiento y JSON & 15\% & III-A, esquema \\
+Adquisición y limpieza & 15\% & III-B, tests \\
+Gemini y validación & 20\% & III-C, JSON \\
+Vault de Obsidian & 20\% & III-D, vault \\
+Data Understanding & 10\% & Figs. 1--7 \\
+Crítica, ética y reproducibilidad & 10\% & V--VII, auditoría \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Evidencia de ejecución}
+La ejecución que respalda las cifras del informe quedó registrada de forma automática, sin incluir secretos. Esto permite diferenciar los resultados del corpus de una descripción escrita posteriormente.
+
+\begin{table}[!h]
+\centering
+\caption{Metadatos del entorno final.}
+\scriptsize
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Elemento} & \textbf{Valor} \\
+\midrule
+GitHub Actions & run \#14 (ID 36354954389) \\
+Commit de entrada & \texttt{a56119a0f1fa...} \\
+Python & 3.12.14 \\
+\texttt{google-genai} & 2.25.0 \\
+Modelo & \texttt{gemini-3.5-flash-lite} \\
+Captura / limpieza & 12 / 12 \\
+JSON válidos / fallidos & 12 / 0 \\
+Pruebas & 19 / 19 \\
+Vault & 185 Markdown; 0 enlaces rotos \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Como comprobación rápida de trazabilidad, N005 conserva la secuencia \path{data/processed/N005.txt} $\rightarrow$ \path{data/json/N005.json} $\rightarrow$ \path{data/validation/N005.validation.json} $\rightarrow$ \path{obsidian_vault/Noticias/N005.md}. Los 12 textos procesados se incluyen en el repositorio final; el HTML RAW y la respuesta cruda del LLM permanecen en el artifact de GitHub Actions para no convertir el repositorio en una copia masiva de contenido periodístico.
+
+\begin{thebibliography}{00}
+\bibitem{bekios2026} J. Bekios Calfa, ``Laboratorio: Noticias delictuales, LLM y Obsidian - De texto no estructurado a grafo de conocimiento,'' material de Machine Learning, Universidad Católica del Norte, 2026.
+\bibitem{googleStructured} Google, ``Structured outputs - Gemini API,'' Google AI for Developers, documentación consultada para la implementación del laboratorio, 2026. [En línea]. Disponible: \url{https://ai.google.dev/gemini-api/docs/structured-output}
+\bibitem{googleInteractions} Google, ``Interactions API - Gemini API,'' Google AI for Developers, documentación consultada para la implementación del laboratorio, 2026. [En línea]. Disponible: \url{https://ai.google.dev/gemini-api/docs/interactions-overview}
+\end{thebibliography}
+
+\end{document}
