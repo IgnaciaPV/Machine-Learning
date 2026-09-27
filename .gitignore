@@ -19,9 +19,8 @@ report/*.synctex.gz
 report/*.fdb_latexmk
 report/*.fls
 # El PDF final del informe sí se versiona; temporales no.
-# Contenido periodístico completo: se genera localmente/CI desde URLs y no se publica en Git.
+# HTML RAW y respuestas crudas del LLM se preservan como artifact de CI; el texto procesado sí se versiona como entregable del laboratorio.
 data/raw/*.html
 data/raw/*.meta.json
-data/processed/*.txt
 data/llm_raw/*
 # Artefactos de ejecución generados por CI se descargan como artifact y luego se curan para entrega.
