@@ -43,6 +43,26 @@ jobs:
           conda env list
           python --version
 
+      - name: Registrar entorno de ejecución
+        shell: bash -el {0}
+        run: |
+          mkdir -p outputs
+          {
+            echo "github_run_number=$GITHUB_RUN_NUMBER"
+            echo "github_run_id=$GITHUB_RUN_ID"
+            echo "git_sha=$GITHUB_SHA"
+            echo "gemini_model=$GEMINI_MODEL"
+            python --version
+            python - <<'PY'
+          import importlib.metadata as md
+          for paquete in ("google-genai", "pydantic", "pandas", "matplotlib", "requests", "beautifulsoup4"):
+              try:
+                  print(f"{paquete}={md.version(paquete)}")
+              except md.PackageNotFoundError:
+                  print(f"{paquete}=NO_INSTALADO")
+          PY
+          } > outputs/environment_runtime.txt
+
       - name: Captura HTTP real
         shell: bash -el {0}
         run: python main.py capturar --forzar
