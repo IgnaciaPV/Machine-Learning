@@ -45,13 +45,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp report/LAB01_Informe_Final.pdf /tmp/LAB01_Informe_Final.pdf
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/LAB01_Informe_Final.pdf report/LAB01_Informe_Final.pdf
           git add -f report/LAB01_Informe_Final.pdf
           if git diff --cached --quiet; then
             echo "El PDF ya coincide con la versión actual."
           else
             git commit -m "report: compilar informe final"
-            git pull --rebase origin main
-            git push
+            git push origin HEAD:main
           fi
 
       - name: Guardar informe como artifact
