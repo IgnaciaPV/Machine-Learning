@@ -84,7 +84,7 @@ Finalmente, \texttt{ValidadorJSON} verifica campos, tipos, ID, URL, fuente y est
 \subsection{Obsidian y trazabilidad}
 Los JSON válidos generan notas en \texttt{Noticias/}, \texttt{Delitos/}, \texttt{Personas/}, \texttt{Organizaciones/}, \texttt{Lugares/}, \texttt{Objetos/} y \texttt{Relaciones/}. Las conexiones se escriben con \texttt{[[wikilinks]]} y el propio proyecto revisa que no existan enlaces rotos.
 
-La trazabilidad se mantiene de extremo a extremo. Por ejemplo, N005 se sigue por las rutas \path{data/urls.csv}, \path{data/raw/N005.html}, \path{data/processed/N005.txt}, \path{data/json/N005.json}, \path{data/validation/N005.validation.json} y \path{obsidian_vault/Noticias/N005.md}. La matriz completa para N001--N012 quedó en \path{docs/trazabilidad.md}.
+La trazabilidad se mantiene de extremo a extremo. Por ejemplo, durante la ejecución N005 sigue las rutas \path{data/urls.csv}, \path{data/raw/N005.html}, \path{data/processed/N005.txt}, \path{data/json/N005.json}, \path{data/validation/N005.validation.json} y \path{obsidian_vault/Noticias/N005.md}. El HTML RAW se conserva en el artifact del workflow, mientras que el texto procesado, JSON, validación y notas de Obsidian quedan versionados en el repositorio. Así se mantiene capacidad de auditoría sin publicar como archivos ordinarios una copia completa del contenido periodístico. La matriz completa para N001--N012 quedó en \path{docs/trazabilidad.md}.
 
 \subsection{Data Understanding y auditoría}
 Una vez generado el corpus estructurado se calcularon noticias por fuente, delitos frecuentes, lugares frecuentes, co-menciones delito--lugar, cantidad de personas y organizaciones por noticia, porcentaje de campos ausentes y evolución temporal. También se revisaron duplicados, JSON inválidos, variantes nominales y relaciones problemáticas.
@@ -196,6 +196,11 @@ La versión final procesa las 12 noticias sin fallos estructurales, genera el va
 El proyecto se organiza con \texttt{main.py} como orquestador y módulos dentro de \texttt{src/} para adquisición, limpieza, extracción, validación, conocimiento y análisis. El entorno se define en \texttt{environment.yml}; no se utiliza \texttt{requirements.txt}. La clave de Gemini permanece fuera del repositorio y GitHub Actions la obtiene desde \texttt{secrets.GEMINI\_API\_KEY}.
 
 El run final registra el commit, versiones de Python y librerías, modelo Gemini y número de ejecución en \texttt{outputs/environment\_runtime.txt}. La configuración usada fue Python 3.12.14, \texttt{google-genai} 2.25.0 y \texttt{gemini-3.5-flash-lite}. Los resultados de las pruebas quedan en \texttt{outputs/test\_results.txt}; la auditoría completa está en \texttt{docs/auditoria\_manual\_final.md} y la matriz de trazabilidad en \texttt{docs/trazabilidad.md}.
+
+\subsection{Automatización y trazabilidad técnica}
+GitHub Actions se utilizó como mecanismo de integración continua y reproducibilidad. El workflow \texttt{lab01\_pipeline.yml} ejecuta el pipeline y publica las salidas estructuradas; \texttt{report\_compile.yml} compila y publica el PDF del informe. Por diseño, cuando un workflow materializa y versiona un artefacto, GitHub registra técnicamente a \texttt{github-actions[bot]} como autor y \emph{committer} de ese commit. Durante la preparación inicial del repositorio también se utilizaron automatizaciones de integración, por lo que el historial conserva otros commits de esa cuenta de servicio.
+
+La identidad \texttt{github-actions[bot]} identifica el proceso automático de GitHub y no un integrante adicional del equipo ni una fuente de información del corpus. El run \#14 del pipeline fue activado por la cuenta \texttt{IgnaciaPV}, ejecutó el commit \texttt{a56119a0f1fab19fc65a792ea7058c7f499c4d60} y finalizó con estado \textbf{SUCCESS}. El historial se conserva sin reescritura para que la procedencia de las ejecuciones y de los artefactos automáticos siga siendo verificable.
 
 \begin{lstlisting}[caption={Ejecución del corpus semilla},label={lst:ejecucion}]
 conda env create -f environment.yml

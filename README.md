@@ -20,6 +20,12 @@ Resultados de ese run:
 
 El detalle técnico está en [`docs/estado_ejecucion.md`](docs/estado_ejecucion.md), la evidencia del run en [`docs/evidencia_ejecucion.md`](docs/evidencia_ejecucion.md) y la revisión caso a caso en [`docs/auditoria_manual_final.md`](docs/auditoria_manual_final.md).
 
+## Automatización y trazabilidad del historial
+
+Este repositorio usa **GitHub Actions como integración continua**, por lo que algunos commits aparecen técnicamente atribuidos a `github-actions[bot]`. Esto ocurre cuando un workflow genera y publica un artefacto reproducible, por ejemplo los JSON/validaciones/vault derivados del pipeline o el PDF compilado del informe. Durante la integración inicial del proyecto también se usaron automatizaciones para materializar archivos en el repositorio, por lo que el historial contiene otros commits de esa cuenta de servicio.
+
+`github-actions[bot]` es la identidad técnica del proceso automático de GitHub; no corresponde a un integrante adicional ni a una fuente de datos. El **run #14** del pipeline fue activado por `IgnaciaPV`, ejecutó el commit `a56119a0f1fab19fc65a792ea7058c7f499c4d60` y terminó en **SUCCESS**. El historial se mantiene sin reescritura para conservar trazabilidad entre cambios, ejecuciones y artefactos generados.
+
 ## Objetivo
 
 El pipeline implementa:

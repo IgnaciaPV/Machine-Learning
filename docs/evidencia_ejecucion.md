@@ -1,5 +1,11 @@
 # Evidencia reproducible de la ejecución final
 
+## Identidad técnica de los commits automáticos
+
+El proyecto utiliza GitHub Actions para ejecutar el pipeline y compilar artefactos. Cuando un workflow ejecuta `git commit`, GitHub registra a `github-actions[bot]` como autor/committer técnico. El workflow `.github/workflows/lab01_pipeline.yml` publica salidas estructuradas y `.github/workflows/report_compile.yml` publica el PDF compilado. El historial también conserva automatizaciones utilizadas durante la integración inicial del repositorio.
+
+Esta identidad de servicio no representa un tercer integrante ni una fuente del corpus. El run final del pipeline (#14, ID 36354954389) fue activado por `IgnaciaPV`, sobre el commit `a56119a0f1fab19fc65a792ea7058c7f499c4d60`, y terminó con estado `SUCCESS`. Mantener estos commits visibles permite auditar qué material fue producido automáticamente en vez de ocultarlo mediante reescritura del historial.
+
 Esta página reúne los elementos que permiten comprobar las cifras usadas en el informe sin depender de una afirmación escrita.
 
 ## Ejecución
