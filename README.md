@@ -2,6 +2,14 @@
 
 Laboratorio 01 del Minor de Sistemas Inteligentes / Machine Learning de la Universidad Católica del Norte. El proyecto transforma noticias delictuales públicas en un **grafo de conocimiento Markdown navegable en Obsidian**, manteniendo trazabilidad desde la URL hasta el JSON validado y las notas finales.
 
+## Equipo académico
+
+- **Profesor:** Dr. Juan Bekios Calfa
+- **Ayudante:** Gael Ortega
+- **Integrantes:**
+  - Francisco Cortes
+  - Ignacia Peña
+
 ## Estado final verificado
 
 El corpus procede de **GitHub Actions, pipeline #14 (27-09-2026), SUCCESS**. Ese run capturó 12 noticias, consultó Gemini y produjo 12 JSON válidos, 38 relaciones y 19/19 pruebas aprobadas. Su evidencia original se conserva sin modificar.
