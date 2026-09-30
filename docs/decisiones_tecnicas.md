@@ -14,4 +14,8 @@ La normalización de entidades es deliberadamente conservadora: Unicode, espacio
 
 ## Captura en el entorno de desarrollo
 
-El runtime utilizado para construir esta entrega no disponía de resolución DNS desde la terminal. Para no inventar datos, el corpus semilla se recuperó desde las páginas públicas mediante un navegador/lector web disponible y se conservaron snapshots semánticos del **contenido principal real** con URL, título y fecha. Cada sidecar `data/raw/NXXX.meta.json` declara `modo=browser_semantic_snapshot`. En una máquina con Internet, `python main.py capturar --forzar` usa `requests` y reemplaza esos snapshots por captura HTTP real. Esta diferencia queda explícita para no hacer pasar un snapshot semántico por una copia byte-a-byte del HTML original.
+El runtime utilizado para construir esta entrega no disponía de resolución DNS desde la terminal. Para no inventar datos, el corpus semilla se recuperó desde las páginas públicas mediante un navegador/lector web disponible y se conservaron snapshots semánticos del **contenido principal real** con URL, título y fecha. Los sidecars iniciales declaraban `modo=browser_semantic_snapshot`. El run #14 los reemplazó por capturas HTTP reales: sus 12 sidecars conservados declaran `modo=http_live`. En una máquina con Internet, `python main.py capturar --forzar` usa `requests` y reemplaza esos snapshots por captura HTTP real. Esta diferencia queda explícita para no hacer pasar un snapshot semántico por una copia byte-a-byte del HTML original.
+
+## Cierre final
+
+Se preservó el run #14 y se corrigió la limpieza inline sin nuevas dependencias. Las referencias de persona repetidas se separan por noticia: coincidencia textual no equivale a identidad. `36` y `26` son etiquetas normalizadas de persona y organización, no conteos certificados de individuos e instituciones. Las correcciones de JSON se registran como revisión asistida posterior al LLM, no como respuesta nueva de Gemini.

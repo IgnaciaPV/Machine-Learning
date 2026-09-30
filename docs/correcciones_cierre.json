@@ -1,0 +1,292 @@
+{
+  "generado_en": "2026-09-30T01:40:03.912910+00:00",
+  "pipeline_origen": {
+    "run": 14,
+    "id": 36354954389,
+    "sha": "a56119a0f1fab19fc65a792ea7058c7f499c4d60",
+    "resultado": "success"
+  },
+  "metodo": "Revisión offline de los RAW y respuestas conservados. No hubo nuevas llamadas Gemini ni recaptura. Se preserva la evidencia histórica original en LAB01-evidencia-run14.zip; data/processed contiene revisión de limpieza posterior y no se declara como entrada original del run.",
+  "correcciones_json": [
+    {
+      "archivo": "data/json/N001.json",
+      "sha256_run14": "70eb9d4a0caeba4627e64981c8bc7829e904a654ae4b32ab3b549ac7db807366",
+      "campos": {
+        "resumen": {
+          "antes": "Una persecución policial en La Serena culminó con la detención de un hombre tras intentar escapar lanzándose al Río Elqui. Personal de Carabineros incautó un vehículo y jarabes de codeína valorados en más de un millón de pesos.",
+          "despues": "Una persecución policial en La Serena culminó con la detención de un hombre que intentó escapar lanzándose al Río Elqui. El conductor dejó el vehículo abandonado y Carabineros incautó jarabes de codeína valorados en más de un millón de pesos. La mención a tráfico de drogas en pequeñas cantidades corresponde a antecedentes policiales informados por la fuente."
+        },
+        "personas": {
+          "antes": [
+            {
+              "nombre": "un hombre",
+              "rol": "detenido"
+            },
+            {
+              "nombre": "Eugenio Olea",
+              "rol": null
+            }
+          ],
+          "despues": [
+            {
+              "nombre": "un hombre",
+              "rol": "detenido"
+            },
+            {
+              "nombre": "Eugenio Olea",
+              "rol": "teniente coronel de Carabineros"
+            }
+          ]
+        }
+      },
+      "evidencia": "data/raw/N001.html en artifact run #14",
+      "tipo_revision": "corrección semántica asistida; no nueva salida Gemini"
+    },
+    {
+      "archivo": "data/json/N003.json",
+      "sha256_run14": "141fa7656bac0f5a50557f490f764b34ced602eb68474b65a61e5a8c08ee1901",
+      "campos": {
+        "resumen": {
+          "antes": "La PDI investiga dos homicidios ocurridos en las comunas de Salamanca y Coquimbo en la Región de Coquimbo. El primer caso involucra a un hombre de unos 37 años que ingresó fallecido al Hospital de Coquimbo con impactos balísticos tras ser trasladado por sujetos desconocidos. El segundo caso corresponde al homicidio de un hombre de 85 años en Salamanca, cuyo cuerpo fue encontrado por sus familiares con lesiones contusas, quedando una mujer de 56 años detenida y ampliada su detención tras reconocer su participación.",
+          "despues": "La PDI investiga dos homicidios en Salamanca y Coquimbo. Un hombre de unos 37 años ingresó fallecido al Hospital de Coquimbo con impactos balísticos. En el otro caso, un hombre de 85 años fue hallado por sus familiares con lesiones contusas; una mujer de 56 años fue detenida como presunta autora y habría reconocido su participación, según lo informado en la noticia."
+        }
+      },
+      "evidencia": "data/raw/N003.html en artifact run #14",
+      "tipo_revision": "corrección semántica asistida; no nueva salida Gemini"
+    },
+    {
+      "archivo": "data/json/N004.json",
+      "sha256_run14": "db4464094884bed5abfd9c12c3a85fe3c6deff1c7bb6013e3711fb54673d4ed5",
+      "campos": {
+        "relaciones": {
+          "antes": [
+            {
+              "origen": "Matías Letelier",
+              "tipo": "DETENIDO_POR",
+              "destino": "usurpación de funciones públicas"
+            },
+            {
+              "origen": "Matías Letelier",
+              "tipo": "DETENIDO_POR",
+              "destino": "infracción a la Ley de Control de Armas"
+            },
+            {
+              "origen": "Matías Letelier",
+              "tipo": "DETENIDO_POR",
+              "destino": "receptación de vehículo"
+            },
+            {
+              "origen": "vehículo",
+              "tipo": "UBICADO_EN",
+              "destino": "Región de Coquimbo"
+            }
+          ],
+          "despues": [
+            {
+              "origen": "Matías Letelier",
+              "tipo": "DETENIDO_POR",
+              "destino": "usurpación de funciones públicas"
+            },
+            {
+              "origen": "Matías Letelier",
+              "tipo": "DETENIDO_POR",
+              "destino": "infracción a la Ley de Control de Armas"
+            },
+            {
+              "origen": "Matías Letelier",
+              "tipo": "DETENIDO_POR",
+              "destino": "receptación de vehículo"
+            }
+          ]
+        }
+      },
+      "evidencia": "data/raw/N004.html en artifact run #14",
+      "tipo_revision": "corrección semántica asistida; no nueva salida Gemini"
+    },
+    {
+      "archivo": "data/json/N006.json",
+      "sha256_run14": "629658f876d614a4ef1bf8c0df1c9ec528ef193ed87e02630666059c2614b65a",
+      "campos": {
+        "resumen": {
+          "antes": "Una mujer de nacionalidad extranjera fue asesinada a puñaladas en la vía pública en la localidad de Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. El agresor huyó hacia el sector de Andacollito, donde fue capturado por Carabineros, quienes le incautaron un arma cortopunzante, una pistola de aire comprimido y elementos contundentes, siendo puesto a disposición del Ministerio Público.",
+          "despues": "Una mujer de nacionalidad extranjera murió tras ser atacada con un arma cortopunzante en Diaguitas, comuna de Vicuña, mientras dejaba a un niño en el colegio. Carabineros capturó en Andacollito al sospechoso informado por la fuente y halló en su posesión un arma cortopunzante, una pistola de aire comprimido y elementos contundentes. El detenido quedó a disposición del Ministerio Público."
+        }
+      },
+      "evidencia": "data/raw/N006.html en artifact run #14",
+      "tipo_revision": "corrección semántica asistida; no nueva salida Gemini"
+    },
+    {
+      "archivo": "data/json/N009.json",
+      "sha256_run14": "26a1b7539781f7e8ab973bf6851ca92bbbeb4cf02af4a1f48dcb3a762ed305ae",
+      "campos": {
+        "resumen": {
+          "antes": "Un hombre de 42 años murió tras ser atacado con un arma cortante al interior del Terminal de Buses de Coquimbo, luego de sostener una discusión. La PDI y el Ministerio Público realizan diligencias para dar con el autor, quien se encuentra prófugo.",
+          "despues": "Un hombre de 42 años murió tras ser atacado con un arma cortante al interior del Terminal de Buses de Coquimbo, luego de una discusión. La PDI y el Ministerio Público realizan diligencias para identificar y localizar al presunto autor, quien permanecía prófugo al publicarse la noticia."
+        }
+      },
+      "evidencia": "data/raw/N009.html en artifact run #14",
+      "tipo_revision": "corrección semántica asistida; no nueva salida Gemini"
+    },
+    {
+      "archivo": "data/json/N010.json",
+      "sha256_run14": "d5738a99d66f2686c8e3f3d76a8dcad8bbfdcd73c875ec0b090271e88d81332b",
+      "campos": {
+        "resumen": {
+          "antes": "Detectives detuvieron a un hombre chileno de 45 años, presunto autor del homicidio de un hombre chileno de 42 años al interior del Terminal de Buses de Coquimbo, tras agredirlo con un arma cortante.",
+          "despues": "Detectives detuvieron a un chileno de 45 años como presunto autor del homicidio de un hombre chileno de 42 años en el Terminal de Buses de Coquimbo. Según la investigación relatada por la fuente, el imputado habría agredido a la víctima con un arma cortante; será puesto a disposición del Juzgado de Garantía para su control de detención."
+        }
+      },
+      "evidencia": "data/raw/N010.html en artifact run #14",
+      "tipo_revision": "corrección semántica asistida; no nueva salida Gemini"
+    },
+    {
+      "archivo": "data/json/N012.json",
+      "sha256_run14": "0bf629b86d6a49c6c9b863e734bc90aab50824190cd160ae424120d499bf6abb",
+      "campos": {
+        "relaciones": {
+          "antes": [
+            {
+              "origen": "Carabineros",
+              "tipo": "DESARTICULO",
+              "destino": "dos hombres adultos"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "ASOCIADO_A",
+              "destino": "tráfico de drogas"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "ASOCIADO_A",
+              "destino": "robo con violencia"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "ASOCIADO_A",
+              "destino": "lesiones"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "ASOCIADO_A",
+              "destino": "tenencia de armas"
+            }
+          ],
+          "despues": [
+            {
+              "origen": "Carabineros",
+              "tipo": "DETUVO_A",
+              "destino": "dos hombres adultos"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "TIENE_ANTECEDENTES_POR",
+              "destino": "tráfico de drogas"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "TIENE_ANTECEDENTES_POR",
+              "destino": "robo con violencia"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "TIENE_ANTECEDENTES_POR",
+              "destino": "lesiones"
+            },
+            {
+              "origen": "dos hombres adultos",
+              "tipo": "TIENE_ANTECEDENTES_POR",
+              "destino": "tenencia de armas"
+            }
+          ]
+        }
+      },
+      "evidencia": "data/raw/N012.html en artifact run #14",
+      "tipo_revision": "corrección semántica asistida; no nueva salida Gemini"
+    }
+  ],
+  "revision_limpieza": [
+    {
+      "archivo": "data/processed/N001.txt",
+      "sha256_entrada_gemini_run14": "71bb80618293694c831d31289e09ae1431e92fbd998f8c20bd00acff7bd20777",
+      "sha256_revision_cierre": "24010be72a497ebbe91d2a6e4e0950563e2305e3de6373b4500b5b050a0d1a17",
+      "sha256_raw": "012bb7d4a0be7009d3da5de361a4d053923c32328788d07c9feb170f95e65e1a"
+    },
+    {
+      "archivo": "data/processed/N002.txt",
+      "sha256_entrada_gemini_run14": "b8848a15e53d6b14fc74cc853e1e31a1d673fbc18437edc152c224d855825580",
+      "sha256_revision_cierre": "4199b2a8bb37c2f1978b45ed3c043ae612954b609c01ad21608485644c9c1060",
+      "sha256_raw": "82fd11781ef27b898ccc63adc2ba2fe6f4b0a4c84ed0822d2fbd9bec8fb73b9a"
+    },
+    {
+      "archivo": "data/processed/N003.txt",
+      "sha256_entrada_gemini_run14": "c7a4faaef014e0e60ea9791afb48643554414e4e015a9089109850a3e12ee8af",
+      "sha256_revision_cierre": "07d77c491301e45ebe206849846bb9e0352a12438c9daf3d1190f0636f99a19f",
+      "sha256_raw": "3523742bb7fbdb06271b760d6e96610965ef7157cc6014875dc18d5368734240"
+    },
+    {
+      "archivo": "data/processed/N004.txt",
+      "sha256_entrada_gemini_run14": "ba78a3c4e1598fdbfb454bb76f1300dcbf6e010a0f5e5d8602ed967655ce71cf",
+      "sha256_revision_cierre": "c6a078adfcd97453235eec15e3411a732814c972f0a0f33777c54ecf14450423",
+      "sha256_raw": "a1838802d6b766dfabc4c871082006e9c72e6873831dacc74b2eaaa50f499538"
+    },
+    {
+      "archivo": "data/processed/N005.txt",
+      "sha256_entrada_gemini_run14": "2906ce26d809f3ad80ebb16f33a14aa0094c0585fc76378dfa053f3b908eb6ca",
+      "sha256_revision_cierre": "072ffcc3ba90e79f4ad24fcdf7da9bc4889599de622ac8212f3cf53009ffc5e9",
+      "sha256_raw": "10f3c843f48be93a71068fd90c3d9b61b9e9ad925887c5e596b3784f6fd1eacd"
+    },
+    {
+      "archivo": "data/processed/N006.txt",
+      "sha256_entrada_gemini_run14": "513bce36663c384a779ae3368552db2c228db6bcff8d0c8eeb5f7e58d3fbba7d",
+      "sha256_revision_cierre": "c7e60e4bd5fe8ab000c67fd7a2539c5ff3a9a4a074d737ab6e270b4fa58f1c0f",
+      "sha256_raw": "1aba9f3e5fa287f5851a3610ca0a20ae8d7557dbab1bbde49c58835d89085c1e"
+    },
+    {
+      "archivo": "data/processed/N007.txt",
+      "sha256_entrada_gemini_run14": "6d4bf77fb60a89ab7fe919f7914fd7b0aaba0d07d8e7af480bee06b5ce1155c2",
+      "sha256_revision_cierre": "c790050d3b2b0257c2393b8475d1744a3fee499707b63d2f9d790c8abeedaaa6",
+      "sha256_raw": "e78b4ce057350835e67d9a2ed14c08f1eb5b51664946566236e0f895fa4d4596"
+    },
+    {
+      "archivo": "data/processed/N008.txt",
+      "sha256_entrada_gemini_run14": "b8ecbf9284a473e2950aa43bb449b0e8d7fe043e24694f5fd08fabbe611c6164",
+      "sha256_revision_cierre": "eea7714fec8c36157894bca60f90b24496d5cc8c464edb2875f33803be2efdd1",
+      "sha256_raw": "0df05e61e821cc50312dbc9d81222221daf194299dbb281b3ffdde65428dde35"
+    },
+    {
+      "archivo": "data/processed/N009.txt",
+      "sha256_entrada_gemini_run14": "4c78836d54549bb050bf1d20cbd47da787be2a8e943821815ede9c2c8b90ef7c",
+      "sha256_revision_cierre": "00b5323de85de9cc0b9908355b3b556cfedac1fcedb21c71a40261f336613bf9",
+      "sha256_raw": "93bd79343380802ad446d92130b4243acca00c488f36c3777baca72fb874dbc2"
+    },
+    {
+      "archivo": "data/processed/N010.txt",
+      "sha256_entrada_gemini_run14": "da6e68da8bb3229220dfe858acc78d470c901d2e5958a33478544a3bc89c3cf6",
+      "sha256_revision_cierre": "c34464db32748583b33c0513d8c8ce283f3009c9777f5a13fd40e094baf1356f",
+      "sha256_raw": "5ff3a3a5aad10f1e6aa2076d05181050f58a85cc884e65b77ed65a87f887170b"
+    },
+    {
+      "archivo": "data/processed/N011.txt",
+      "sha256_entrada_gemini_run14": "6b7811ec1cd18b66d1f2e571a91448214e41e05cf63af6cb5fa06e12d282c928",
+      "sha256_revision_cierre": "dfd851e485547e8ed31961545345b38f57ac586a9f7df47be62aa8cb151e7e55",
+      "sha256_raw": "a85066dc82bc5ef7b7303705df021cd17f2b9b79e6ebed0329c7daf82a090d6f"
+    },
+    {
+      "archivo": "data/processed/N012.txt",
+      "sha256_entrada_gemini_run14": "a7bd2904ba918114d7e93f2257adfd2e010b3993127c3a45d62275b9433303f8",
+      "sha256_revision_cierre": "af5effbbc3a486c80c2bb2a9f3aea544a11ad418fd06315a1e14ddaa3a2b9331",
+      "sha256_raw": "539179730a42916a5248337acb3f7fef7dbc35832bf284480368ecf14ecc2d4c"
+    }
+  ],
+  "motivos": {
+    "N001": "El RAW describe vehículo abandonado, no incautación del vehículo; delito mencionado como antecedente; rol de Olea explícito.",
+    "N003": "Conservar el habría reconocido de la fuente.",
+    "N004": "La relación vehículo UBICADO_EN Región de Coquimbo era una inferencia geográfica, se elimina.",
+    "N006": "Conservar sospechoso en el resumen, sin adjudicar identidad de autor.",
+    "N009": "Conservar presunto autor y el momento de publicación.",
+    "N010": "Conservar habría agredido en resumen y relaciones.",
+    "N012": "El centro fue desarticulado; las personas fueron detenidas. Los otros delitos se mencionan como antecedentes, no hechos nuevos.",
+    "Obsidian": "Las descripciones un hombre en N001 y N005 son personas distintas y se separan por ID de noticia.",
+    "Limpieza": "Reunir texto inline antes del filtro de longitud para no eliminar fragmentos semánticos."
+  }
+}

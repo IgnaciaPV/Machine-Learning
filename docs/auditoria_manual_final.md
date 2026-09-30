@@ -8,6 +8,12 @@ La referencia técnica es **GitHub Actions run #14 (ID 36354954389), estado SUCC
 
 Que un JSON sea válido significa que cumple el contrato estructural y los controles automáticos. La auditoría humana sigue siendo necesaria para revisar matices que no se resuelven con `json.loads` o Pydantic.
 
+## Revisión de cierre posterior
+
+La tabla siguiente conserva la auditoría manual declarada del run #14. La revisión asistida posterior detectó problemas adicionales, registrados en `docs/correcciones_cierre.json`: pérdida de fragmentos inline, sobreafirmaciones en resúmenes N001/N003/N006/N009/N010, geografía inferida en N004, verbo incorrecto y falta de contexto de antecedentes en N012, y fusión de la etiqueta `un hombre` entre N001 y N005. No se presenta esa revisión asistida como una nueva auditoría humana firmada.
+
+El cierre deja 37 relaciones, 185 notas y 23/23 pruebas. N010 conserva `HABRIA_COMETIDO` y `HABRIA_AGREDIDO_A`, también en su resumen. N012 usa `DETUVO_A` y `TIENE_ANTECEDENTES_POR`. Los nombres y roles omitidos que no se completaron siguen siendo limitaciones del extractor; no se afirma extracción exhaustiva.
+
 ## Revisión caso a caso
 
 | ID | Estado final | Observación |
@@ -40,6 +46,6 @@ Que un JSON sea válido significa que cumple el contrato estructural y los contr
 
 ## Limitaciones que se mantienen de forma consciente
 
-La salida final conserva una variante nominal potencial (`Un hombre` / `un hombre`) y pueden existir correferencias como `un hombre` / `el sujeto` que una persona reconocerá como el mismo actor. No se aplica fuzzy matching a nombres de personas porque una fusión agresiva puede mezclar individuos distintos.
+Los JSON conservan las etiquetas (`Un hombre` / `un hombre`), pero sus notas de persona se separan por noticia: N001 es un detenido y N005 una víctima de otro caso. La similitud textual no identifica a una misma persona. La salida y pueden existir correferencias como `un hombre` / `el sujeto` que una persona reconocerá como el mismo actor. No se aplica fuzzy matching a nombres de personas porque una fusión agresiva puede mezclar individuos distintos.
 
 Los recuentos y gráficos describen únicamente las 12 noticias seleccionadas. No son tasas oficiales de delincuencia ni permiten inferir riesgo por comuna.

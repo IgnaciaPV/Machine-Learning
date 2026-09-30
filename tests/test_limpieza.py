@@ -3,6 +3,12 @@ from src.limpieza import LimpiadorHTML
 
 
 class TestLimpiadorHTML(unittest.TestCase):
+    def test_conserva_fragmentos_inline_y_calificadores(self):
+        html = '<article><p>El imputado <strong>habría</strong> agredido a la víctima en el <a>Hospital San Pablo</a>, según la investigación.</p></article>'
+        cuerpo = LimpiadorHTML().limpiar(html)
+        self.assertIn("habría agredido", cuerpo)
+        self.assertIn("Hospital San Pablo", cuerpo)
+
     def test_elimina_ruido_y_conserva_cuerpo(self):
         html = '''<html><body><nav>Menú de navegación que no debe sobrevivir a la limpieza.</nav>
         <article><h1>Título de prueba</h1>

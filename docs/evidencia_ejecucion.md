@@ -38,7 +38,7 @@ Esta página reúne los elementos que permiten comprobar las cifras usadas en el
 
 El workflow empaqueta además `data/raw/`, `data/llm_raw/`, `data/processed/`, JSON, validaciones, vault, outputs y logs. El HTML completo y la respuesta cruda del LLM no se publican como archivos normales del repositorio, pero quedan asociados a la ejecución para auditoría.
 
-## Comprobaciones finales
+## Comprobaciones históricas del run #14
 
 - Captura HTTP: 12/12
 - Limpieza: 12/12
@@ -49,3 +49,11 @@ El workflow empaqueta además `data/raw/`, `data/llm_raw/`, `data/processed/`, J
 - Enlaces rotos: 0
 - Tests: 19/19
 - Auditoría manual: 12/12
+
+## Cierre posterior sin nueva extracción
+
+La entrega incorpora las correcciones verificadas en `docs/correcciones_cierre.json`: 12 JSON válidos, 37 relaciones, 185 notas y 0 enlaces rotos. La suite de cierre aprobó 23/23 (`outputs/test_results_cierre.txt`). El run #14 conserva sus cifras históricas 38 relaciones y 19 pruebas; no se presenta como una ejecución de los cambios posteriores.
+
+`data/processed/` contiene la revisión de limpieza del cierre; los textos exactos enviados a Gemini permanecen dentro del ZIP original del run y se identifican por SHA-256. Los siete gráficos no se regeneraron: las correcciones no modificaron sus variables ni recuentos.
+
+El artifact original ID 10943591125 vence el 04-10-2026 22:22 UTC. Se descargó y conservó intacto como `LAB01_Evidencia_Run14_Original.zip` (SHA-256 `457341f305b19d2cce57d379e0dc75db39510010fe523de4b02baaf86287b1c8`), para adjuntarlo con la entrega.

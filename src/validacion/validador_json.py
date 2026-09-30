@@ -66,6 +66,9 @@ class ValidadorJSON:
         except (OSError, UnicodeError, json.JSONDecodeError) as exc:
             errores.append(f"JSON ilegible o sintácticamente inválido: {exc}")
 
+        if not errores and not isinstance(data, dict):
+            errores.append("La raíz JSON debe ser un objeto, no una lista ni un escalar")
+
         if isinstance(data, dict):
             faltantes = [c for c in self.CAMPOS_OBLIGATORIOS if c not in data]
             if faltantes:

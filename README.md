@@ -4,27 +4,32 @@ Laboratorio 01 del Minor de Sistemas Inteligentes / Machine Learning de la Unive
 
 ## Estado final verificado
 
-La versión usada para la entrega se ejecutó nuevamente de extremo a extremo en **GitHub Actions (run #14, 27-09-2026)** y terminó con estado **SUCCESS**. La ejecución no usa resultados escritos a mano: vuelve a capturar las fuentes, limpia los textos, consulta Gemini, valida los JSON, reconstruye la bóveda y recalcula el análisis.
+El corpus procede de **GitHub Actions, pipeline #14 (27-09-2026), SUCCESS**. Ese run capturó 12 noticias, consultó Gemini y produjo 12 JSON válidos, 38 relaciones y 19/19 pruebas aprobadas. Su evidencia original se conserva sin modificar.
 
-Resultados de ese run:
+La revisión de cierre del **29-09-2026 (Chile)** detectó pérdidas de texto inline, sobreafirmaciones en resúmenes, una relación geográfica inferida y una referencia de persona compartida entre casos distintos. Se corrigieron de forma acotada, **sin recapturar ni volver a consultar Gemini**. El registro de cambios y hashes está en [`docs/correcciones_cierre.json`](docs/correcciones_cierre.json).
 
-- 12 noticias capturadas y limpiadas;
-- 12 JSON válidos y 0 fallidos;
-- 38 relaciones conservadas después de los controles;
-- 36 personas y 26 organizaciones únicas en el corpus estructurado;
-- 185 archivos Markdown en la bóveda;
-- 0 enlaces rotos;
-- 7 visualizaciones de Data Understanding;
-- 19/19 pruebas automatizadas aprobadas;
-- auditoría manual de 12/12 noticias.
+Estado de entrega después de ese cierre:
 
-El detalle técnico está en [`docs/estado_ejecucion.md`](docs/estado_ejecucion.md), la evidencia del run en [`docs/evidencia_ejecucion.md`](docs/evidencia_ejecucion.md) y la revisión caso a caso en [`docs/auditoria_manual_final.md`](docs/auditoria_manual_final.md).
+- 12 noticias y 12 JSON válidos, sin fallos estructurales;
+- 37 relaciones documentales;
+- 36 etiquetas distintas de persona en 37 referencias por noticia; no es un conteo de individuos reales;
+- 26 etiquetas distintas de organización, con variantes institucionales todavía presentes;
+- 185 notas Markdown y 0 wikilinks rotos;
+- 7 visualizaciones, cuyos recuentos siguen vigentes;
+- 23/23 pruebas offline aprobadas con el RAW restaurado;
+- auditoría manual previa de 12/12 documentada; cierre adicional asistido y trazable.
+
+Los textos actuales son una revisión posterior de limpieza. Las entradas exactas enviadas a Gemini y sus respuestas originales están en **LAB01_Evidencia_Run14_Original.zip**. No se atribuyen las correcciones posteriores al run #14.
 
 ## Automatización y trazabilidad del historial
 
 Este repositorio usa **GitHub Actions como integración continua**, por lo que algunos commits aparecen técnicamente atribuidos a `github-actions[bot]`. Esto ocurre cuando un workflow genera y publica un artefacto reproducible, por ejemplo los JSON/validaciones/vault derivados del pipeline o el PDF compilado del informe. Durante la integración inicial del proyecto también se usaron automatizaciones para materializar archivos en el repositorio, por lo que el historial contiene otros commits de esa cuenta de servicio.
 
 `github-actions[bot]` es la identidad técnica del proceso automático de GitHub; no corresponde a un integrante adicional ni a una fuente de datos. El **run #14** del pipeline fue activado por `IgnaciaPV`, ejecutó el commit `a56119a0f1fab19fc65a792ea7058c7f499c4d60` y terminó en **SUCCESS**. El historial se mantiene sin reescritura para conservar trazabilidad entre cambios, ejecuciones y artefactos generados.
+
+## Enfoque de ingeniería y automatización
+
+El laboratorio se aborda como un proceso de transformación de información con etapas controlables: adquisición, limpieza, extracción, validación, generación de conocimiento y análisis. La programación implementa y estandariza ese flujo, mientras el criterio humano define el alcance, las reglas semánticas, el tratamiento de roles y la interpretación de resultados. La automatización permite repetir operaciones y concentrar la revisión en decisiones que no pueden garantizarse solo mediante código o un LLM.
 
 ## Objetivo
 
@@ -42,7 +47,7 @@ Noticias públicas
   -> Data Understanding + auditoría crítica
 ```
 
-No se entrena clustering. Los agrupamientos emergen por entidades y relaciones explícitas compartidas.
+No se entrena clustering. Los agrupamientos emergen por entidades y relaciones explícitas compartidas. Las etiquetas de persona repetidas se mantienen separadas por noticia hasta disponer de evidencia de identidad.
 
 ## Estructura
 
@@ -119,7 +124,7 @@ Documentación oficial de referencia:
 - revisar manualmente al menos 10 noticias;
 - mantener trazabilidad y calidad antes que volumen.
 
-La adquisición en vivo es reproducible. Los HTML completos de `data/raw/` se regeneran desde las URLs y se conservan como evidencia del workflow, mientras que los textos ya limpiados de `data/processed/` sí se versionan porque son parte directa del laboratorio. En una máquina o en GitHub Actions con Internet, `capturar --forzar` vuelve a obtener las fuentes originales.
+La adquisición en vivo puede repetirse, aunque el contenido de las páginas y la salida del LLM pueden cambiar. Los HTML completos de `data/raw/` se regeneran desde las URLs y se conservan como evidencia del workflow, mientras que los textos ya limpiados de `data/processed/` sí se versionan porque son parte directa del laboratorio. En una máquina o en GitHub Actions con Internet, `capturar --forzar` vuelve a obtener las fuentes originales.
 
 ## Comandos
 
@@ -143,7 +148,7 @@ Para recapturar aunque exista caché:
 python main.py capturar --forzar
 ```
 
-Genera `data/raw/NXXX.html`, metadata lateral y `data/processed/NXXX.txt`.
+Genera `data/raw/NXXX.html`, metadata lateral y `data/processed/NXXX.txt`. Para la revisión final se reutilizó el RAW del run #14; no se recapturaron las fuentes.
 
 ### 3. Extraer con Gemini y validar
 
@@ -195,7 +200,7 @@ Genera estadísticas y visualizaciones en `outputs/`, entre ellas cobertura por 
 python main.py auditar
 ```
 
-Construye `docs/auditoria_llm.md` a partir de una referencia humana preparada para 10 noticias. La herramienta ayuda a detectar omisiones, roles mal asignados y relaciones dudosas, pero no reemplaza la lectura manual de original -> texto limpio -> JSON.
+Construye una guía de comparación en `docs/auditoria_llm.md` a partir de una referencia humana preparada para 10 noticias. La herramienta ayuda a detectar omisiones, roles mal asignados y relaciones dudosas, pero no reemplaza la lectura manual de original -> texto limpio -> JSON.
 
 ### 7. Pipeline completo
 
@@ -203,7 +208,7 @@ Construye `docs/auditoria_llm.md` a partir de una referencia humana preparada pa
 python main.py pipeline
 ```
 
-Para reproducir exactamente el corpus semilla sin añadir URLs nuevas:
+Para repetir el flujo sobre las mismas URLs semilla sin añadir URLs nuevas (la respuesta del LLM puede variar):
 
 ```bash
 python main.py pipeline --sin-descubrir
@@ -237,13 +242,17 @@ Los metadatos de trazabilidad (`id_noticia`, `fuente`, `url`) no se confían al 
 - No fusionar personas/organizaciones por similitud difusa.
 - Toda relación debe tener respaldo textual explícito.
 
+## Correcciones de cierre y evidencia histórica
+
+`docs/auditoria_cierre.md` contrasta la pauta y el estado de entrega. `docs/correcciones_cierre.json` registra las modificaciones semánticas y los hashes de las entradas originales. El artifact `LAB01-evidencia` del run #14 conserva HTML, respuestas LLM, textos originales y logs, pero **vence el 04-10-2026 a las 22:22 UTC**. Se conserva además una copia íntegra descargada, `LAB01_Evidencia_Run14_Original.zip`, para adjuntar con la entrega. El ZIP conserva los datos originales; no contiene las correcciones posteriores.
+
 ## Pruebas
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-Las pruebas cubren adquisición, fechas, limpieza, eliminación de bloques editoriales ajenos, prompt y parsing estructurado, controles de presunción, reclasificación de tribunales, validación, Obsidian, enlaces internos, Data Understanding y trazabilidad. El run final aprobó 19/19.
+Las pruebas cubren adquisición, fechas, limpieza, eliminación de bloques editoriales ajenos, prompt y parsing estructurado, controles de presunción, reclasificación de tribunales, validación, Obsidian, enlaces internos, Data Understanding y trazabilidad. El run #14 aprobó 19/19. La suite ampliada de cierre aprobó 23/23 con los RAW restaurados; en una clonación nueva omite explícitamente solo la comprobación de RAW no versionado y ejecuta las otras 22 pruebas.
 
 ## Abrir la bóveda
 

@@ -1,0 +1,16 @@
+{
+  "pipeline_base_run_id": 36354954389,
+  "gemini_reconsultado": false,
+  "json_validos": 12,
+  "relaciones": 37,
+  "markdown": 185,
+  "enlaces_rotos": 0,
+  "pruebas_cierre": {
+    "ejecutadas": 23,
+    "aprobadas": 23,
+    "raw_restaurado": true
+  },
+  "sha256_tex": "a272c27a689527a6436f22011d8cb632025c953bd9bf477b74830b42191ce231",
+  "sha256_pdf_local": "0fddde08874d1cde5dce90eaed599ac2667d58c3b488f553695b1ffe2d574857",
+  "sha256_evidencia_original": "457341f305b19d2cce57d379e0dc75db39510010fe523de4b02baaf86287b1c8"
+}

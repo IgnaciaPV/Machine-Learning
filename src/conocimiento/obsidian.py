@@ -34,6 +34,7 @@ class EscritorVaultObsidian(EscritorObsidian):
         self.vault_dir = Path(vault_dir)
         self._registro: dict[str, dict[str, tuple[str, str]]] = {}
         self._relaciones_por_noticia: dict[str, list[tuple[str, dict[str, Any]]]] = defaultdict(list)
+        self._personas_repetidas: set[str] = set()
 
     def _preparar(self, limpiar: bool = False) -> None:
         if limpiar and self.vault_dir.exists():
@@ -48,12 +49,19 @@ class EscritorVaultObsidian(EscritorObsidian):
 
     def _construir_registro(self, noticias: list[dict[str, Any]]) -> None:
         self._registro = {tipo: {} for tipo in self.CARPETAS}
+        apariciones: dict[str, set[str]] = defaultdict(set)
+        for data in noticias:
+            for persona in data.get("personas", []):
+                if isinstance(persona, dict) and persona.get("nombre"):
+                    apariciones[clave_entidad(persona["nombre"])].add(str(data["id_noticia"]))
+        # Una etiqueta repetida no prueba identidad entre documentos.
+        self._personas_repetidas = {k for k, ids in apariciones.items() if len(ids) > 1}
         for data in noticias:
             for delito in data.get("delitos", []):
                 self._registrar("delitos", str(delito))
             for persona in data.get("personas", []):
                 if isinstance(persona, dict) and persona.get("nombre"):
-                    self._registrar("personas", str(persona["nombre"]))
+                    self._registrar("personas", str(persona["nombre"]), str(data["id_noticia"]))
             for org in data.get("organizaciones", []):
                 self._registrar("organizaciones", str(org))
             for lugar in data.get("lugares", []):
@@ -62,9 +70,17 @@ class EscritorVaultObsidian(EscritorObsidian):
                 if isinstance(obj, dict):
                     self._registrar("objetos", self._valor_objeto(obj))
 
-    def _registrar(self, tipo: str, valor: str) -> tuple[str, str]:
-        valor = normalizar_visual(valor)
+    def _clave_registro(self, tipo: str, valor: str, nid: str | None = None) -> str:
         clave = clave_entidad(valor)
+        if tipo == "personas" and clave in self._personas_repetidas:
+            if nid is None:
+                raise ValueError("Una referencia de persona repetida requiere id_noticia")
+            return f"{clave}::{nid}"
+        return clave
+
+    def _registrar(self, tipo: str, valor: str, nid: str | None = None) -> tuple[str, str]:
+        valor = normalizar_visual(valor)
+        clave = self._clave_registro(tipo, valor, nid)
         if not clave:
             clave = "sin_nombre"
         existente = self._registro.setdefault(tipo, {}).get(clave)
@@ -72,29 +88,30 @@ class EscritorVaultObsidian(EscritorObsidian):
             return existente
         carpeta = self.CARPETAS[tipo]
         slug = slugify(valor)
+        if tipo == "personas" and clave_entidad(valor) in self._personas_repetidas:
+            slug = f"{nid}_{slug}"
         ruta = f"{carpeta}/{slug}"
         self._registro[tipo][clave] = (valor, ruta)
         return valor, ruta
 
-    def _enlace(self, tipo: str, valor: str) -> str:
+    def _enlace(self, tipo: str, valor: str, nid: str | None = None) -> str:
         valor = normalizar_visual(valor)
-        registro = self._registro.get(tipo, {}).get(clave_entidad(valor))
+        registro = self._registro.get(tipo, {}).get(self._clave_registro(tipo, valor, nid))
         if not registro:
-            registro = self._registrar(tipo, valor)
+            registro = self._registrar(tipo, valor, nid)
         display, ruta = registro
         return f"[[{ruta}|{display}]]"
 
-    def _buscar_tipo_endpoint(self, valor: str) -> str | None:
-        clave = clave_entidad(valor)
+    def _buscar_tipo_endpoint(self, valor: str, nid: str | None = None) -> str | None:
         for tipo in ("personas", "organizaciones", "delitos", "lugares", "objetos"):
-            if clave in self._registro.get(tipo, {}):
+            if self._clave_registro(tipo, valor, nid) in self._registro.get(tipo, {}):
                 return tipo
         return None
 
-    def _enlace_endpoint(self, valor: str) -> str:
-        tipo = self._buscar_tipo_endpoint(valor)
+    def _enlace_endpoint(self, valor: str, nid: str | None = None) -> str:
+        tipo = self._buscar_tipo_endpoint(valor, nid)
         if tipo:
-            return self._enlace(tipo, valor)
+            return self._enlace(tipo, valor, nid)
         return normalizar_visual(valor)
 
     def escribir_noticia(self, data: dict[str, Any]) -> Path:
@@ -123,7 +140,7 @@ class EscritorVaultObsidian(EscritorObsidian):
             if not nombre:
                 continue
             rol = p.get("rol")
-            texto = f"- {self._enlace('personas', nombre)}"
+            texto = f"- {self._enlace('personas', nombre, nid)}"
             if rol:
                 texto += f" — rol: {rol}"
             personas.append(texto)
@@ -175,9 +192,9 @@ class EscritorVaultObsidian(EscritorObsidian):
                     "",
                     "Tipo: Relación explícita extraída de una noticia.",
                     "",
-                    f"- Origen: {self._enlace_endpoint(origen)}",
+                    f"- Origen: {self._enlace_endpoint(origen, nid)}",
                     f"- Tipo: `{tipo}`",
-                    f"- Destino: {self._enlace_endpoint(destino)}",
+                    f"- Destino: {self._enlace_endpoint(destino, nid)}",
                     f"- Evidencia documental: [[Noticias/{nid}|{nid}]]",
                     "",
                     "La relación conserva el carácter descriptivo de la fuente y no implica culpabilidad.",
@@ -196,7 +213,7 @@ class EscritorVaultObsidian(EscritorObsidian):
             for p in data.get("personas", []):
                 if not isinstance(p, dict) or not p.get("nombre"):
                     continue
-                item = indices["personas"][clave_entidad(str(p["nombre"]))]
+                item = indices["personas"][self._clave_registro("personas", str(p["nombre"]), nid)]
                 item["noticias"].add(nid)
                 if p.get("rol"):
                     item["roles"].add(str(p["rol"]))
@@ -218,6 +235,8 @@ class EscritorVaultObsidian(EscritorObsidian):
             for clave, (display, ruta_rel) in sorted(self._registro.get(tipo, {}).items(), key=lambda x: x[1][0].casefold()):
                 item = indices[tipo].get(clave, {"noticias": set(), "roles": set(), "detalles": []})
                 lineas = [f"# {display}", "", f"Tipo: {carpeta[:-1] if carpeta.endswith('s') else carpeta}", "", "## Noticias relacionadas"]
+                if tipo == "personas" and "::" in clave:
+                    lineas[4:4] = ["Referencia limitada a esta noticia. La coincidencia de palabras con otra nota no demuestra que sea la misma persona.", ""]
                 lineas.extend([f"- [[Noticias/{nid}|{nid}]]" for nid in sorted(item["noticias"])])
                 if item.get("roles"):
                     lineas += ["", "## Roles explícitos observados"]

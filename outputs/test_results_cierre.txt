@@ -1,0 +1,33 @@
+test_recupera_fecha_url_amp (test_adquisicion.TestCapturadorCooperativa.test_recupera_fecha_url_amp) ... ok
+test_recupera_fecha_url_no_amp (test_adquisicion.TestCapturadorCooperativa.test_recupera_fecha_url_no_amp) ... ok
+test_genera_resumen_y_visualizaciones (test_analisis.TestAnalisis.test_genera_resumen_y_visualizaciones) ... ok
+test_postprocesado_descarta_actor_policial_generico_como_persona (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_actor_policial_generico_como_persona) ... ok
+test_postprocesado_descarta_agresion_afirmativa_con_acento (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_agresion_afirmativa_con_acento) ... Relación descartada por sobreafirmar culpabilidad: un imputado --AGREDIÓ_CON--> arma cortante (rol=imputado)
+ok
+test_postprocesado_descarta_relacion_huerfana (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_relacion_huerfana) ... Relación descartada por endpoint no trazable: víctima --VIO_A--> entidad inexistente
+ok
+test_postprocesado_descarta_uso_afirmativo_para_imputado (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_uso_afirmativo_para_imputado) ... Relación descartada por sobreafirmar culpabilidad: un imputado --USO--> arma cortante (rol=imputado)
+ok
+test_postprocesado_descarta_vinculacion_hacia_lugar (test_extraccion.TestExtractorGemini.test_postprocesado_descarta_vinculacion_hacia_lugar) ... Relación descartada por destino semánticamente incompatible: cinco gendarmes --PRESUNTA_VINCULACION_A--> cárcel de Illapel
+ok
+test_postprocesado_evitar_sobreafirmar_culpabilidad (test_extraccion.TestExtractorGemini.test_postprocesado_evitar_sobreafirmar_culpabilidad) ... Relación descartada por sobreafirmar culpabilidad: persona detenida --COMETIO_DELITO--> receptación de vehículo (rol=detenido)
+ok
+test_postprocesado_reclasifica_tribunal_como_organizacion (test_extraccion.TestExtractorGemini.test_postprocesado_reclasifica_tribunal_como_organizacion) ... ok
+test_postprocesado_valorizacion_no_es_cantidad_fisica (test_extraccion.TestExtractorGemini.test_postprocesado_valorizacion_no_es_cantidad_fisica) ... ok
+test_prompt_contiene_reglas_eticas_y_trazabilidad (test_extraccion.TestExtractorGemini.test_prompt_contiene_reglas_eticas_y_trazabilidad) ... ok
+test_recupera_json_con_fences (test_extraccion.TestExtractorGemini.test_recupera_json_con_fences) ... ok
+test_conserva_fragmentos_inline_y_calificadores (test_limpieza.TestLimpiadorHTML.test_conserva_fragmentos_inline_y_calificadores) ... ok
+test_elimina_ruido_y_conserva_cuerpo (test_limpieza.TestLimpiadorHTML.test_elimina_ruido_y_conserva_cuerpo) ... ok
+test_elimina_tarjeta_lee_tambien (test_limpieza.TestLimpiadorHTML.test_elimina_tarjeta_lee_tambien) ... ok
+test_no_fusiona_personas_por_descripcion_compartida (test_obsidian.TestObsidian.test_no_fusiona_personas_por_descripcion_compartida) ... ok
+test_vault_navegable_sin_enlaces_rotos (test_obsidian.TestObsidian.test_vault_navegable_sin_enlaces_rotos) ... ok
+test_corpus_semilla_tiene_entregables_versionados (test_trazabilidad.TestTrazabilidadCorpus.test_corpus_semilla_tiene_entregables_versionados) ... ok
+test_raw_y_meta_cuando_se_restaura_evidencia (test_trazabilidad.TestTrazabilidadCorpus.test_raw_y_meta_cuando_se_restaura_evidencia) ... ok
+test_detecta_campo_faltante (test_validacion.TestValidadorJSON.test_detecta_campo_faltante) ... ok
+test_rechaza_raiz_json_no_objeto (test_validacion.TestValidadorJSON.test_rechaza_raiz_json_no_objeto) ... ok
+test_valido_y_trazable (test_validacion.TestValidadorJSON.test_valido_y_trazable) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.780s
+
+OK

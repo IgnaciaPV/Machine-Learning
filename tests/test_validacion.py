@@ -7,6 +7,14 @@ from src.validacion import ValidadorJSON
 
 
 class TestValidadorJSON(unittest.TestCase):
+    def test_rechaza_raiz_json_no_objeto(self):
+        with TemporaryDirectory() as d:
+            ruta = Path(d) / "N001.json"
+            for valor in ([], None, "texto", 42):
+                with self.subTest(valor=valor):
+                    ruta.write_text(json.dumps(valor), encoding="utf-8")
+                    self.assertFalse(ValidadorJSON().validar(ruta).valido)
+
     def fixture(self):
         return {
             "id_noticia":"N001","titulo":"Título","fecha_publicacion":None,

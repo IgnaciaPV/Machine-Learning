@@ -70,6 +70,7 @@ jobs:
       - name: Pruebas automatizadas
         shell: bash -el {0}
         run: |
+          set -o pipefail
           python -m unittest discover -s tests -v 2>&1 | tee outputs/test_results.txt
 
       - name: Extracción Gemini y validación

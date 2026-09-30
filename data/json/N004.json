@@ -53,11 +53,6 @@
       "origen": "Matías Letelier",
       "tipo": "DETENIDO_POR",
       "destino": "receptación de vehículo"
-    },
-    {
-      "origen": "vehículo",
-      "tipo": "UBICADO_EN",
-      "destino": "Región de Coquimbo"
     }
   ]
 }

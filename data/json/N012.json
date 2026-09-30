@@ -36,27 +36,27 @@
   "relaciones": [
     {
       "origen": "Carabineros",
-      "tipo": "DESARTICULO",
+      "tipo": "DETUVO_A",
       "destino": "dos hombres adultos"
     },
     {
       "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A",
+      "tipo": "TIENE_ANTECEDENTES_POR",
       "destino": "tráfico de drogas"
     },
     {
       "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A",
+      "tipo": "TIENE_ANTECEDENTES_POR",
       "destino": "robo con violencia"
     },
     {
       "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A",
+      "tipo": "TIENE_ANTECEDENTES_POR",
       "destino": "lesiones"
     },
     {
       "origen": "dos hombres adultos",
-      "tipo": "ASOCIADO_A",
+      "tipo": "TIENE_ANTECEDENTES_POR",
       "destino": "tenencia de armas"
     }
   ]

@@ -29,3 +29,7 @@ Para auditar N005 se puede seguir el recorrido completo sin buscar manualmente a
 6. abrir `obsidian_vault/Noticias/N005.md` y seguir sus wikilinks.
 
 La misma secuencia funciona para N001-N012. En GitHub Actions, `data/raw/` y `data/processed/` también quedan empaquetados en el artifact de evidencia de la ejecución.
+
+## Distinción de versiones
+
+Los RAW y las respuestas LLM del run #14 se conservan en `LAB01_Evidencia_Run14_Original.zip`. El artifact temporal vence el 04-10-2026. `data/processed/` y algunos JSON incorporan revisiones posteriores; los hashes de las entradas originales y los valores antes/después constan en `docs/correcciones_cierre.json`. La secuencia histórica Gemini se reconstruye desde el ZIP, y la persistencia actual desde los JSON corregidos.

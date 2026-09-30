@@ -27,3 +27,7 @@ La serie temporal describe cuándo se publicaron las noticias del corpus. Con un
 Duplicados detectados: **0** grupos. Variantes potencialmente inconsistentes de entidades: **1**. Advertencias de relaciones: **0**.
 
 Las advertencias requieren revisión humana porque las equivalencias nominales y el respaldo semántico de una relación no pueden resolverse de forma segura mediante similitud textual agresiva.
+
+## Revisión de cierre
+
+Los siete gráficos conservan sus recuentos originales: las correcciones no modifican sus variables. El cierre deja 37 relaciones. Las etiquetas únicas de persona (36) no representan individuos únicos: existen 37 referencias por noticia, con colectivos y correferencias sin resolver. Los delitos incluyen menciones a antecedentes (N001 y N012); sus frecuencias no son un recuento exclusivo de hechos nuevos.

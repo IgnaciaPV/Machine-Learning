@@ -83,6 +83,12 @@ class LimpiadorHTML:
         fecha = self._extraer_fecha(soup)
 
         articulo = soup.find("article") or soup.find("main") or soup.body or soup
+        # Los saltos entre nodos inline (<strong>, <a>, <em>) no son
+        # límites de párrafo. Filtrarlos por longitud borraba nombres,
+        # negaciones y calificadores del cuerpo original.
+        for nodo in articulo.find_all(["strong", "b", "em", "i", "a", "span"]):
+            nodo.unwrap()
+        articulo.smooth()
         lineas_crudas = [self._normalizar_espacios(x) for x in articulo.get_text("\n").splitlines()]
         lineas_crudas = [x for x in lineas_crudas if x]
 

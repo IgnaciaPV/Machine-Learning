@@ -28,7 +28,7 @@ Construir un pipeline reproducible que capture noticias delictuales públicas, l
 
 ## Criterio de relación entre noticias
 
-Dos noticias pueden observarse como relacionadas cuando comparten **exactamente** un delito, una persona, una organización, un lugar u otra entidad normalizada de forma conservadora. No se entrena clustering y no se infieren similitudes latentes.
+Dos noticias pueden observarse como relacionadas cuando comparten **exactamente** un delito, una persona con identidad verificada, una organización, un lugar u otra entidad normalizada de forma conservadora. No se entrena clustering y no se infieren similitudes latentes.
 
 ## Información incompleta y ausente
 
@@ -48,3 +48,5 @@ Dos noticias pueden observarse como relacionadas cuando comparten **exactamente*
 ## Criterios de éxito
 
 El laboratorio se considera técnicamente exitoso si mantiene trazabilidad NXXX de extremo a extremo; genera JSON válidos conforme al esquema; produce una bóveda con enlaces internos sin roturas; permite responder preguntas descriptivas sobre fuentes, delitos, lugares, entidades y relaciones; y documenta mediante auditoría manual las limitaciones y errores de extracción.
+
+Una misma descripción de persona en documentos distintos no prueba identidad. Las referencias repetidas se mantienen separadas por ID de noticia; las conexiones entre los casos pueden analizarse a través de delitos, organizaciones y lugares explícitos.
